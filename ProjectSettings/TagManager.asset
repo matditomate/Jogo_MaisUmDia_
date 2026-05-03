@@ -12,7 +12,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - CafePanel
   - 
   - 
   - 
@@ -38,11 +38,14 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 571018457
-    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Cenario
+    uniqueID: 571018457
+    locked: 0
+  - name: CafePanel
+    uniqueID: 3929054429
     locked: 0
   m_RenderingLayers:
   - Default
