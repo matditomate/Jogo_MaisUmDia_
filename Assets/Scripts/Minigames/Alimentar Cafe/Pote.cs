@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PoteController : MonoBehaviour
 {
+    [SerializeField] private Image poteUI;
+    [SerializeField] private Sprite[] estadosPote;
     public RectTransform rect;
     public float speed = 200f;
 
@@ -42,8 +45,20 @@ public class PoteController : MonoBehaviour
         pontos++;
         Debug.Log("Acertou: " + pontos);
 
+        int porcentagem = pontos / pontosMax * 10;
+
+        if(porcentagem <= 3)
+        {
+            poteUI.sprite = estadosPote[1];
+        } else if (porcentagem <= pontosMax)
+        {
+            poteUI.sprite = estadosPote[2];
+        }
+
         if (pontos >= pontosMax)
+        {    
             Vencer();
+        }
     }
 
     void Vencer()

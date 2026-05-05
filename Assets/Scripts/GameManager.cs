@@ -4,6 +4,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public string portaDeDestino;
+    
 
     void Awake()
     {
