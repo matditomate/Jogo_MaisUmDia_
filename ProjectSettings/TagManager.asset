@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Ground
   - CafePanel
-  - 
+  - Image
   - 
   - 
   - 
@@ -46,6 +46,9 @@ TagManager:
     locked: 0
   - name: CafePanel
     uniqueID: 3929054429
+    locked: 0
+  - name: image
+    uniqueID: 1959747251
     locked: 0
   m_RenderingLayers:
   - Default

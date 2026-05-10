@@ -48,10 +48,10 @@ public class PoteController : MonoBehaviour
 
     void Vencer()
     {
-        Debug.Log("WIN!");
-
         if (finalizado) return;
         finalizado = true;
+
+        Debug.Log("WIN!");
 
         // 1. PARA LÓGICA DO JOGO
         enabled = false;
@@ -64,15 +64,22 @@ public class PoteController : MonoBehaviour
             scoop.enabled = false;
         }
 
-        // 3. BLOQUEIA O GATO 
-        if (cafe != null)
-        {
-            cafe.SetFull();
-            cafe.LockCat();
-        }
+        // 3. BLOQUEIA O GATO (Usando a lógica estática que criamos)
+        // Chamamos direto pela Classe Cafe para garantir a persistência entre cenas
+        Cafe.AlterarFome(-4);
+        Cafe.AlterarAtencao(2);
+        Cafe.SetLocked(true);
 
         // 4. DESATIVA O MINIGAME
+        // Aqui ainda usamos a referência 'cafe' para chegar no painel que está na cena
         if (cafe != null && cafe.minigamePanel != null)
+        {
             cafe.minigamePanel.FecharPanel();
+        }
+        else
+        {
+            // Caso a referência 'cafe' falhe, você pode tentar fechar pelo PanelCafeOpener direto se tiver a referência
+            Debug.LogWarning("Minigame fechado, mas a referência do script Cafe no PoteController sumiu!");
+        }
     }
 }
