@@ -19,6 +19,11 @@ public class ScoopController : MonoBehaviour
     public GameObject racaoDropPrefab;
     public Transform dropsContainer;
     public Transform spawnPoint;
+
+    public AudioSource audioSource;
+    public AudioClip somDrop;
+    public AudioClip somRacao;
+
     bool clicando = false;
     RectTransform rt;
 
@@ -53,6 +58,12 @@ public class ScoopController : MonoBehaviour
         {
             cheio = true;
             scoopImage.sprite = scoopCheio;
+
+            // TOCAR SOUND EFFECT pegandoRacao
+            if (audioSource != null && somRacao != null)
+            {
+                audioSource.PlayOneShot(somRacao);
+            }
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -113,6 +124,12 @@ public class ScoopController : MonoBehaviour
         script.rect = dropRect;
         script.pote = pote;
         script.poteArea = poteArea;
+
+        // TOCAR SOUND EFFECT jogandoRacao
+        if (audioSource != null && somDrop != null)
+        {
+            audioSource.PlayOneShot(somDrop);
+        }
 
         cheio = false;
         scoopImage.sprite = scoopVazio;

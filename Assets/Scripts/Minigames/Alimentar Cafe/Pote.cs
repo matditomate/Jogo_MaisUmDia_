@@ -18,6 +18,9 @@ public class PoteController : MonoBehaviour
     public ScoopController scoop;
     public Cafe cafe;
 
+    public AudioSource audioSource;
+    public AudioClip somAcerto;
+
     private bool finalizado = false;
 
     void Start()
@@ -41,6 +44,12 @@ public class PoteController : MonoBehaviour
     public void Acertou()
     {
         if (finalizado) return;
+
+        // TOCAR SOUND EFFECT poteRacao
+        if(audioSource != null && somAcerto != null)
+        {
+            audioSource.PlayOneShot(somAcerto);
+        }
 
         pontos++;
         Debug.Log("Acertou: " + pontos);
