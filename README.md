@@ -1,7 +1,7 @@
 # Jogo: Mais Um Dia
-Um jogo que aborda o tema ansiedade/depressão com o intuito de conscientizar sobre esses tópicos de uma forma não tão pesada.
+Em um ciclo repetitivo de uma semana, o jogador acompanha a rotina de um universitário que enfrenta ansiedade e depressão. O mundo ao seu redor reflete seu estado emocional, perdendo gradualmente as cores e se tornando cada vez mais opaco. Ao longo dos dias, surgem desafios opcionais que representam pequenas batalhas do cotidiano; superá-los traz de volta cores e esperança, enquanto ignorá-los faz o personagem regredir ainda mais. A cada reinício da semana, nasce uma nova esperança de conquista, e as escolhas do jogador determinam diferentes desfechos, revelando o impacto do esforço, da persistência e das dificuldades na jornada do protagonista.
 
-ALUNOS:
+### ALUNOS:
 
 Carolina Tartaroti Shishito
 RA: 24.00599-0

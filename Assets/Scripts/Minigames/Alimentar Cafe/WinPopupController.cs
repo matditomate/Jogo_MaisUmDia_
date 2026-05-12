@@ -5,31 +5,23 @@ public class WinPopupController : MonoBehaviour
     public GameObject popup;
     public PanelCafeOpener panelOpener;
 
-    private CanvasGroup cg;
-
     void Awake()
     {
         if (popup != null)
         {
-            cg = popup.GetComponent<CanvasGroup>();
-
-            if (cg == null)
-                cg = popup.GetComponentInChildren<CanvasGroup>();
-
             popup.SetActive(false);
         }
     }
 
     public void Show()
     {
-        Debug.Log("SHOW CHAMADO");
+        Debug.Log("[WIN] Mostrando Popup de Vitória");
 
         popup.SetActive(true);
 
+        // Tenta pegar o CanvasGroup para garantir que esteja visível
         CanvasGroup cg = popup.GetComponent<CanvasGroup>();
-
-        if (cg == null)
-            cg = popup.GetComponentInChildren<CanvasGroup>();
+        if (cg == null) cg = popup.GetComponentInChildren<CanvasGroup>();
 
         if (cg != null)
         {
@@ -37,11 +29,8 @@ public class WinPopupController : MonoBehaviour
             cg.interactable = true;
             cg.blocksRaycasts = true;
         }
-        else
-        {
-            Debug.LogWarning("Sem CanvasGroup!");
-        }
 
+        // Centraliza o popup e coloca na frente de outros elementos do painel
         RectTransform rt = popup.GetComponent<RectTransform>();
         if (rt != null)
         {
@@ -51,11 +40,15 @@ public class WinPopupController : MonoBehaviour
 
         popup.transform.SetAsLastSibling();
     }
+
     public void Close()
     {
         popup.SetActive(false);
 
+        // Quando fechar a vitória, chama o PanelOpener para fechar o minijogo todo
         if (panelOpener != null)
+        {
             panelOpener.FecharPanel();
+        }
     }
 }
