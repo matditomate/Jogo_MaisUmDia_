@@ -54,12 +54,14 @@ public class PoteController : MonoBehaviour
         pontos++;
         Debug.Log("Acertou: " + pontos);
 
-        int porcentagem = pontos / pontosMax * 10;
+        float porcentagem = (float)pontos / pontosMax * 10;
 
-        if(porcentagem <= 3)
+        Debug.Log(porcentagem);
+
+        if(porcentagem <= 3.4)
         {
             poteUI.sprite = estadosPote[1];
-        } else if (porcentagem <= pontosMax)
+        } else if (porcentagem <= 6.7)
         {
             poteUI.sprite = estadosPote[2];
         }
