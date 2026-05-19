@@ -4,11 +4,45 @@ public class Cafe : MonoBehaviour
 {
     public PanelCafeOpener minigamePanel;
 
+    [SerializeField] private Texture2D cursorInteracao; // Arrastar a textura do mouse de carinho/interação aqui
+    private Vector2 hotspot = Vector2.zero;
+
     // --- STATUS ESTÁTICOS (Persistem entre cenas) ---
     public static int fome = 5;      // 0 a 10
     public static int atencao = 5;   // 0 a 10
     public static bool locked = false; // Trava total de interação
 
+
+    private void OnMouseEnter()
+    {
+        // Só muda o cursor se o minigame NÃO estiver aberto e o gato NÃO estiver travado
+        if (!locked && minigamePanel != null && !minigamePanel.minigamePanel.activeSelf)
+        {
+            if (cursorInteracao != null)
+            {
+                Cursor.SetCursor(cursorInteracao, hotspot, CursorMode.Auto);
+            }
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        // Quando o mouse sai de cima do gato, volta para o cursor padrão
+        // Se o minigame abriu, o PanelCafeOpener já vai gerenciar o mouse, então aqui só limpamos se o painel estiver fechado
+        if (minigamePanel != null && !minigamePanel.minigamePanel.activeSelf)
+        {
+            // Se você tiver o CursorCustom na cena, podemos chamá-lo para restaurar a "mão" padrão:
+            if (minigamePanel.CursorMao != null)
+            {
+                minigamePanel.CursorMao.AtivarCursor();
+            }
+            else
+            {
+                // Caso contrário, volta para o ponteiro padrão do sistema
+                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            }
+        }
+    }
     public void AchouCafe()
     {
         // Se estiver travado (bool), nem tenta checar o resto
@@ -22,6 +56,10 @@ public class Cafe : MonoBehaviour
         if (fome > 0)
         {
             Debug.Log("Café está com fome! Abrindo minigame.");
+
+            // Força o reset do cursor imediatamente antes de abrir o painel
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+
             minigamePanel.AbrirPanel();
         }
         else

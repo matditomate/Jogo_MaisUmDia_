@@ -7,6 +7,8 @@ public class PanelCafeOpener : MonoBehaviour
     public GameObject worldRoot; 
     public GameObject minigamePanel;
 
+    public CursorCustom CursorMao;
+
     [Header("Componentes de Interface")]
     public CanvasGroup canvasGroup;
     public ScoopController scoop;
@@ -17,9 +19,14 @@ public class PanelCafeOpener : MonoBehaviour
     public void AbrirPanel()
     {
         Debug.Log("[PANEL] Abrindo minigame");
+        
+        if (CursorMao != null)
+        {
+            CursorMao.DesativarCursor();
+        }
 
         // Liberar o cursor para interagir com o Canvas
-        Cursor.visible = true;
+        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.None;
 
         // Opcional: Pausa o tempo do jogo (física, timers, etc)
@@ -49,12 +56,15 @@ public class PanelCafeOpener : MonoBehaviour
     {
         Debug.Log("[PANEL] Fechando minigame");
 
-        // Retorna o cursor ao estado normal do seu jogo (ex: travado para FPS)
-        // Mude para CursorLockMode.Locked se for um jogo em primeira pessoa
-        Cursor.visible = true; 
+        // 2. REATIVA o cursor customizado (CursorMao) ao sair do minigame
+        if (CursorMao != null)
+        {
+            CursorMao.AtivarCursor();
+        }
+
+        Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
-        // Retorna o tempo ao normal
         Time.timeScale = 1f;
 
         if (scoop != null)
@@ -64,10 +74,8 @@ public class PanelCafeOpener : MonoBehaviour
             scoop.enabled = false;
         }
 
-        // Esconde o painel
         minigamePanel.SetActive(false);
 
-        // Desativa a interação com o CanvasGroup
         canvasGroup.alpha = 0f;
         canvasGroup.blocksRaycasts = false;
         canvasGroup.interactable = false;
