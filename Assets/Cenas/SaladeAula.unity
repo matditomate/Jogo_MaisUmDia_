@@ -434,9 +434,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: BalaoProfessor
       objectReference: {fileID: 0}
-    - target: {fileID: 7066967475124180962, guid: 649b352e751b5f84b9e6e074c8bff5a5, type: 3}
-      propertyPath: m_Enabled
-      value: 1
+    - target: {fileID: 5021373062270248379, guid: 649b352e751b5f84b9e6e074c8bff5a5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
