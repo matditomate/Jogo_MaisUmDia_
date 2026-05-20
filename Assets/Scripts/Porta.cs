@@ -10,6 +10,13 @@ public class Porta : MonoBehaviour
 
     public void IrProximaFase()
     {
+        // VERIFICAÇÃO: Se o minigame estiver ativo, impede o jogador de mudar de fase
+        if (CameraPanLateral.minigameAtivo)
+        {
+            Debug.Log("Você não pode mudar de sala enquanto estiver no minigame!");
+            return; // Corta a execução da função aqui e não muda de cena
+        }
+        
         GameManager.instance.portaDeDestino = nomePortaDeDestino;
         SceneManager.LoadScene(this.nomeProximaFase);
     }

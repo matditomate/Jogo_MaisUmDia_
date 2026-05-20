@@ -19,7 +19,8 @@ public class PanelCafeOpener : MonoBehaviour
     public void AbrirPanel()
     {
         Debug.Log("[PANEL] Abrindo minigame");
-        
+        CameraPanLateral.minigameAtivo = true; // CONGELA A CÂMERA E AS PORTAS!
+
         if (CursorMao != null)
         {
             CursorMao.DesativarCursor();
@@ -55,6 +56,7 @@ public class PanelCafeOpener : MonoBehaviour
     public void FecharPanel()
     {
         Debug.Log("[PANEL] Fechando minigame");
+        CameraPanLateral.minigameAtivo = false; // DESCONGELA A CÂMERA E AS PORTAS!
 
         // 2. REATIVA o cursor customizado (CursorMao) ao sair do minigame
         if (CursorMao != null)

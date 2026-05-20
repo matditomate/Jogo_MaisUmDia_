@@ -41,6 +41,8 @@ public class TriggerPia : MonoBehaviour
         // Só abre se NÃO estiver bloqueado
         if (!minigameBloqueado)
         {
+            CameraPanLateral.minigameAtivo = true; // CONGELA A CÂMERA E AS PORTAS!
+
             // Força o reset do cursor antes de sumir com ele
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
             canvasMinigame.SetActive(true);

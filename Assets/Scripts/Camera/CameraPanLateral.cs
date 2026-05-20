@@ -5,6 +5,9 @@ public class CameraPanLateral : MonoBehaviour
 {
     public float speed = 20f;
     public float edgeSize = 10f;
+
+    // ESTA VARIÁVEL VAI CONTROLAR SE A CÂMERA PODE SE MOVER
+    public static bool minigameAtivo = false;
     
     [Header("Configurações de Limite")]
     public SpriteRenderer background;
@@ -21,6 +24,13 @@ public class CameraPanLateral : MonoBehaviour
 
     void Update()
     {
+
+        // SE ALGUM MINIGAME ESTIVER ABERTO, TRAVA A CÂMERA IMEDIATAMENTE
+        if (minigameAtivo) 
+        {
+            return; 
+        }
+
         Vector2 mousePosition = Mouse.current.position.ReadValue();
         Vector3 pos = transform.position;
 
