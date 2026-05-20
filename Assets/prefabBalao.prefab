@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5021373062270248379
+--- !u!1 &4765741433233068951
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,52 +8,52 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 68128607245346867}
-  - component: {fileID: 4643520375999681573}
-  - component: {fileID: 7388646374757246313}
-  - component: {fileID: 7066967475124180962}
-  - component: {fileID: 4307718709599291058}
+  - component: {fileID: 3238545035061914989}
+  - component: {fileID: 6559266905586268643}
+  - component: {fileID: 2800134336568852964}
+  - component: {fileID: 5426398059079948388}
+  - component: {fileID: 6387722551567545112}
   m_Layer: 5
-  m_Name: BalaoProfessor
+  m_Name: prefabBalao
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &68128607245346867
+--- !u!224 &3238545035061914989
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5021373062270248379}
+  m_GameObject: {fileID: 4765741433233068951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 150, y: 100, z: 2.3427331}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -106.32242, y: -267.5845}
-  m_SizeDelta: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &4643520375999681573
+--- !u!222 &6559266905586268643
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5021373062270248379}
+  m_GameObject: {fileID: 4765741433233068951}
   m_CullTransparentMesh: 1
---- !u!114 &7388646374757246313
+--- !u!114 &2800134336568852964
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5021373062270248379}
+  m_GameObject: {fileID: 4765741433233068951}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -77,29 +77,13 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7066967475124180962
+--- !u!114 &5426398059079948388
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5021373062270248379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e940c7441d283014a931822058290857, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::baloesContrloler
-  velocidadeX: 600
-  amplitude: 100
-  frequencia: 2
-  tempoDeVida: 1
---- !u!114 &4307718709599291058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5021373062270248379}
+  m_GameObject: {fileID: 4765741433233068951}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -133,11 +117,11 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 7388646374757246313}
+  m_TargetGraphic: {fileID: 2800134336568852964}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7066967475124180962}
+      - m_Target: {fileID: 6387722551567545112}
         m_TargetAssemblyTypeName: Baloes, Assembly-CSharp
         m_MethodName: Clicou
         m_Mode: 1
@@ -149,3 +133,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6387722551567545112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4765741433233068951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e940c7441d283014a931822058290857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Baloes
+  velocidadeX: 400
+  amplitude: 100
+  frequencia: 2
+  tempoDeVida: 3
+  modificador: 0

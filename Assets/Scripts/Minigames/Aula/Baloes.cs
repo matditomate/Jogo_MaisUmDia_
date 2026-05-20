@@ -3,15 +3,17 @@ using UnityEngine.UI;
 
 public class Baloes : MonoBehaviour
 {
-    public float velocidadeX = 200f;
+    public float velocidadeX = 400f;
     public float amplitude = 100f;
     public float frequencia = 2f;
-    public float tempoDeVida = 1f;
+    public float tempoDeVida = 3f;
 
     private RectTransform rect;
     private Image imagem;
 
     private float tempo;
+
+    public float modificador;
     private Vector2 posicaoInicial;
 
     void Start()
@@ -28,9 +30,11 @@ public class Baloes : MonoBehaviour
 
         // Anda continuamente
         rect.anchoredPosition += new Vector2(
-            velocidadeX * Time.deltaTime,
-            Mathf.Sin(tempo * frequencia) * amplitude * Time.deltaTime
+            velocidadeX * Time.deltaTime * -1f,
+            Mathf.Sin(tempo * frequencia) * amplitude * modificador * Time.deltaTime
         );
+
+        
 
         // Fade
         Color cor = imagem.color;
@@ -40,7 +44,7 @@ public class Baloes : MonoBehaviour
         imagem.color = cor;
 
         // Destrói
-        if (tempo >= tempoDeVida)
+        if (cor.a <= 0)
         {
             Destroy(gameObject);
         }

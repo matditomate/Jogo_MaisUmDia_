@@ -6,10 +6,10 @@ public class BalaoSpawner : MonoBehaviour
 
     public RectTransform canvas;
 
-    public float intervalo = 1f;
+    public float intervalo = 0.5f;
 
-    public float minY = -300f;
-    public float maxY = 300f;
+    public float minY = 350f;
+    public float maxY = 360f;
 
     void Start()
     {
@@ -31,8 +31,27 @@ public class BalaoSpawner : MonoBehaviour
             balao.GetComponent<RectTransform>();
 
         rect.anchoredPosition = new Vector2(
-            -900f,
+            347f,
             Random.Range(minY, maxY)
         );
+
+        Baloes script =
+            balao.GetComponent<Baloes>();
+
+        float valor = Random.Range(-1f, 1f);
+
+        float resultado1 =
+            Mathf.Sign(valor) *
+            Mathf.Pow(Mathf.Abs(valor), 2f) *
+            2f; 
+
+        float resultado2 =
+            Mathf.Sign(valor) *
+            Mathf.Pow(Mathf.Abs(valor), 0.5f) *
+            2f;
+
+        float resultadoF = (resultado1 + resultado2) / 2f;
+
+        script.modificador = resultadoF;
     }
 }
