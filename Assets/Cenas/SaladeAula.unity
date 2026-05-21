@@ -339,7 +339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BalaoSpawner
   prefabBalao: {fileID: 4765741433233068951, guid: 3e2fb4583e303fe4e95ef085465a45c8, type: 3}
   canvas: {fileID: 1697567461}
-  intervalo: 1
+  intervalo: 0.5
   minY: 350
   maxY: 360
 --- !u!1 &1491847816
@@ -559,17 +559,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3238545035061914989, guid: 3e2fb4583e303fe4e95ef085465a45c8, type: 3}
   m_PrefabInstance: {fileID: 7819482284958656943}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1584806889 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7966282377404319702, guid: 3e2fb4583e303fe4e95ef085465a45c8, type: 3}
-  m_PrefabInstance: {fileID: 7819482284958656943}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e940c7441d283014a931822058290857, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Baloes
 --- !u!1 &1697567457
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,13 +755,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: prefabBalao
       objectReference: {fileID: 0}
-    - target: {fileID: 5426398059079948388, guid: 3e2fb4583e303fe4e95ef085465a45c8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1584806889}
-    - target: {fileID: 5426398059079948388, guid: 3e2fb4583e303fe4e95ef085465a45c8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Clicou
+    - target: {fileID: 4765741433233068951, guid: 3e2fb4583e303fe4e95ef085465a45c8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
