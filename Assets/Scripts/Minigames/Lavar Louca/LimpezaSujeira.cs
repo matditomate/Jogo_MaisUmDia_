@@ -38,7 +38,7 @@ public class LimpezaSujeira : MonoBehaviour
         {
             TriggerPia.minigameBloqueado = true;
         }
-
+        CameraPanLateral.minigameAtivo = false; // DESCONGELA A CÂMERA E AS PORTAS!
         canvasMinigame.SetActive(false);
         Cursor.visible = true;
         Robin.AlterarEnergia(2);

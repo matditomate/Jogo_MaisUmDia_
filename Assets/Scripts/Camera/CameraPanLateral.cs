@@ -8,12 +8,22 @@ public class CameraPanLateral : MonoBehaviour
     [Range(0f, 0.2f)]
     [Header("Tamanho da Borda (Ex: 0.05 = 5% da tela)")]
     public float edgePercentage = 0.05f; 
+
+    // ESTA VARIÁVEL VAI CONTROLAR SE A CÂMERA PODE SE MOVER
+    public static bool minigameAtivo = false;
     
     [Header("Configurações de Limite")]
     public SpriteRenderer background;
 
     void Update()
     {
+
+        // SE ALGUM MINIGAME ESTIVER ABERTO, TRAVA A CÂMERA IMEDIATAMENTE
+        if (minigameAtivo) 
+        {
+            return; 
+        }
+
         Vector2 mousePosition = Mouse.current.position.ReadValue();
         Vector3 pos = transform.position;
 

@@ -67,5 +67,6 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "Jogo_MaisUmDia_.slnx"
+    "dotnet.defaultSolution": "Jogo_MaisUmDia_.slnx",
+    "files.autoSave": "afterDelay"
 }
