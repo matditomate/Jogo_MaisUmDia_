@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,8 @@ public class Baloes : MonoBehaviour
     public float modificador;
     private Vector2 posicaoInicial;
 
+    public TextMeshProUGUI Fala;
+
     void Start()
     {
         rect = GetComponent<RectTransform>();
@@ -26,15 +29,17 @@ public class Baloes : MonoBehaviour
 
     void Update()
     {
+
         tempo += Time.deltaTime;
-
-        // Anda continuamente
-        rect.anchoredPosition += new Vector2(
-            velocidadeX * Time.deltaTime * -1f,
-            Mathf.Sin(tempo * frequencia) * amplitude * modificador * Time.deltaTime
-        );
-
         
+        if (!BalaoSpawner.instance.Pensamento)
+        {
+            // Anda continuamente
+            rect.anchoredPosition += new Vector2(
+                velocidadeX * Time.deltaTime * -1f,
+                Mathf.Sin(tempo * frequencia) * amplitude * modificador * Time.deltaTime
+            );
+        }
 
         // Fade
         Color cor = imagem.color;
@@ -53,6 +58,12 @@ public class Baloes : MonoBehaviour
     public void Clicou()
     {
         BalaoManager.pontos++;
+
+        if(Fala.text == "Preste atenção")
+        {
+            BalaoSpawner.instance.Pensamento = false;
+            CameraMinigame.instance.MoverCamera(2f, 2f);
+        }
 
         Destroy(gameObject);
     }
