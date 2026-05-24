@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: ea5e0698b98f26a43837679b7cbb0170
+guid: 59e25707f76472145b973596f1488f3c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5989718586710991546
-    second: SujeiraPNG_0
+      213: -8181487867551875348
+    second: LavarLouca_0
+  - first:
+      213: -7003145394890831926
+    second: LavarLouca_1
+  - first:
+      213: -6114055519668066615
+    second: LavarLouca_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -96,30 +102,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SujeiraPNG_0
+      name: LavarLouca_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 348
-        height: 471
+        x: 16
+        y: 14
+        width: 252
+        height: 252
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ab2a679d151cf1350800000000000000
-      internalID: 5989718586710991546
+      spriteID: ceef660c124857e80800000000000000
+      internalID: -8181487867551875348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LavarLouca_1
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 55
+        width: 178
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac78e1b1e54dfce90800000000000000
+      internalID: -7003145394890831926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LavarLouca_2
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 90
+        width: 64
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c62b2506e2862ba0800000000000000
+      internalID: -6114055519668066615
       vertices: []
       indices: 
       edges: []
@@ -138,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SujeiraPNG_0: 5989718586710991546
+      LavarLouca_0: -8181487867551875348
+      LavarLouca_1: -7003145394890831926
+      LavarLouca_2: -6114055519668066615
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
