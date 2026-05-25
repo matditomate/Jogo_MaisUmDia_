@@ -41,7 +41,7 @@ public class LimpezaSujeira : MonoBehaviour
         CameraPanLateral.minigameAtivo = false; // DESCONGELA A CÂMERA E AS PORTAS!
         canvasMinigame.SetActive(false);
         Cursor.visible = true;
-        Robin.AlterarEnergia(2);
+        Robin.AlterarEnergia(-2);
         Robin.AlterarDiversao(-1);
         velocidadeLimpeza /= 2;
         Debug.Log("Velocidade de limpeza:" + velocidadeLimpeza);

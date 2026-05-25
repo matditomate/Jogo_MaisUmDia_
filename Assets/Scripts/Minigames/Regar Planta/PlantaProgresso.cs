@@ -102,9 +102,9 @@ public class PlantaProgresso : MonoBehaviour, IPointerEnterHandler
             
             // Aplica os status estáticos na Robin e trava o minigame
             TriggerPlanta.minigameBloqueado = true;
-            Robin.AlterarDiversao(4f);    // Aumenta a diversão
-            Robin.AlterarProgresso(2f);    // Progresso positivo na depressão
-
+            Robin.AlterarDiversao(4);    // Aumenta a diversão
+            Robin.AlterarProgresso(2);    // Progresso positivo na depressão
+            Casa.AlterarAguaPlanta(4);   // Aumenta quanto de água tem na planta
             
             CameraPanLateral.minigameAtivo = false; // DESCONGELA A CÂMERA E AS PORTAS!
 

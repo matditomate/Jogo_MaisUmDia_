@@ -92,7 +92,7 @@ public class PoteController : MonoBehaviour
 
         // 3. BLOQUEIA O GATO (Usando a lógica estática que criamos)
         // Chamamos direto pela Classe Cafe para garantir a persistência entre cenas
-        Cafe.AlterarFome(-4);
+        Cafe.AlterarFome(4);
         Cafe.AlterarAtencao(2);
         Cafe.SetLocked(true);
 
