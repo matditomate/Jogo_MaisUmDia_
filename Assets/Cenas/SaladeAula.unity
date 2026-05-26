@@ -204,7 +204,7 @@ Transform:
   m_GameObject: {fileID: 109399964}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.55, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.785071, y: 1.785071, z: 1.785071}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -343,6 +343,9 @@ MonoBehaviour:
   intervalo: 0.5
   minY: 350
   maxY: 360
+  chanceMinigame: 0.7
+  cooldown: 60
+  Pensamento: 0
 --- !u!1 &1491847816
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,7 +358,6 @@ GameObject:
   - component: {fileID: 1491847818}
   - component: {fileID: 1491847817}
   - component: {fileID: 1491847820}
-  - component: {fileID: 1491847822}
   - component: {fileID: 1491847821}
   m_Layer: 0
   m_Name: Main Camera
@@ -432,7 +434,7 @@ Transform:
   m_GameObject: {fileID: 1491847816}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 2, y: 2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -491,27 +493,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1491847816}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2998b6c2430cd0144b1d35455eab2128, type: 3}
+  m_Script: {fileID: 11500000, guid: aca4424361f3c0d40ae774b837b61c3d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraPanLateral
-  speed: 20
-  edgeSize: 10
-  background: {fileID: 109399965}
---- !u!114 &1491847822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1491847816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: def40650150849745bd67887a754f4bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraPanVertical
-  speed: 20
-  edgeSize: 10
-  background: {fileID: 109399965}
+  m_EditorClassIdentifier: Assembly-CSharp::CameraMinigame
 --- !u!1 &1539065946
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,7 +634,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &1697567460
 Canvas:
   m_ObjectHideFlags: 0
@@ -660,7 +644,7 @@ Canvas:
   m_GameObject: {fileID: 1697567457}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -683,7 +667,7 @@ RectTransform:
   m_GameObject: {fileID: 1697567457}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 388339979}
@@ -693,8 +677,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_SizeDelta: {x: 1440, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &7819482284958656943
 PrefabInstance:
   m_ObjectHideFlags: 0
