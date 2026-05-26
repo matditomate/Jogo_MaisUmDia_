@@ -13,9 +13,9 @@ TagManager:
   - UI
   - Ground
   - CafePanel
-  - 
-  - 
-  - 
+  - Image
+  - MinigameLouca
+  - MinigameRegar
   - 
   - 
   - 
@@ -46,6 +46,15 @@ TagManager:
     locked: 0
   - name: CafePanel
     uniqueID: 3929054429
+    locked: 0
+  - name: image
+    uniqueID: 1959747251
+    locked: 0
+  - name: MinigameLouca
+    uniqueID: 4248158033
+    locked: 0
+  - name: MinigameRegar
+    uniqueID: 435542407
     locked: 0
   m_RenderingLayers:
   - Default

@@ -1,0 +1,658 @@
+fileFormatVersion: 2
+guid: f790bd1a69642ce49ba9ad74a7242bdc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7055425630213109209
+    second: NecessidadesIcons_0
+  - first:
+      213: 3723681803023687745
+    second: NecessidadesIcons_1
+  - first:
+      213: -7850749140451489911
+    second: NecessidadesIcons_2
+  - first:
+      213: -8707344222745242716
+    second: NecessidadesIcons_3
+  - first:
+      213: -2663682311682741267
+    second: NecessidadesIcons_4
+  - first:
+      213: 5278609926649612153
+    second: NecessidadesIcons_5
+  - first:
+      213: 5266754891275710487
+    second: NecessidadesIcons_6
+  - first:
+      213: 5802493939612773875
+    second: NecessidadesIcons_7
+  - first:
+      213: -926551075810048610
+    second: NecessidadesIcons_8
+  - first:
+      213: -9052873990667514471
+    second: NecessidadesIcons_9
+  - first:
+      213: 3006740753519518712
+    second: NecessidadesIcons_10
+  - first:
+      213: 8897056792764797512
+    second: NecessidadesIcons_11
+  - first:
+      213: 7487489102023448418
+    second: NecessidadesIcons_12
+  - first:
+      213: -7108612185567513916
+    second: NecessidadesIcons_13
+  - first:
+      213: 2757990746462565027
+    second: NecessidadesIcons_14
+  - first:
+      213: 1235107418746536942
+    second: NecessidadesIcons_15
+  - first:
+      213: 4208108274762986786
+    second: NecessidadesIcons_16
+  - first:
+      213: -7269910869414029332
+    second: NecessidadesIcons_17
+  - first:
+      213: -3518524781603758504
+    second: NecessidadesIcons_18
+  - first:
+      213: 4258915043702226125
+    second: NecessidadesIcons_19
+  - first:
+      213: -2282024115371336440
+    second: NecessidadesIcons_20
+  - first:
+      213: -57770227525003403
+    second: NecessidadesIcons_21
+  - first:
+      213: 2107362717357019165
+    second: NecessidadesIcons_22
+  - first:
+      213: 3594273801671585402
+    second: NecessidadesIcons_23
+  - first:
+      213: -4228474768060738157
+    second: NecessidadesIcons_24
+  - first:
+      213: -911411963123463285
+    second: NecessidadesIcons_25
+  - first:
+      213: -9154923999395560772
+    second: NecessidadesIcons_26
+  - first:
+      213: 5843027309749489272
+    second: NecessidadesIcons_27
+  - first:
+      213: -5496506708745354275
+    second: NecessidadesIcons_28
+  - first:
+      213: 4770666062841098554
+    second: NecessidadesIcons_29
+  - first:
+      213: 1595649886862366009
+    second: NecessidadesIcons_30
+  - first:
+      213: 9192288932737093391
+    second: NecessidadesIcons_31
+  - first:
+      213: 2548984588427597414
+    second: NecessidadesIcons_32
+  - first:
+      213: 3508729888357949624
+    second: NecessidadesIcons_33
+  - first:
+      213: -477454295653694272
+    second: NecessidadesIcons_34
+  - first:
+      213: -5049123905650963171
+    second: NecessidadesIcons_35
+  - first:
+      213: -7114773407424011033
+    second: NecessidadesIcons_36
+  - first:
+      213: 8099200717653235780
+    second: NecessidadesIcons_37
+  - first:
+      213: -8559748542535021368
+    second: NecessidadesIcons_38
+  - first:
+      213: 5593687687607715258
+    second: NecessidadesIcons_39
+  - first:
+      213: 7974756522329077415
+    second: NecessidadesIcons_40
+  - first:
+      213: -3300101791055247733
+    second: NecessidadesIcons_41
+  - first:
+      213: -3501156529887510000
+    second: NecessidadesIcons_42
+  - first:
+      213: 7961438736194872738
+    second: NecessidadesIcons_43
+  - first:
+      213: -4586618211428315967
+    second: NecessidadesIcons_44
+  - first:
+      213: 2151727249464402664
+    second: NecessidadesIcons_45
+  - first:
+      213: -2200329694833219033
+    second: NecessidadesIcons_46
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NecessidadesIcons_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 55
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d5f90cba38e9e160800000000000000
+      internalID: 7055425630213109209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NecessidadesIcons_1
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 56
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14020d5fedc2da330800000000000000
+      internalID: 3723681803023687745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NecessidadesIcons_2
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 57
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9878fa670498c0390800000000000000
+      internalID: -7850749140451489911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NecessidadesIcons_4
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 56
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deba8a1ec03b80bd0800000000000000
+      internalID: -2663682311682741267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NecessidadesIcons_5
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 56
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9770dc1d2c3614940800000000000000
+      internalID: 5278609926649612153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NecessidadesIcons_6
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 57
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7103a8d4ba5471940800000000000000
+      internalID: 5266754891275710487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NecessidadesIcons_7
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 56
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fde9f1ce79968050800000000000000
+      internalID: 5802493939612773875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NecessidadesIcons_46
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 6
+        width: 78
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72ae8b6eccbd671e0800000000000000
+      internalID: -2200329694833219033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NecessidadesIcons_3
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 28
+        width: 50
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12b2624ef725a654abd08d325d5b2890
+      internalID: -8707344222745242716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NecessidadesIcons_8
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 37
+        width: 71
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af6216b05e4924249b224e1b903f3aff
+      internalID: -926551075810048610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NecessidadesIcons_9
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 37
+        width: 20
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17e43f810f0870645ab5df83c277892e
+      internalID: -9052873990667514471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NecessidadesIcons_10
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 28
+        width: 27
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e17ea3c22868ad44ca38c6d305d27dec
+      internalID: 3006740753519518712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NecessidadesIcons_11
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 19
+        width: 71
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07b5d9a45d236094794aaf2a50f477bd
+      internalID: 8897056792764797512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NecessidadesIcons_12
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 19
+        width: 20
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7f7bee6d293e9b4784da3cc62304108
+      internalID: 7487489102023448418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NecessidadesIcons_13
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 64
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9672587ceb9fa744580bda5dee2568cb
+      internalID: -7108612185567513916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NecessidadesIcons_14
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 56
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2a7a562d8ead1f4d9abc8595a77cf43
+      internalID: 2757990746462565027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8a2625f927f089e49b4d606630947b35
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      NecessidadesIcons_0: 7055425630213109209
+      NecessidadesIcons_1: 3723681803023687745
+      NecessidadesIcons_10: 3006740753519518712
+      NecessidadesIcons_11: 8897056792764797512
+      NecessidadesIcons_12: 7487489102023448418
+      NecessidadesIcons_13: -7108612185567513916
+      NecessidadesIcons_14: 2757990746462565027
+      NecessidadesIcons_15: 1235107418746536942
+      NecessidadesIcons_16: 4208108274762986786
+      NecessidadesIcons_17: -7269910869414029332
+      NecessidadesIcons_18: -3518524781603758504
+      NecessidadesIcons_19: 4258915043702226125
+      NecessidadesIcons_2: -7850749140451489911
+      NecessidadesIcons_20: -2282024115371336440
+      NecessidadesIcons_21: -57770227525003403
+      NecessidadesIcons_22: 2107362717357019165
+      NecessidadesIcons_23: 3594273801671585402
+      NecessidadesIcons_24: -4228474768060738157
+      NecessidadesIcons_25: -911411963123463285
+      NecessidadesIcons_26: -9154923999395560772
+      NecessidadesIcons_27: 5843027309749489272
+      NecessidadesIcons_28: -5496506708745354275
+      NecessidadesIcons_29: 4770666062841098554
+      NecessidadesIcons_3: -8707344222745242716
+      NecessidadesIcons_30: 1595649886862366009
+      NecessidadesIcons_31: 9192288932737093391
+      NecessidadesIcons_32: 2548984588427597414
+      NecessidadesIcons_33: 3508729888357949624
+      NecessidadesIcons_34: -477454295653694272
+      NecessidadesIcons_35: -5049123905650963171
+      NecessidadesIcons_36: -7114773407424011033
+      NecessidadesIcons_37: 8099200717653235780
+      NecessidadesIcons_38: -8559748542535021368
+      NecessidadesIcons_39: 5593687687607715258
+      NecessidadesIcons_4: -2663682311682741267
+      NecessidadesIcons_40: 7974756522329077415
+      NecessidadesIcons_41: -3300101791055247733
+      NecessidadesIcons_42: -3501156529887510000
+      NecessidadesIcons_43: 7961438736194872738
+      NecessidadesIcons_44: -4586618211428315967
+      NecessidadesIcons_45: 2151727249464402664
+      NecessidadesIcons_46: -2200329694833219033
+      NecessidadesIcons_47: -1651484242
+      NecessidadesIcons_5: 5278609926649612153
+      NecessidadesIcons_6: 5266754891275710487
+      NecessidadesIcons_7: 5802493939612773875
+      NecessidadesIcons_8: -926551075810048610
+      NecessidadesIcons_9: -9052873990667514471
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
