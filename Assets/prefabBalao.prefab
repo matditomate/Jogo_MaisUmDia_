@@ -288,4 +288,5 @@ MonoBehaviour:
   frequencia: 2
   tempoDeVida: 3
   modificador: 0
+  tipoBalao: 0
   Fala: {fileID: 226091386974421887}
