@@ -235,6 +235,7 @@ public class BalaoSpawner : MonoBehaviour
             }
             else
             {
+                indiceBlaBla = 0;
                 this.enabled =false;
                 CameraMinigame.instance?.MoverCamera(0f, -2.5f);
             }
