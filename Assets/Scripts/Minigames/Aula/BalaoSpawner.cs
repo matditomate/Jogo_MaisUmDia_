@@ -2,6 +2,8 @@ using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using System;
+using Random = UnityEngine.Random;
 
 public class BalaoSpawner : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class BalaoSpawner : MonoBehaviour
     public static BalaoSpawner instance;
 
     public RectTransform canvas;
+
+    public BalaoSpawnerPensamentos balaoSpawnerPensamentos;
 
     public float intervalo = 0.5f;
 
@@ -24,13 +28,21 @@ public class BalaoSpawner : MonoBehaviour
 
     private bool podeAparecer = true;
 
-    bool aulaTerminou;
+    public bool aulaTerminou;
 
     public bool Pensamento;
 
     int indiceProfessor = 0;
 
-    int indicePensamento = 0;
+    int indiceBlaBla = 0;
+
+    private string[] BlaBla =
+    {
+        "Bla",
+        "Bla",
+        "Bla",
+        "Bla"
+    };
 
     private string[] palavrasProfessor =
     {
@@ -189,32 +201,6 @@ public class BalaoSpawner : MonoBehaviour
         "historia"
     };
 
-    public Dictionary<string, bool> palavrasVermelhas =
-        new Dictionary<string, bool>()
-    {
-        { "inutil", true },
-        { "fracasso", true },
-        { "patetico", true },
-        { "ridiculo", true },
-        { "fraco", true },
-        { "lento", true },
-        { "burro", true },
-        { "medroso", true },
-        { "irrelevante", true },
-        { "estranho", true },
-        { "perdedor", true },
-        { "desastre", true },
-        { "falho", true },
-        { "incompetento", true },
-        { "quebrado", true },
-        { "apagado", true },
-        { "desconfortavel", true },
-        { "desajeitado", true },
-        { "vazio", true },
-        { "cansado", true },
-        { "Preste atenção", false }
-    };
-
     void Awake()
     {
         instance = this;
@@ -238,61 +224,36 @@ public class BalaoSpawner : MonoBehaviour
 
     void CriarBalao()
     {
-        GameObject balao = Instantiate(prefabBalao, canvas);
-        Baloes script = balao.GetComponent<Baloes>();
+
 
         if (Pensamento)
         {
-            var lista = palavrasVermelhas.ToList();
-
-            if (lista.Count == 0) return;
-
-            if (indicePensamento >= lista.Count)
-                indicePensamento = 0;
-
-            var item = lista[indicePensamento];
-
-            RectTransform rect = balao.GetComponent<RectTransform>();
-            rect.anchoredPosition = new Vector2(
-                Random.Range(-328, 328),
-                Random.Range(-450, -50)
-            );
-
-            script.Fala.text = item.Key;
-            script.Fala.color = item.Value ? Color.red : Color.green;
-
-            indicePensamento++;
+            if (indiceBlaBla < BlaBla.Length)
+            {
+                balaoSpawnerPensamentos.enabled = true;
+                BalaoProfessor(ref indiceBlaBla, BlaBla);
+            }
+            else
+            {
+                this.enabled =false;
+                CameraMinigame.instance?.MoverCamera(0f, -2.5f);
+            }
         }
         else
         {
-            RectTransform rect = balao.GetComponent<RectTransform>();
-            rect.anchoredPosition = new Vector2(273f, 252f);
-
-            float valor = Random.Range(-1f, 1f);
-
-            float resultado1 =
-                Mathf.Sign(valor) *
-                Mathf.Pow(Mathf.Abs(valor), 2f) * 2f;
-
-            float resultado2 =
-                Mathf.Sign(valor) *
-                Mathf.Pow(Mathf.Abs(valor), 0.5f) * 2f;
-
-            script.modificador = (resultado1 + resultado2) / 2f;
-
-            if (indiceProfessor >= palavrasProfessor.Length)
+            if (indiceProfessor < palavrasProfessor.Length)
+            {
+                BalaoProfessor(ref indiceProfessor, palavrasProfessor);
+            }
+            else
             {
                 aulaTerminou = true;
                 Debug.Log("Fim da aula");
-                return;
             }
-
-            script.Fala.text = palavrasProfessor[indiceProfessor];
-            indiceProfessor++;
         }
     }
 
-    void TentarMinigame()
+    public void TentarMinigame()
     {
         if (!podeAparecer) return;
 
@@ -300,18 +261,42 @@ public class BalaoSpawner : MonoBehaviour
         {
             Pensamento = true;
 
-            CameraMinigame.instance?.MoverCamera(0f, -2.5f);
-
             StartCoroutine(CooldownMinigame(cooldown));
         }
     }
 
-    IEnumerator CooldownMinigame(float x)
+     IEnumerator CooldownMinigame(float x)
     {
         podeAparecer = false;
 
         yield return new WaitForSeconds(x);
 
         podeAparecer = true;
+    }
+    
+    void BalaoProfessor(ref int x, string[] y)
+    {
+        GameObject balao = Instantiate(prefabBalao, canvas);
+        Baloes script = balao.GetComponent<Baloes>();
+
+        RectTransform rect = balao.GetComponent<RectTransform>();
+        rect.anchoredPosition = new Vector2(273f, 252f);
+
+        float valor = Random.Range(-1f, 1f);
+
+        float resultado1 =
+            Mathf.Sign(valor) *
+            Mathf.Pow(Mathf.Abs(valor), 2f) * 2f;
+
+        float resultado2 =
+            Mathf.Sign(valor) *
+            Mathf.Pow(Mathf.Abs(valor), 0.5f) * 2f;
+
+        script.modificador = (resultado1 + resultado2) / 2f;
+
+        script.tipoBalao = true;
+
+        script.Fala.text = y[x];
+        x++;
     }
 }

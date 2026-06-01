@@ -16,7 +16,7 @@ TagManager:
   - Image
   - MinigameLouca
   - MinigameRegar
-  - 
+  - DoomScrolling
   - 
   - 
   - 
@@ -55,6 +55,9 @@ TagManager:
     locked: 0
   - name: MinigameRegar
     uniqueID: 435542407
+    locked: 0
+  - name: DoomScrolling
+    uniqueID: 173922321
     locked: 0
   m_RenderingLayers:
   - Default
