@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class ClickDetector : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class ClickDetector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (CameraPanLateral.minigameAtivo)
+        {
+            return; // Ignora o resto do código (não deixa o clique passar)
+        }
+
         if(Mouse.current.leftButton.wasPressedThisFrame)
         {
             Vector2 mousePos = Mouse.current.position.ReadValue();
