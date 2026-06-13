@@ -909,17 +909,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8503574502282526304, guid: f9e33cab864c65540b92e8cc8cb6f8d6, type: 3}
   m_PrefabInstance: {fileID: 1633594355}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &547930450 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8651600382908926559, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
-  m_PrefabInstance: {fileID: 8985289124185174953}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4de994198058d204389543809d4d6195, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Desbloquear
 --- !u!1 &562459917
 GameObject:
   m_ObjectHideFlags: 0
@@ -2612,11 +2601,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1764561968}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &1807100514 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4384706022494775341, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
-  m_PrefabInstance: {fileID: 8985289124185174953}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1814442579
 GameObject:
   m_ObjectHideFlags: 0
@@ -3190,7 +3174,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2112370380
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3413,22 +3397,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HudCelular
       objectReference: {fileID: 0}
-    - target: {fileID: 5757887456041477877, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
-      propertyPath: scriptDesbloq
-      value: 
-      objectReference: {fileID: 547930450}
     - target: {fileID: 6197886378409197605, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6735167062512739556, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
-      propertyPath: rt
-      value: 
-      objectReference: {fileID: 1807100514}
-    - target: {fileID: 6735167062512739556, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
-      propertyPath: background
-      value: 
-      objectReference: {fileID: 1894715907}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

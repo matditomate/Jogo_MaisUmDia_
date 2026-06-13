@@ -8,23 +8,32 @@ public class Celular : MonoBehaviour
     [SerializeField] private Image fundoUI;
     [SerializeField] private Sprite[] fundos;
     [SerializeField] private GameObject telaDesbloq;
+    [SerializeField] private Desbloquear scriptDesbloq;
+    
 
-
-    public void ligarTela()
+    public void LigarTela()
     {
         inicio.SetActive(true);
         fundoUI.sprite = fundos[1];
     }
 
-    public void desligarTela()
+    public void DesligarTela()
     {
         inicio.SetActive(false);
         fundoUI.sprite = fundos[0];
     }
 
-    public void telaDesbloqueada()
+    public void TelaDesbloqueada()
     {
         inicio.SetActive(false);
         telaDesbloq.SetActive(true);
+    }
+
+    public void DesligarCelular()
+    {
+        telaDesbloq.SetActive(false);
+        scriptDesbloq.tAtualDesbloq = 0f;
+        scriptDesbloq.desbloqueando = false;
+        fundoUI.sprite = fundos[0];
     }
 }

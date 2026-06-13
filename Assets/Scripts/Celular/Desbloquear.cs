@@ -3,9 +3,9 @@ using UnityEngine;
 public class Desbloquear : MonoBehaviour
 {
     private Animator anim;
-    private float tTotalDesbloq = 1.72f;
-    private float tAtualDesbloq = 0f;
-    private bool desbloqueando = false;
+    private float tTotalDesbloq = 1f;
+    public float tAtualDesbloq = 0f;
+    public bool desbloqueando = false;
     private Celular scriptCel;
     
     void Start()
@@ -27,26 +27,22 @@ public class Desbloquear : MonoBehaviour
             else
             {
                 tAtualDesbloq = 0f;
-                Debug.Log("Celular não desbloqueado");
                 anim.SetBool("desbloqueando", false);
             }
         } 
         else
         {
-            scriptCel.telaDesbloqueada();
+            scriptCel.TelaDesbloqueada();
         }
-      
     }
 
     public void OnPointerDownEffect()
     {
         desbloqueando = true;
-
     }
 
     public void OnPointerUpEffect()
     {
         desbloqueando = false;
-        
     }
 }

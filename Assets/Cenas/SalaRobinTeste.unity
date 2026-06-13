@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &28398442 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8651600382908926559, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
+  m_PrefabInstance: {fileID: 990813559}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4de994198058d204389543809d4d6195, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Desbloquear
 --- !u!1 &43755018
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,12 +917,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: a25a6a9796e6cff4e9e5d576f76dfb86, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7a561c2e1bfee544f96810744a4caf80, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 14.28, y: 4.9}
+  m_Size: {x: 13.51, y: 4.9}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -925,7 +936,7 @@ Transform:
   m_GameObject: {fileID: 805948351}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.01, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1075,6 +1086,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: HudCelular
       objectReference: {fileID: 0}
+    - target: {fileID: 5757887456041477877, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
+      propertyPath: scriptDesbloq
+      value: 
+      objectReference: {fileID: 28398442}
+    - target: {fileID: 6735167062512739556, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
+      propertyPath: rt
+      value: 
+      objectReference: {fileID: 2082418403}
+    - target: {fileID: 6735167062512739556, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
+      propertyPath: background
+      value: 
+      objectReference: {fileID: 1118879960}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1150,7 +1173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6146302144900783746, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0
+      value: 0.0013888889
       objectReference: {fileID: 0}
     - target: {fileID: 6146302144900783746, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
@@ -1158,7 +1181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6146302144900783746, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 1
+      value: 0.9966946
       objectReference: {fileID: 0}
     - target: {fileID: 6882219133264721193, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_LocalScale.x
@@ -1798,7 +1821,7 @@ Transform:
   m_GameObject: {fileID: 1576461042}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.57, y: -0.36019, z: 0}
+  m_LocalPosition: {x: 3.961, y: -0.36019, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2539,6 +2562,11 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!224 &2082418403 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4384706022494775341, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
+  m_PrefabInstance: {fileID: 990813559}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2091242664
 GameObject:
   m_ObjectHideFlags: 0

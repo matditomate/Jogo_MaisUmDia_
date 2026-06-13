@@ -5,28 +5,28 @@ public class HoverCelular : MonoBehaviour
 {
     private RectTransform rt;
     public Celular scriptCel;
-    private bool celUsando = false;
+    public bool celUsando = false;
     [SerializeField] private GameObject background;
 
     void Start()
     {
         rt = GetComponent<RectTransform>();
         rt.anchoredPosition = new Vector3(308.2f, -391f, 0f);
-        scriptCel.desligarTela();
+        scriptCel.DesligarTela();
     }
 
     public void OnHoverEnterEffect()
     {
         if(celUsando) return;
         rt.anchoredPosition = new Vector2(308.2f, -343.6f);
-        scriptCel.ligarTela();
+        scriptCel.LigarTela();
     }
 
     public void OnHoverExitEffect()
     {
         if(celUsando) return;
         rt.anchoredPosition = new Vector3(308.2f, -391f, 0f);
-        scriptCel.desligarTela();
+        scriptCel.DesligarTela();
     }
 
     public void OnPointerClickEffect()
@@ -34,11 +34,10 @@ public class HoverCelular : MonoBehaviour
         if(celUsando) return;
         celUsando = true;
         rt.anchoredPosition = new Vector3(0f, -35f, 0f);
-        scriptCel.ligarTela();
+        scriptCel.LigarTela();
         background.SetActive(true);
 
         CameraPanLateral.minigameAtivo = true;
-
-        Cursor.lockState = CursorLockMode.None;
     }
+
 }
