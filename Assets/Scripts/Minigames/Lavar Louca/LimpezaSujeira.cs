@@ -9,11 +9,13 @@ public class LimpezaSujeira : MonoBehaviour
 
     // Referência ao gatilho para travá-lo
     [SerializeField] private TriggerPia scriptTrigger;
+    private Casa scriptCasa;
 
     void Start()
     {
         imagemSujeira = GetComponent<Image>();
         Debug.Log("Velocidade de limpeza:" + velocidadeLimpeza);
+        scriptCasa = Object.FindAnyObjectByType<Casa>();
     }
 
     public void AoEsfregar()
@@ -43,6 +45,7 @@ public class LimpezaSujeira : MonoBehaviour
         Cursor.visible = true;
         Robin.AlterarEnergia(-2);
         Robin.AlterarDiversao(-1);
+        scriptCasa.AlterarHoraio(0.5f);
         velocidadeLimpeza /= 2;
         Debug.Log("Velocidade de limpeza:" + velocidadeLimpeza);
 

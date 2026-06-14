@@ -23,8 +23,11 @@ public class PoteController : MonoBehaviour
 
     private bool finalizado = false;
 
+    private Casa scriptCasa;
+
     void Start()
     {
+        scriptCasa = Object.FindAnyObjectByType<Casa>();
         if (rect == null)
             rect = GetComponent<RectTransform>();
     }
@@ -95,6 +98,7 @@ public class PoteController : MonoBehaviour
         Cafe.AlterarFome(4);
         Cafe.AlterarAtencao(2);
         Cafe.SetLocked(true);
+        scriptCasa.AlterarHoraio(0.25f);
 
         // 4. DESATIVA O MINIGAME
         // Aqui ainda usamos a referência 'cafe' para chegar no painel que está na cena
