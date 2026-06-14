@@ -9,41 +9,79 @@ public class MenuPrincipal : MonoBehaviour
 
     [Header("Efeito de Transição")]
     [SerializeField] private Animator fadeAnimator; // Arraste o Animator do FadePainel aqui
-    [SerializeField] private float tempoDeEspera = 300f; // Tempo que a animação de FadeIn demora
+    [SerializeField] private float tempoDoFade = 1f; // Tempo que a sua animação de fade demora (ex: 1 segundo)
+
+    [Header("Aviso de Conteúdo Sensível")]
+    [SerializeField] private GameObject ObjectAvisoSensivel;
+    [SerializeField] private float tempoExibicaoAviso = 10f; // Tempo que o aviso fica na tela
+
+    private void Start()
+    {
+        // Garante que o aviso comece desativado ao iniciar o menu
+        if (ObjectAvisoSensivel != null)
+        {
+            ObjectAvisoSensivel.SetActive(false);
+        }
+    }
 
     // Função que o botão JOGAR vai chamar
     public void Jogar()
     {
-        // Inicia a rotina que espera a animação antes de mudar de cena
-        StartCoroutine(TransicaoCena());
+        StartCoroutine(TransicaoComAviso());
     }
 
     // Função que o botão SAIR vai chamar
     public void SairDoJogo()
     {
         Debug.Log("O jogador clicou em Sair!");
-        
-        // Fecha o jogo se for uma build, só fecha de verdade quando o jogo for .exe.
         Application.Quit();
 
-        // para o editor da unity, Faz o botão de Play desativar sozinho!
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
         #endif
     }
 
-    // Co-rotina para dar tempo do Fade acontecer antes da cena carregar
-    private IEnumerator TransicaoCena()
+    // Nova co-rotina com o fluxo completo do aviso
+    private IEnumerator TransicaoComAviso()
     {
         if (fadeAnimator != null)
         {
-            // Dispara o gatilho ou toca a animação de escurecer a tela
+            // Escurece a tela 
             fadeAnimator.Play("FadeIn");
+            yield return new WaitForSeconds(tempoDoFade);
+            yield return new WaitForSeconds(tempoDoFade);
+
+            // Ativa o aviso em background 
+            if (ObjectAvisoSensivel != null)
+            {
+                ObjectAvisoSensivel.SetActive(true);
+            }
+
+            // Clareia a tela para mostrar o aviso
+            fadeAnimator.Play("FadeOut");
+            yield return new WaitForSeconds(tempoDoFade);
+            yield return new WaitForSeconds(tempoDoFade);
+        }
+        else
+        {
+            // Se não houver animator, só ativa o aviso direto
+            if (ObjectAvisoSensivel != null) ObjectAvisoSensivel.SetActive(true);
         }
 
-        // Espera o tempo do Fade terminar antes de cortar para a próxima cena
-        yield return new WaitForSeconds(tempoDeEspera);
-        yield return new WaitForSeconds(tempoDeEspera); // não funcionou mudar o tempo, ai adicionei dois
+        // Espera os 10 segundos para o jogador ler
+        yield return new WaitForSeconds(tempoExibicaoAviso);
+        yield return new WaitForSeconds(tempoExibicaoAviso);
+
+
+        if (fadeAnimator != null)
+        {
+            // Escurece a tela de novo (FadeIn) para esconder o aviso
+            fadeAnimator.Play("FadeIn");
+            yield return new WaitForSeconds(tempoDoFade);
+            yield return new WaitForSeconds(tempoDoFade);
+
+        }
+
         // Carrega a nova fase
         SceneManager.LoadScene(nomeDaCenaJogo);
     }

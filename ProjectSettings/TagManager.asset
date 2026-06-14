@@ -17,7 +17,7 @@ TagManager:
   - MinigameLouca
   - MinigameRegar
   - DoomScrolling
-  - 
+  - SalaDeAula
   - 
   - 
   - 
@@ -58,6 +58,9 @@ TagManager:
     locked: 0
   - name: DoomScrolling
     uniqueID: 173922321
+    locked: 0
+  - name: SalaDeAula
+    uniqueID: 541717643
     locked: 0
   m_RenderingLayers:
   - Default
