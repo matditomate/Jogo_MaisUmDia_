@@ -21,6 +21,7 @@ public class PlantaProgresso : MonoBehaviour, IPointerEnterHandler
     [SerializeField] private Sprite sprite75Porcento;   // Imagem quando passar de 75%
 
     private Image imagemComponente;
+    private Casa scriptCasa;
 
     void Start()
     {
@@ -28,6 +29,7 @@ public class PlantaProgresso : MonoBehaviour, IPointerEnterHandler
         
         // Pega o componente de Image anexado a esta planta
         imagemComponente = GetComponent<Image>();
+        scriptCasa = Object.FindAnyObjectByType<Casa>();
     }
 
     // Detecta que o regador está posicionado sobre a planta
@@ -105,6 +107,7 @@ public class PlantaProgresso : MonoBehaviour, IPointerEnterHandler
             Robin.AlterarDiversao(4);    // Aumenta a diversão
             Robin.AlterarProgresso(2);    // Progresso positivo na depressão
             Casa.AlterarAguaPlanta(4);   // Aumenta quanto de água tem na planta
+            scriptCasa.AlterarHoraio(0.75f);
             
             CameraPanLateral.minigameAtivo = false; // DESCONGELA A CÂMERA E AS PORTAS!
 

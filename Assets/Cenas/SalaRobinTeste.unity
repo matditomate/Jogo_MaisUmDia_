@@ -119,17 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &28398442 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8651600382908926559, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
-  m_PrefabInstance: {fileID: 990813559}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4de994198058d204389543809d4d6195, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Desbloquear
 --- !u!1 &43755018
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +615,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &598120120 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6197886378409197605, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
+  m_PrefabInstance: {fileID: 990813559}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,6 +759,7 @@ GameObject:
   m_Component:
   - component: {fileID: 633038065}
   - component: {fileID: 633038064}
+  - component: {fileID: 633038066}
   m_Layer: 0
   m_Name: Gerenciador
   m_TagString: Untagged
@@ -794,6 +795,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &633038066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633038063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d0e71817264bed48964396a9e1d526e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Casa
 --- !u!1001 &780965347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -845,6 +858,10 @@ PrefabInstance:
     - target: {fileID: 6052934220218006718, guid: f9e33cab864c65540b92e8cc8cb6f8d6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6899887723063307036, guid: f9e33cab864c65540b92e8cc8cb6f8d6, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1022,6 +1039,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6052934220218006718, guid: f9e33cab864c65540b92e8cc8cb6f8d6, type: 3}
   m_PrefabInstance: {fileID: 780965347}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &948247620 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2283099765213601229, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
+  m_PrefabInstance: {fileID: 990813559}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &990813559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1074,26 +1102,22 @@ PrefabInstance:
       propertyPath: background
       value: 
       objectReference: {fileID: 1118879960}
-    - target: {fileID: 4384706022494775341, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 308.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384706022494775341, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -391
-      objectReference: {fileID: 0}
+    - target: {fileID: 3474960684665815063, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
+      propertyPath: diaTMPro
+      value: 
+      objectReference: {fileID: 598120120}
+    - target: {fileID: 3474960684665815063, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
+      propertyPath: horaIniTMPro
+      value: 
+      objectReference: {fileID: 948247620}
+    - target: {fileID: 3474960684665815063, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
+      propertyPath: horaDesbloqTMPro
+      value: 
+      objectReference: {fileID: 1888177145}
     - target: {fileID: 4692883505731769840, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
       propertyPath: m_Name
       value: HudCelular
       objectReference: {fileID: 0}
-    - target: {fileID: 5757887456041477877, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
-      propertyPath: scriptDesbloq
-      value: 
-      objectReference: {fileID: 28398442}
-    - target: {fileID: 6735167062512739556, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
-      propertyPath: rt
-      value: 
-      objectReference: {fileID: 2082418403}
     - target: {fileID: 6735167062512739556, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
       propertyPath: background
       value: 
@@ -1173,7 +1197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6146302144900783746, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.0013888889
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6146302144900783746, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
@@ -1181,7 +1205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6146302144900783746, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.9966946
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6882219133264721193, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_LocalScale.x
@@ -2162,6 +2186,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1888177145 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5473210521648330233, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
+  m_PrefabInstance: {fileID: 990813559}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1903403582
 GameObject:
   m_ObjectHideFlags: 0
@@ -2562,11 +2597,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!224 &2082418403 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4384706022494775341, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
-  m_PrefabInstance: {fileID: 990813559}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2091242664
 GameObject:
   m_ObjectHideFlags: 0
