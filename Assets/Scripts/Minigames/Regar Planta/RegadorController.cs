@@ -4,30 +4,36 @@ using UnityEngine.UI;
 public class RegadorController : MonoBehaviour
 {
     private RectTransform rectTransform;
-    private Image imagemRegador; // Guarda a referência do componente de imagem
+    private Image imagemRegador; 
 
-    [SerializeField] private GameObject particulaAgua; // O seu DropsObject
+    [SerializeField] private GameObject particulaAgua; 
     
     [Header("Sprites do Regador")]
-    [SerializeField] private Sprite spriteNormal;   // PNG dele em pé/parado
-    [SerializeField] private Sprite spriteClicado;  // PNG dele inclinado/regando
+    [SerializeField] private Sprite spriteNormal;   
+    [SerializeField] private Sprite spriteClicado;  
 
     public bool minigameAtivo = true;
+
+    private void OnEnable()
+    {
+        if (imagemRegador == null) imagemRegador = GetComponent<Image>();
+
+        // Força o regador a começar resetado e correto
+        if (spriteNormal != null) imagemRegador.sprite = spriteNormal;
+        if (particulaAgua != null) particulaAgua.SetActive(false);
+        minigameAtivo = true;
+    }
 
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
-        imagemRegador = GetComponent<Image>();
-
-        // Começa com o sprite normal garantido
-        if (spriteNormal != null) imagemRegador.sprite = spriteNormal;
     }
 
     void Update()
     {
         if (!minigameAtivo) return;
 
-        // Faz o regador seguir o mouse
+        // Faz o regador seguir o mouse perfeitamente no Canvas
         Vector2 posicaoMouse;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             transform.parent as RectTransform, 
@@ -37,21 +43,15 @@ public class RegadorController : MonoBehaviour
         );
         rectTransform.anchoredPosition = posicaoMouse;
 
-        // Detecta o clique para trocar o visual
+        // Troca o visual e as partículas baseado no clique
         if (Input.GetMouseButton(0))
         {
-            // Ativa o DropsObject (suas gotas)
             if (particulaAgua != null) particulaAgua.SetActive(true);
-
-            // Troca o desenho do regador para o inclinado
             if (spriteClicado != null) imagemRegador.sprite = spriteClicado;
         }
         else
         {
-            // Esconde o DropsObject
             if (particulaAgua != null) particulaAgua.SetActive(false);
-
-            // Volta o regador para o sprite normal em pé
             if (spriteNormal != null) imagemRegador.sprite = spriteNormal;
         }
     }

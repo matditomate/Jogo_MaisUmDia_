@@ -7,9 +7,20 @@ public class LimpezaSujeira : MonoBehaviour
     [SerializeField] private static float velocidadeLimpeza = 20f;
     [SerializeField] private GameObject canvasMinigame;
 
-    // Referência ao gatilho para travá-lo
     [SerializeField] private TriggerPia scriptTrigger;
     private Casa scriptCasa;
+
+    // Esse método roda toda vez que o minigame é aberto na tela
+    private void OnEnable()
+    {
+        if (imagemSujeira == null) 
+            imagemSujeira = GetComponent<Image>();
+
+        // Garante que a sujeira volte a ficar 100% visível ao reabrir
+        Color c = imagemSujeira.color;
+        c.a = 1f;
+        imagemSujeira.color = c;
+    }
 
     void Start()
     {
@@ -35,34 +46,28 @@ public class LimpezaSujeira : MonoBehaviour
 
     void FinalizarMinigame()
     {
-        // Ativa a trava no gatilho
         if (scriptTrigger != null)
         {
             TriggerPia.minigameBloqueado = true;
         }
-        CameraPanLateral.minigameAtivo = false; // DESCONGELA A CÂMERA E AS PORTAS!
+        
+        CameraPanLateral.minigameAtivo = false; 
         canvasMinigame.SetActive(false);
         Cursor.visible = true;
+        
+        // Aplica as consequências de vitória normalmente
         Robin.AlterarEnergia(-2);
         Robin.AlterarDiversao(-1);
         scriptCasa.AlterarHoraio(0.5f);
+        
         velocidadeLimpeza /= 2;
         Debug.Log("Velocidade de limpeza:" + velocidadeLimpeza);
-
-        // Resetar a sujeira para a próxima vez que for desbloqueado
-        Color c = imagemSujeira.color;
-        c.a = 1f;
-        imagemSujeira.color = c;
-
     }
-    // Desbloquear pia no futuro (em qualquer outro script do seu jogo)
 
+    // Chamar para liberar a pia em um próximo dia ou evento
     void EventoSujaPia()
     {
-        // Acessamos direto pelo nome da classe TriggerPia
         TriggerPia.minigameBloqueado = false;
-
         Debug.Log("A pia foi suja por um evento externo!");
     }
 }
-
