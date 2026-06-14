@@ -15,6 +15,10 @@ public class MenuPrincipal : MonoBehaviour
     [SerializeField] private GameObject ObjectAvisoSensivel;
     [SerializeField] private float tempoExibicaoAviso = 10f; // Tempo que o aviso fica na tela
 
+
+    [Header("Configurações de Áudio")]
+    [SerializeField] private AudioSource musicaMenu; // Arraste a Main Camera (ou o AudioSource dela) aqui!
+
     private void Start()
     {
         // Garante que o aviso comece desativado ao iniciar o menu
@@ -77,6 +81,12 @@ public class MenuPrincipal : MonoBehaviour
         {
             // Escurece a tela de novo (FadeIn) para esconder o aviso
             fadeAnimator.Play("FadeIn");
+
+            if(musicaMenu != null)
+            {
+                StartCoroutine(FadeOutMusica(musicaMenu, tempoDoFade));    
+            }
+
             yield return new WaitForSeconds(tempoDoFade);
             yield return new WaitForSeconds(tempoDoFade);
 
@@ -84,5 +94,21 @@ public class MenuPrincipal : MonoBehaviour
 
         // Carrega a nova fase
         SceneManager.LoadScene(nomeDaCenaJogo);
+    }
+
+    private IEnumerator FadeOutMusica(AudioSource audioSource, float duracao)
+    {
+        float volumeInicial = audioSource.volume;
+        float tempoMapeado = 0;
+
+        while (tempoMapeado < duracao)
+        {
+            tempoMapeado += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(volumeInicial, 0, tempoMapeado / duracao);
+            yield return null;
+        }
+
+        audioSource.volume = 0;
+        audioSource.Stop();
     }
 }
