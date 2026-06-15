@@ -63,7 +63,7 @@ public class PoteController : MonoBehaviour
 
         if (audioSource != null && somAcerto != null)
         {
-            audioSource.PlayOneShot(somAcerto);
+            AudioManager.instance.TocarSFX(somAcerto);
         }
 
         pontos++;

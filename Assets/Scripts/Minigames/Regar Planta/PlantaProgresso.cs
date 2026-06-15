@@ -1,31 +1,32 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System.Collections; // IMPORTANTE: Necessário para usar Corotinas (IEnumerator)
 
 public class PlantaProgresso : MonoBehaviour
 {
     [SerializeField] private float aguaAtual = 0f;
     [SerializeField] private float aguaMaxima = 100f;
-    [SerializeField] private float velocidadRegar = 25f; 
+    [SerializeField] private float velocidadRegar = 25f;
 
     private bool plantaSatisfeita = false;
 
-    // Controle estático do minigame
     private static int plantasResolvidas = 0;
-    [SerializeField] private GameObject painelMinigame; 
+    [SerializeField] private GameObject painelMinigame;
 
     [Header("Evolução da Planta")]
-    [SerializeField] private Sprite sprite25Porcento;   
-    [SerializeField] private Sprite sprite50Porcento;   
-    [SerializeField] private Sprite sprite75Porcento;   
+    [SerializeField] private Sprite sprite25Porcento;
+    [SerializeField] private Sprite sprite50Porcento;
+    [SerializeField] private Sprite sprite75Porcento;
 
     private Image imagemComponente;
-    private Sprite spriteInicial; // Guarda o visual seco original
+    private Sprite spriteInicial;
     private Casa scriptCasa;
+
+    public AudioClip somRegando;
 
     private void Awake()
     {
-        // O Awake roda ANTES de qualquer OnEnable, garantindo o cache seguro dos componentes
         imagemComponente = GetComponent<Image>();
         if (imagemComponente != null)
         {
@@ -35,14 +36,12 @@ public class PlantaProgresso : MonoBehaviour
         scriptCasa = Object.FindAnyObjectByType<Casa>();
     }
 
-    // Esse método garante o reset completo sempre que o painel for aberto
     private void OnEnable()
     {
         aguaAtual = 0f;
         plantaSatisfeita = false;
-        plantasResolvidas = 0; // Limpa o contador estático para o novo início
+        plantasResolvidas = 0;
 
-        // Volta o sprite para o estado seco original
         if (imagemComponente != null && spriteInicial != null)
         {
             imagemComponente.sprite = spriteInicial;
@@ -51,58 +50,81 @@ public class PlantaProgresso : MonoBehaviour
 
     void Update()
     {
-        // O Update sozinho já gerencia perfeitamente a entrada e permanência do mouse na UI
-        if (Input.GetMouseButton(0) && !plantaSatisfeita)
+        if (plantaSatisfeita) return;
+
+        if (Input.GetMouseButton(0))
         {
-            if (EventSystem.current.IsPointerOverGameObject() && 
+            if (EventSystem.current.IsPointerOverGameObject() &&
                 RectTransformUtility.RectangleContainsScreenPoint(GetComponent<RectTransform>(), Input.mousePosition))
             {
                 RegarPlanta();
+
+                if (somRegando != null)
+                {
+                    AudioManager.instance.TocarLooping(somRegando);
+                }
+                return;
             }
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            AudioManager.instance.PararLooping();
         }
     }
 
     void RegarPlanta()
     {
+        if (plantaSatisfeita) return;
+
         aguaAtual += velocidadRegar * Time.deltaTime;
         aguaAtual = Mathf.Clamp(aguaAtual, 0f, aguaMaxima);
 
         Debug.Log($"{gameObject.name} recebendo água: {aguaAtual}");
         AtualizarSpriteProgresso();
 
-        if (aguaAtual >= aguaMaxima && !plantaSatisfeita)
+        if (aguaAtual >= aguaMaxima)
         {
             plantaSatisfeita = true;
             plantasResolvidas++;
             Debug.Log($"{gameObject.name} totalmente regada! Total resolvidas: {plantasResolvidas}");
 
+            // Força o som a parar imediatamente no momento do acerto
+            AudioManager.instance.PararLooping();
+
             ChecarFinalJogo();
         }
-    }
-
-    void UpdateSpriteProgresso() // Traduzido internamente para manter o padrão sem quebras
-    {
-        AtualizarSpriteProgresso();
     }
 
     void AtualizarSpriteProgresso()
     {
         if (imagemComponente == null) return;
 
-        float porcentagem = (aguaAtual / aguaMaxima) * 100f;
+        float porcentagem = ((float)aguaAtual / aguaMaxima) * 100f;
 
         if (porcentagem >= 75f && sprite75Porcento != null)
         {
-            imagemComponente.sprite = sprite75Porcento;
+            AplicarSprite(sprite75Porcento);
         }
         else if (porcentagem >= 50f && sprite50Porcento != null)
         {
-            imagemComponente.sprite = sprite50Porcento;
+            AplicarSprite(sprite50Porcento);
         }
         else if (porcentagem >= 25f && sprite25Porcento != null)
         {
-            imagemComponente.sprite = sprite25Porcento;
+            AplicarSprite(sprite25Porcento);
         }
+    }
+
+    void AplicarSprite(Sprite novoSprite)
+    {
+        imagemComponente.sprite = novoSprite;
+
+        imagemComponente.SetNativeSize();
+
+        RectTransform rect = imagemComponente.GetComponent<RectTransform>();
+
+        rect.sizeDelta *= 3f;
     }
 
     void ChecarFinalJogo()
@@ -110,20 +132,46 @@ public class PlantaProgresso : MonoBehaviour
         if (plantasResolvidas >= 2)
         {
             Debug.Log("Minigame Plantas Concluído com Sucesso!");
-            
-            TriggerPlanta.minigameBloqueado = true;
-            Robin.AlterarDiversao(4);    
-            Robin.AlterarProgresso(2);    
-            Casa.AlterarAguaPlanta(4);   
-            scriptCasa.AlterarHoraio(0.75f);
-            
-            CameraPanLateral.minigameAtivo = false; 
 
-            Cursor.visible = true;
-            if (painelMinigame != null)
-            {
-                painelMinigame.SetActive(false);
-            }
+            // CORREÇÃO CRÍTICA: Iniciamos uma corotina no próprio script da planta para fechar o jogo com segurança
+            StartCoroutine(FecharPainelComSeguranca());
+        }
+    }
+
+    // NOVA COROTINA: Garante o corte do som antes de desativar o painel
+    private IEnumerator FecharPainelComSeguranca()
+    {
+        // 1. Mandamos o AudioManager parar o looping enquanto o painel ainda está ativo
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PararLooping();
+        }
+
+        // 2. Esperamos o final deste frame. Isso dá tempo para a Unity processar o comando de parada do áudio
+        yield return new WaitForEndOfFrame();
+
+        // 3. Agora que o som parou com 100% de certeza, rodamos o restante da sua lógica de vitória
+        TriggerPlanta.minigameBloqueado = true;
+        Robin.AlterarDiversao(4);
+        Robin.AlterarProgresso(2);
+        Casa.AlterarAguaPlanta(4);
+        scriptCasa.AlterarHoraio(0.75f);
+
+        CameraPanLateral.minigameAtivo = false;
+
+        Cursor.visible = true;
+
+        if (painelMinigame != null)
+        {
+            painelMinigame.SetActive(false);
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PararLooping();
         }
     }
 }
