@@ -1553,7 +1553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6146302144900783746, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0
+      value: 0.0018518518
       objectReference: {fileID: 0}
     - target: {fileID: 6146302144900783746, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
@@ -1561,7 +1561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6146302144900783746, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 1
+      value: 0.99669456
       objectReference: {fileID: 0}
     - target: {fileID: 8762512019683598850, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: background
@@ -2063,6 +2063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   sfxSource: {fileID: 1423398865}
+  loopSource: {fileID: 0}
   somPortaFechando: {fileID: 8300000, guid: e302610fd710b394c9a6cf223218512f, type: 3}
 --- !u!4 &1423398867
 Transform:
@@ -3118,6 +3119,46 @@ PrefabInstance:
       propertyPath: background
       value: 
       objectReference: {fileID: 1894715907}
+    - target: {fileID: 8212399987311271008, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
+      propertyPath: listaDeReels.Array.size
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212399987311271008, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
+      propertyPath: 'listaDeReels.Array.data[12]'
+      value: 
+      objectReference: {fileID: 6123017716775415674, guid: 2a8a4ea721af79f46aeaa749129ef5cb, type: 3}
+    - target: {fileID: 8212399987311271008, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
+      propertyPath: 'listaDeReels.Array.data[13]'
+      value: 
+      objectReference: {fileID: -5723217800803329181, guid: c1f4e8393801939438c307a56e40781e, type: 3}
+    - target: {fileID: 8212399987311271008, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
+      propertyPath: 'listaDeReels.Array.data[14]'
+      value: 
+      objectReference: {fileID: -812512044615331358, guid: 49a6847357d9782409cf465a9cd64217, type: 3}
+    - target: {fileID: 8212399987311271008, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
+      propertyPath: 'listaDeReels.Array.data[15]'
+      value: 
+      objectReference: {fileID: 308452617585346618, guid: afca127d0d251c14b8378ae242217be3, type: 3}
+    - target: {fileID: 8212399987311271008, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
+      propertyPath: 'listaDeReels.Array.data[16]'
+      value: 
+      objectReference: {fileID: -710396705513282402, guid: b4f4bfaf13dcbf549b4d098cdc721e4c, type: 3}
+    - target: {fileID: 8212399987311271008, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
+      propertyPath: 'listaDeReels.Array.data[17]'
+      value: 
+      objectReference: {fileID: 6952319565166483079, guid: 69bbd635e0fb72241876bfdb9256ca78, type: 3}
+    - target: {fileID: 8212399987311271008, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
+      propertyPath: 'listaDeReels.Array.data[18]'
+      value: 
+      objectReference: {fileID: -170058514730257529, guid: 9aa8661573105004fbd3379ec61a2031, type: 3}
+    - target: {fileID: 8212399987311271008, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
+      propertyPath: 'listaDeReels.Array.data[19]'
+      value: 
+      objectReference: {fileID: 6598752587404657123, guid: 098b8a77c9d70404880a4764df78c366, type: 3}
+    - target: {fileID: 8212399987311271008, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
+      propertyPath: 'listaDeReels.Array.data[20]'
+      value: 
+      objectReference: {fileID: 3554435688226202485, guid: 63aa503f5cbd84a48894898f74dc2ca4, type: 3}
     - target: {fileID: 8406005641450017671, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
