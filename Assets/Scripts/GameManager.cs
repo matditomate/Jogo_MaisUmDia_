@@ -80,8 +80,9 @@ public class GameManager : MonoBehaviour
 
         if (resultado == "despertador_snooze")
         {
-            DialogueManager.Instance.StartDialogue("rota_2_atrasado");
             AlterarHoraio(2);
+            DialogueManager.Instance.StartDialogue("rota_2_atrasado");
+            
             return;
         }
     }

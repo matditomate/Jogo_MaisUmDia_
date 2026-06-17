@@ -22,7 +22,7 @@ public class PoteController : MonoBehaviour
     public AudioClip somAcerto;
 
     private bool finalizado = false;
-    private Casa scriptCasa;
+    private GameManager scriptCasa;
 
     // O OnEnable roda toda vez que o minigame abre na tela
     private void OnEnable()
@@ -40,7 +40,7 @@ public class PoteController : MonoBehaviour
 
     void Start()
     {
-        scriptCasa = Object.FindAnyObjectByType<Casa>();
+        scriptCasa = Object.FindAnyObjectByType<GameManager>();
         if (rect == null)
             rect = GetComponent<RectTransform>();
     }
