@@ -111,6 +111,8 @@ public class PoteController : MonoBehaviour
         if (cafe != null && cafe.minigamePanel != null)
         {
             cafe.minigamePanel.FecharPanel();
+
+            DialogueManager.Instance.StartDialogue("depois_atividade_gato");
         }
         else
         {

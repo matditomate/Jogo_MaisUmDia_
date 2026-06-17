@@ -89,6 +89,8 @@ public class LimpezaSujeira : MonoBehaviour
         Robin.AlterarEnergia(-2);
         Robin.AlterarDiversao(-1);
         scriptCasa.AlterarHoraio(0.5f);
+
+        DialogueManager.Instance.StartDialogue("depois_atividade_lousa");
         
         velocidadeLimpeza /= 2;
         Debug.Log("Velocidade de limpeza:" + velocidadeLimpeza);

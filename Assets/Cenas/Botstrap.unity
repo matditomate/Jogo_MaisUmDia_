@@ -119,6 +119,103 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &89626907 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1352264254942731510, guid: 31627f3130451b04ea91c4fd295b1d27, type: 3}
+  m_PrefabInstance: {fileID: 6883430068716308469}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &89626917
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89626907}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &481489070 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5725425197080949086, guid: 31627f3130451b04ea91c4fd295b1d27, type: 3}
+  m_PrefabInstance: {fileID: 6883430068716308469}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &481489080
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481489070}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1804958701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1804958703}
+  - component: {fileID: 1804958702}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1804958702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804958701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce24fe8d9dffef947a4d1817dd5e8b20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  portaDeDestino: 
+--- !u!4 &1804958703
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804958701}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.59015, y: -0.48003, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1987050277
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BootstrapManager
   dialogueSystemPrefab: {fileID: 0}
-  firstSceneName: Teste
+  firstSceneName: QuartoRobinTeste
 --- !u!4 &1987050279
 Transform:
   m_ObjectHideFlags: 0
@@ -260,7 +357,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1352264254942731510, guid: 31627f3130451b04ea91c4fd295b1d27, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 89626917}
+    - targetCorrespondingSourceObject: {fileID: 5725425197080949086, guid: 31627f3130451b04ea91c4fd295b1d27, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 481489080}
   m_SourcePrefab: {fileID: 100100000, guid: 31627f3130451b04ea91c4fd295b1d27, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -268,3 +371,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 1987050279}
   - {fileID: 6883430068716308469}
+  - {fileID: 1804958703}

@@ -157,6 +157,8 @@ public class PlantaProgresso : MonoBehaviour
         Casa.AlterarAguaPlanta(4);
         scriptCasa.AlterarHoraio(0.75f);
 
+        DialogueManager.Instance.StartDialogue("depois_atividade_plantas");
+
         CameraPanLateral.minigameAtivo = false;
 
         Cursor.visible = true;
