@@ -1,0 +1,34 @@
+{
+    "posts": [
+       {
+            "nomeDaImagem": "PostEstella",
+            "usuario": "Estrella",
+            "legenda": "Aproveitando o fim do dia com minha pessoa favorita! <3"
+       },
+       {
+            "nomeDaImagem": "PostWaffleEstrela",
+            "usuario": "Aesthetic_foods",
+            "legenda": "I just had the cutest waffles for breakfast!"
+       },
+       {
+            "nomeDaImagem": "PostLumo",
+            "usuario": "Lumo's_Adventures",
+            "legenda": "Lumo watched the sunset with the flowers..."
+       },
+       {
+            "nomeDaImagem": "PostPH2",
+            "usuario": "lugares_para_visitar",
+            "legenda": "Realmente parece que eu vim em um conto de fadas..."
+        },
+        {
+            "nomeDaImagem": "PostPH1",
+            "usuario": "Comidas_Saudáveis",
+            "legenda": "Nada como um bom café da manhã para começar o dia!"
+        },
+        {
+            "nomeDaImagem": "PostPaisagem",
+            "usuario": "lugares_para_visitar",
+            "legenda": "Como eu queria ir para lá..."
+        }
+    ]
+}

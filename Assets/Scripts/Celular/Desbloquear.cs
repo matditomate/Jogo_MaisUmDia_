@@ -21,7 +21,6 @@ public class Desbloquear : MonoBehaviour
             if (desbloqueando)
             {
                 tAtualDesbloq += Time.deltaTime;
-                Debug.Log(tAtualDesbloq);
                 anim.SetBool("desbloqueando", true);
             } 
             else
