@@ -4,12 +4,15 @@ public class MinigameUIPlanta : MonoBehaviour
 {
     [Header("Configurações de UI")]
     public GameObject panelMinigame;
+    [SerializeField] private GameObject fundoSala;
+    [SerializeField] private GameObject fundoSacada;
 
     [Header("Cursores")]
     public CursorCustom cursorMaoPadrao;
 
     public void FecharMinigame()
     {
+        
         // DESCONGELA A CÂMERA E AS PORTAS!
         CameraPanLateral.minigameAtivo = false; 
 
@@ -27,6 +30,8 @@ public class MinigameUIPlanta : MonoBehaviour
         if (panelMinigame != null)
         {
             panelMinigame.SetActive(false);
+            fundoSacada.SetActive(true);
+            fundoSala.SetActive(true);
         }
 
         Debug.Log("[PLANTEI] Minigame de regar cancelado. Progresso descartado.");

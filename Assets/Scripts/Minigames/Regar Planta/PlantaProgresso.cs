@@ -13,6 +13,8 @@ public class PlantaProgresso : MonoBehaviour
 
     private static int plantasResolvidas = 0;
     [SerializeField] private GameObject painelMinigame;
+    [SerializeField] private GameObject fundoSala;
+    [SerializeField] private GameObject fundoSacada;
 
     [Header("Evolução da Planta")]
     [SerializeField] private Sprite sprite25Porcento;
@@ -166,6 +168,8 @@ public class PlantaProgresso : MonoBehaviour
         if (painelMinigame != null)
         {
             painelMinigame.SetActive(false);
+            fundoSacada.SetActive(true);
+            fundoSala.SetActive(true);
         }
     }
 
