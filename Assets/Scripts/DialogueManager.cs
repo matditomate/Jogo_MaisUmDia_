@@ -22,6 +22,16 @@ public class DialogueManager : MonoBehaviour
         public Sprite portrait;
     }
 
+    [Header("Canvas do Diálogo")]
+    [SerializeField] private Canvas canvasDialogoCanvas;
+
+    private CanvasGroup canvasDialogoGroup;
+    private GraphicRaycaster canvasDialogoRaycaster;
+
+    [Header("Sort Order do Canvas")]
+    [SerializeField] private int sortOrderNaFrente = 1000;
+    [SerializeField] private int sortOrderAtras = -100;
+
     [Header("Ink")]
     [SerializeField] private TextAsset inkJson;
 
@@ -77,12 +87,111 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
+        PrepararCanvasDialogo();
+
         if (inkJson != null)
             story = new Story(inkJson.text);
         else
             Debug.LogError("Ink Json não foi colocado no DialogueManager.");
 
         HideAllPanels();
+        EsconderCanvasDialogo();
+    }
+
+    private void PrepararCanvasDialogo()
+    {
+        if (canvasDialogoCanvas == null)
+        {
+            canvasDialogoCanvas = GetComponentInChildren<Canvas>(true);
+        }
+
+        if (canvasDialogoCanvas == null)
+        {
+            Debug.LogError("Nenhum Canvas foi encontrado dentro do prefab do DialogueManager.");
+            return;
+        }
+
+        canvasDialogoCanvas.overrideSorting = true;
+
+        canvasDialogoGroup = canvasDialogoCanvas.GetComponent<CanvasGroup>();
+        canvasDialogoRaycaster = canvasDialogoCanvas.GetComponent<GraphicRaycaster>();
+
+        Debug.Log("Canvas do diálogo encontrado: " + GetPath(canvasDialogoCanvas.transform));
+    }
+
+    private string GetPath(Transform obj)
+    {
+        string path = obj.name;
+
+        while (obj.parent != null)
+        {
+            obj = obj.parent;
+            path = obj.name + "/" + path;
+        }
+
+        return path;
+    }
+
+    public void ColocarDialogoNaFrente()
+    {
+        if (canvasDialogoCanvas == null)
+            return;
+
+        canvasDialogoCanvas.overrideSorting = true;
+        canvasDialogoCanvas.sortingOrder = sortOrderNaFrente;
+
+        Debug.Log("Diálogo na frente. Sort Order: " + canvasDialogoCanvas.sortingOrder);
+    }
+
+    public void ColocarDialogoAtras()
+    {
+        if (canvasDialogoCanvas == null)
+            return;
+
+        canvasDialogoCanvas.overrideSorting = true;
+        canvasDialogoCanvas.sortingOrder = sortOrderAtras;
+
+        Debug.Log("Diálogo atrás. Sort Order: " + canvasDialogoCanvas.sortingOrder);
+    }
+
+    private void MostrarCanvasDialogo()
+    {
+        if (canvasDialogoCanvas == null)
+            return;
+
+        canvasDialogoCanvas.gameObject.SetActive(true);
+
+        ColocarDialogoNaFrente();
+
+        if (canvasDialogoGroup != null)
+        {
+            canvasDialogoGroup.alpha = 1f;
+            canvasDialogoGroup.interactable = true;
+            canvasDialogoGroup.blocksRaycasts = true;
+        }
+
+        if (canvasDialogoRaycaster != null)
+            canvasDialogoRaycaster.enabled = true;
+    }
+
+    private void EsconderCanvasDialogo()
+    {
+        if (canvasDialogoCanvas == null)
+            return;
+
+        ColocarDialogoAtras();
+
+        if (canvasDialogoGroup != null)
+        {
+            canvasDialogoGroup.alpha = 0f;
+            canvasDialogoGroup.interactable = false;
+            canvasDialogoGroup.blocksRaycasts = false;
+        }
+
+        if (canvasDialogoRaycaster != null)
+            canvasDialogoRaycaster.enabled = false;
+
+        canvasDialogoCanvas.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -130,6 +239,8 @@ public class DialogueManager : MonoBehaviour
         dialogueActive = true;
         currentPanel = PanelType.Dialogue;
         previousPanel = PanelType.Dialogue;
+
+        MostrarCanvasDialogo();
 
         ContinueStory();
     }
@@ -417,6 +528,8 @@ public class DialogueManager : MonoBehaviour
         onDialogueFinished = null;
 
         callback?.Invoke(resultado);
+
+        EsconderCanvasDialogo();
     }
 
     public bool IsDialogueActive()
