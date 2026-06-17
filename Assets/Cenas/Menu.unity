@@ -1264,11 +1264,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abb9e6e5c205048419d6c4b4e11528ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuPrincipal
-  nomeDaCenaJogo: QuartoRobinTeste
+  nomeDaCenaJogo: Botstrap
   fadeAnimator: {fileID: 1493683902}
   tempoDoFade: 1
   ObjectAvisoSensivel: {fileID: 1286757864}
-  tempoExibicaoAviso: 8
+  tempoExibicaoAviso: 1
   musicaMenu: {fileID: 109107052}
 --- !u!4 &1322082046
 Transform:

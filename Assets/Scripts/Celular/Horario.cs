@@ -17,17 +17,17 @@ public class Horario : MonoBehaviour
 
     void OnEnable()
     {
-        Casa.OnHorarioMudou += AlterarTextos;
+        GameManager.OnHorarioMudou += AlterarTextos;
     }
 
     void OnDisable()
     {
-        Casa.OnHorarioMudou -= AlterarTextos;
+        GameManager.OnHorarioMudou -= AlterarTextos;
     }
 
     public void CalculoHorario()
     {
-        float horario = Casa.horario;
+        float horario = GameManager.horario;
         int horas = (int)horario;
         int segundos = (int)((horario - horas) * 60f);
         Debug.Log(horario);
@@ -41,7 +41,7 @@ public class Horario : MonoBehaviour
         CalculoHorario();
         horaIniTMPro.text = horarioTexto;
         horaDesbloqTMPro.text = horarioTexto;
-        diaTexto = string.Format("{0}, {1}", diasSemana[Casa.dia - 1], Casa.dia);
+        diaTexto = string.Format("{0}, {1}", diasSemana[GameManager.dia - 1], GameManager.dia);
         diaTMPro.text = diaTexto;
     }
 }

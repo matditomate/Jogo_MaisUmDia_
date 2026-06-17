@@ -21,7 +21,7 @@ public class PlantaProgresso : MonoBehaviour
 
     private Image imagemComponente;
     private Sprite spriteInicial;
-    private Casa scriptCasa;
+    private GameManager scriptCasa;
 
     public AudioClip somRegando;
 
@@ -33,7 +33,7 @@ public class PlantaProgresso : MonoBehaviour
             spriteInicial = imagemComponente.sprite;
         }
 
-        scriptCasa = Object.FindAnyObjectByType<Casa>();
+        scriptCasa = Object.FindAnyObjectByType<GameManager>();
     }
 
     private void OnEnable()
@@ -154,8 +154,10 @@ public class PlantaProgresso : MonoBehaviour
         TriggerPlanta.minigameBloqueado = true;
         Robin.AlterarDiversao(4);
         Robin.AlterarProgresso(2);
-        Casa.AlterarAguaPlanta(4);
+        GameManager.AlterarAguaPlanta(4);
         scriptCasa.AlterarHoraio(0.75f);
+
+        DialogueManager.Instance.StartDialogue("depois_atividade_plantas");
 
         CameraPanLateral.minigameAtivo = false;
 

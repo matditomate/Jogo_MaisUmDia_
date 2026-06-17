@@ -72,6 +72,13 @@ Pelo menos elas parecem estar indo bem... #panel:thought
 
 -> END
 
+=== depois_atividade_lousa ===
+
+Robin lava a louça. #panel:thought
+Ainda bem que acbou, lavar isso tudo é um saco, não posso deixar acumular tanto assim. #panel:thought
+
+-> END
+
 
 === rota_2_atrasado ===
 
