@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5508652070749878334}
   - component: {fileID: 7502071697821597382}
   - component: {fileID: 9029602684904658322}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: PanelDialogo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,9 @@ GameObject:
   - component: {fileID: 201946958454828915}
   - component: {fileID: 2430295227297034109}
   - component: {fileID: 7157481443462680669}
-  m_Layer: 0
+  - component: {fileID: 7193189967970916417}
+  - component: {fileID: 4110096626747050864}
+  m_Layer: 19
   m_Name: Button (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,6 +201,39 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7193189967970916417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352264254942731510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce691f06f789c87499e5fdf6c4fb6b03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClickDetector
+--- !u!65 &4110096626747050864
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352264254942731510}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1724584569579237275
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +245,7 @@ GameObject:
   - component: {fileID: 7548801101273221859}
   - component: {fileID: 6475414880676739089}
   - component: {fileID: 7343295015005675876}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Text (B1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +382,7 @@ GameObject:
   - component: {fileID: 4172839147395187072}
   - component: {fileID: 3763496937919955161}
   - component: {fileID: 1140459475244380194}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Text (B2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +519,7 @@ GameObject:
   - component: {fileID: 8059874028212404117}
   - component: {fileID: 8591631768901536308}
   - component: {fileID: 8562829860025582267}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Text (Fala)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -625,7 +660,7 @@ GameObject:
   - component: {fileID: 3141332895675072355}
   - component: {fileID: 8791947391693234848}
   - component: {fileID: 4949724238870987050}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Text (Pergunta)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -762,7 +797,7 @@ GameObject:
   - component: {fileID: 5694561438568087734}
   - component: {fileID: 2350179194356453819}
   - component: {fileID: 8141347624133994142}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Text (Pensamento)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -899,7 +934,7 @@ GameObject:
   - component: {fileID: 8579094585515701271}
   - component: {fileID: 4598052453894623361}
   - component: {fileID: 7640526859910006952}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Text (nome)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1036,7 +1071,7 @@ GameObject:
   - component: {fileID: 7369883973667881709}
   - component: {fileID: 4879574908491816008}
   - component: {fileID: 7870814582716920201}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: PanelEscolha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1115,7 +1150,9 @@ GameObject:
   - component: {fileID: 6487008307707494384}
   - component: {fileID: 3734026831690313004}
   - component: {fileID: 5593296007915848041}
-  m_Layer: 0
+  - component: {fileID: 5183040329920495716}
+  - component: {fileID: 5536267952503647691}
+  m_Layer: 19
   m_Name: Button (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1224,6 +1261,39 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5183040329920495716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5725425197080949086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce691f06f789c87499e5fdf6c4fb6b03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClickDetector
+--- !u!65 &5536267952503647691
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5725425197080949086}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6695841637278852625
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,7 +1304,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6877080501195752435}
   - component: {fileID: 3646197866708122568}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: DialogueManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1324,7 +1394,7 @@ GameObject:
   - component: {fileID: 4690238556387736222}
   - component: {fileID: 953979738272510408}
   - component: {fileID: 563313869641994388}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: PersonagemPortrate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1399,7 +1469,7 @@ GameObject:
   - component: {fileID: 3016433757006207518}
   - component: {fileID: 1922153430419304400}
   - component: {fileID: 3050525767074136251}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: PanelPensamento
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1476,7 +1546,7 @@ GameObject:
   - component: {fileID: 8383075738187781836}
   - component: {fileID: 4759557698876300790}
   - component: {fileID: 5242013205353772625}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1526,7 +1596,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1000
   m_TargetDisplay: 0
 --- !u!114 &4759557698876300790
 MonoBehaviour:

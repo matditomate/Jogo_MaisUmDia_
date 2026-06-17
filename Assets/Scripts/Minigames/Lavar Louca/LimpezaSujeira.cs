@@ -8,7 +8,7 @@ public class LimpezaSujeira : MonoBehaviour
     [SerializeField] private GameObject canvasMinigame;
 
     [SerializeField] private TriggerPia scriptTrigger;
-    private Casa scriptCasa;
+    private GameManager scriptCasa;
 
     [Header("Sons do Minigame")]
     public AudioClip somEsponja;
@@ -36,7 +36,7 @@ public class LimpezaSujeira : MonoBehaviour
     {
         imagemSujeira = GetComponent<Image>();
         Debug.Log("Velocidade de limpeza:" + velocidadeLimpeza);
-        scriptCasa = Object.FindAnyObjectByType<Casa>();
+        scriptCasa = Object.FindAnyObjectByType<GameManager>();
     }
 
     void Update()
@@ -89,6 +89,8 @@ public class LimpezaSujeira : MonoBehaviour
         Robin.AlterarEnergia(-2);
         Robin.AlterarDiversao(-1);
         scriptCasa.AlterarHoraio(0.5f);
+
+        DialogueManager.Instance.StartDialogue("depois_atividade_lousa");
         
         velocidadeLimpeza /= 2;
         Debug.Log("Velocidade de limpeza:" + velocidadeLimpeza);
