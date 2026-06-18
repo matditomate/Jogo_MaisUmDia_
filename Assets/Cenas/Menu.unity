@@ -1268,7 +1268,7 @@ MonoBehaviour:
   fadeAnimator: {fileID: 1493683902}
   tempoDoFade: 1
   ObjectAvisoSensivel: {fileID: 1286757864}
-  tempoExibicaoAviso: 1
+  tempoExibicaoAviso: 8
   musicaMenu: {fileID: 109107052}
 --- !u!4 &1322082046
 Transform:
