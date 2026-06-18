@@ -51,16 +51,6 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Água das plantas: {aguaPlanta}");
     }
 
-    public static void  SetHorario(float valor)
-    {
-        horario = valor;
-
-        if (OnHorarioMudou != null)
-        {
-            OnHorarioMudou.Invoke();
-        }
-    }
-
     public static void SetHorario(float valor)
     {
         horario = valor;
