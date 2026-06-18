@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        AlterarHoraio(0);
+        AlterarHorario(0);
         AtivarEfeitoAnsiedade();
     }
 
@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Água das plantas: {aguaPlanta}");
     }
 
-    public void AlterarHoraio(float valor)
+    public void AlterarHorario(float valor)
     {
         horario += valor;
         if (horario > 23.98f)
@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
 
         if (resultado == "despertador_snooze")
         {
-            AlterarHoraio(2);
+            AlterarHorario(2);
             DialogueManager.Instance.StartDialogue("rota_2_atrasado");
             
             return;

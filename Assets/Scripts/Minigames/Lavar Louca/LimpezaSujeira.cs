@@ -88,7 +88,8 @@ public class LimpezaSujeira : MonoBehaviour
         // Aplica as consequências de vitória
         Robin.AlterarEnergia(-2);
         Robin.AlterarDiversao(-1);
-        scriptCasa.AlterarHoraio(0.5f);
+        scriptCasa.AlterarHorario(0.5f);
+        Robin.AlterarProgresso(3);
 
         DialogueManager.Instance.StartDialogue("depois_atividade_lousa");
         

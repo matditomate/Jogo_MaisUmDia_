@@ -106,7 +106,10 @@ public class PoteController : MonoBehaviour
         Cafe.AlterarFome(4);
         Cafe.AlterarAtencao(2);
         Cafe.SetLocked(true);
-        scriptCasa.AlterarHoraio(0.25f);
+        scriptCasa.AlterarHorario(0.25f);
+        Robin.AlterarDiversao(1);
+        Robin.AlterarFome(-1);
+        Robin.AlterarProgresso(2);
 
         if (cafe != null && cafe.minigamePanel != null)
         {

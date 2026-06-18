@@ -28,7 +28,7 @@ public class Casa : MonoBehaviour
         Debug.Log($"Água das plantas: {aguaPlanta}");
     }
 
-    public void AlterarHoraio(float valor)
+    public void AlterarHorario(float valor)
     {
         horario += valor;
         if(horario > 23.98f)

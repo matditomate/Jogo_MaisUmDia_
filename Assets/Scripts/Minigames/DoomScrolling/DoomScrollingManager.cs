@@ -26,6 +26,8 @@ public class DoomScrollingManager : MonoBehaviour, IDragHandler
     private DadosPost[] meusPosts; 
     private float elementHeight;
     private float boundaryY;
+    private int tempoTotal;
+    private int contadorPosts = 0;
 
     void Start()
     {
@@ -77,15 +79,18 @@ public class DoomScrollingManager : MonoBehaviour, IDragHandler
                 MoveToBottom(scrollElements[i]);
                 MostrarReelAleatorio(scrollElements[i]);
                 
-                // O jogador passou de post (arrastou para cima)! Consome tempo.
-                AdicionarTempo(5); 
+                contadorPosts++;
+
+                if (contadorPosts >= 5)
+                {
+                    AdicionarTempo(1);
+                    contadorPosts = 0; 
+                }
             }
             else if (scrollElements[i].anchoredPosition.y < -boundaryY)
             {
                 MoveToTop(scrollElements[i]);
                 MostrarReelAleatorio(scrollElements[i]);
-                
-                // (Opcional) Pode adicionar tempo aqui também caso ele volte posts
             }
         }
     }
@@ -111,12 +116,6 @@ public class DoomScrollingManager : MonoBehaviour, IDragHandler
         }
         element.anchoredPosition = new Vector2(element.anchoredPosition.x, highestY + elementHeight);
     }
-
-    // private void AvançarFeed()
-    // {
-    //     MostrarReelAleatorio();
-    //     AdicionarTempo(5); // Avisa ao jogo que se passaram 5 minutos
-    // }
 
     private void MostrarReelAleatorio(RectTransform element)
     {
@@ -144,10 +143,16 @@ public class DoomScrollingManager : MonoBehaviour, IDragHandler
 
     private void AdicionarTempo(int minutosPassados)
     {
-        // Mostra no console para testar se o arrasto funcionou
-        Debug.Log($"[DoomScrolling] Passou de Reel! +{minutosPassados} minutos no jogo.");
 
-        // script de tempo chama ele aqui.
-        // Exemplo: GameManager.Instance.PassarTempo(minutosPassados);
+        tempoTotal += 5;
+        GameManager.instance.AlterarHorario(0.08f);
+        if(tempoTotal >= 30)
+        {
+            Robin.AlterarAnsiedade(1);
+            Robin.AlterarProgresso(-1);
+            Robin.AlterarDiversao(3);
+            tempoTotal = 0;
+        }
+        
     }
 }

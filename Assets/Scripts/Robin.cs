@@ -9,15 +9,8 @@ public class Robin : MonoBehaviour
     public static int higiene = 6;   // 10 = Limpo, 0 = Imundo
     public static int diversao = 7;  // 10 = Feliz, 0 = Entediado
     public static int energia = 8;   // 10 = Disposto, 0 = Exausto
-    public static int ansiedade = 10;    // 0 = Calma, 10 = Crise
+    public static int ansiedade = 6;    // 0 = Calma, 10 = Crise
     public static int progresso = 0;    // 0 = Início, 10 = Meta (Depressão)
-
-    private static GameManager gerenciador;
-
-    void Awake()
-    {
-        gerenciador = Object.FindAnyObjectByType<GameManager>();
-    }
 
     // --- FUNÇÕES DE MANIPULAÇÃO ---
 
@@ -51,7 +44,7 @@ public class Robin : MonoBehaviour
     {
         ansiedade = Mathf.Clamp(ansiedade + valor, 0, 10);
         Debug.Log($"Ansiedade de Robin: {ansiedade}");
-        gerenciador.AtivarEfeitoAnsiedade();
+        GameManager.instance.AtivarEfeitoAnsiedade();
     }
 
     public static void AlterarProgresso(int valor)
