@@ -1715,7 +1715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6146302144900783746, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0
+      value: 0.0013888889
       objectReference: {fileID: 0}
     - target: {fileID: 6146302144900783746, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
@@ -1723,7 +1723,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6146302144900783746, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 1
+      value: 0.9966946
       objectReference: {fileID: 0}
     - target: {fileID: 6882219133264721193, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_LocalScale.x
@@ -2099,7 +2099,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1400798931
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2116,7 +2116,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -82, y: 25}
+  m_AnchoredPosition: {x: -70, y: -20.5}
   m_SizeDelta: {x: 50, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1400798932
@@ -2169,6 +2169,7 @@ GameObject:
   - component: {fileID: 1407020701}
   - component: {fileID: 1407020700}
   - component: {fileID: 1407020699}
+  - component: {fileID: 1407020702}
   m_Layer: 10
   m_Name: Regador
   m_TagString: Untagged
@@ -2185,7 +2186,7 @@ RectTransform:
   m_GameObject: {fileID: 1407020697}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1400798931}
@@ -2193,8 +2194,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 408, y: 341}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchoredPosition: {x: 408, y: 216}
+  m_SizeDelta: {x: 117, y: 112}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1407020699
 MonoBehaviour:
@@ -2216,7 +2217,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 732403675947621920, guid: 6f0e4891c58ee464d980ec862bce9f9c, type: 3}
+  m_Sprite: {fileID: -3935716550600654456, guid: c75abe91dd12cc54995d6592f95e40ce, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2247,9 +2248,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RegadorController
   particulaAgua: {fileID: 1400798930}
-  spriteNormal: {fileID: 732403675947621920, guid: 6f0e4891c58ee464d980ec862bce9f9c, type: 3}
-  spriteClicado: {fileID: -481292568069352833, guid: 965c3a61e7d63fa4e8d8a41c64775903, type: 3}
+  spriteNormal: {fileID: -3935716550600654456, guid: c75abe91dd12cc54995d6592f95e40ce, type: 3}
+  spriteClicado: {fileID: -2482220927471387756, guid: c75abe91dd12cc54995d6592f95e40ce, type: 3}
   minigameAtivo: 1
+--- !u!95 &1407020702
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407020697}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4f294028a38356d47b1174362da8cb96, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1486216698
 GameObject:
   m_ObjectHideFlags: 0

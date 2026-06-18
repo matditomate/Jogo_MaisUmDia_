@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class RegadorController : MonoBehaviour
 {
+    private Animator anim;
     private RectTransform rectTransform;
     private Image imagemRegador; 
 
@@ -27,6 +28,7 @@ public class RegadorController : MonoBehaviour
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -46,13 +48,15 @@ public class RegadorController : MonoBehaviour
         // Troca o visual e as partículas baseado no clique
         if (Input.GetMouseButton(0))
         {
-            if (particulaAgua != null) particulaAgua.SetActive(true);
-            if (spriteClicado != null) imagemRegador.sprite = spriteClicado;
+            // if (particulaAgua != null) particulaAgua.SetActive(true);
+            // if (spriteClicado != null) imagemRegador.sprite = spriteClicado;
+            anim.SetBool("regando", true);
         }
         else
         {
-            if (particulaAgua != null) particulaAgua.SetActive(false);
-            if (spriteNormal != null) imagemRegador.sprite = spriteNormal;
+            // if (particulaAgua != null) particulaAgua.SetActive(false);
+            // if (spriteNormal != null) imagemRegador.sprite = spriteNormal;
+            anim.SetBool("regando", false);
         }
     }
 }
