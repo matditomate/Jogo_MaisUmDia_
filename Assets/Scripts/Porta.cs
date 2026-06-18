@@ -8,6 +8,8 @@ public class Porta : MonoBehaviour
     [SerializeField] private string nomeProximaFase;
     [SerializeField] private string nomePortaDeDestino;
 
+    public AudioClip somAbrir;
+
     public void IrProximaFase()
     {
         // VERIFICAÇÃO: Se o minigame estiver ativo, impede o jogador de mudar de fase
@@ -17,6 +19,10 @@ public class Porta : MonoBehaviour
             return; // Corta a execução da função aqui e não muda de cena
         }
         
+        //Som da porta ao mudar de cena
+        AudioManager.instance.TocarSFX(somAbrir);
+        AudioManager.instance.AgendarSomDeFechar();
+
         GameManager.instance.portaDeDestino = nomePortaDeDestino;
         SceneManager.LoadScene(this.nomeProximaFase);
     }

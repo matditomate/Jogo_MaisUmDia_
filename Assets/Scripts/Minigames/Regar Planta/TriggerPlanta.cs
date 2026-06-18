@@ -3,11 +3,13 @@ using UnityEngine;
 public class TriggerPlanta : MonoBehaviour
 {
     [SerializeField] private GameObject canvasMinigame;
+    [SerializeField] private GameObject fundoSala;
+    [SerializeField] private GameObject fundoSacada;
     
     public static bool minigameBloqueado = false;
     
-    [SerializeField] private Texture2D cursorInteracao; // Arraste a textura do hover aqui
-    [SerializeField] private CursorCustom cursorMaoPadrao; // Opcional: Seu script de cursor padrão
+    [SerializeField] private Texture2D cursorInteracao; // Arrastar textura do hover nisso
+    [SerializeField] private CursorCustom cursorMaoPadrao; // Opcional: script de cursor padrão
     
     private Vector2 hotspot = Vector2.zero;
 
@@ -44,9 +46,11 @@ public class TriggerPlanta : MonoBehaviour
         if (!minigameBloqueado)
         {
             canvasMinigame.SetActive(true);
+            fundoSacada.SetActive(false);
+            fundoSala.SetActive(false);
             Cursor.visible = false;
             
-            // CONGELA A CÂMERA E AS PORTAS (Usa a variável que criamos na câmera)
+            // congela camera e portas, variavel que criei na camera
             CameraPanLateral.minigameAtivo = true;
             Debug.Log("Câmera e portas congeladas para o minigame.");
         }
@@ -55,17 +59,24 @@ public class TriggerPlanta : MonoBehaviour
     public void FecharMinigameRegar()
     {
         canvasMinigame.SetActive(false);
+        fundoSacada.SetActive(true);
+        fundoSala.SetActive(true);
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
 
         Cursor.visible = true;
         
-        // LIBERA A CÂMERA E AS PORTAS NO FINAL
+        // libera camera e porta no final
         CameraPanLateral.minigameAtivo = false;
         Debug.Log("Câmera e portas liberadas.");
     }
 
     void OnMouseDown()
     {
-        AbrirMinigameRegar();
+        // Só abre o minigame da planta se ela não estiver bloqueada 
+        // E se nenhumoutro minigame estiver aberto na tela!
+        if (!minigameBloqueado && !CameraPanLateral.minigameAtivo)
+        {
+            AbrirMinigameRegar();
+        }
     }
 }

@@ -16,6 +16,15 @@ TagManager:
   - Image
   - MinigameLouca
   - MinigameRegar
+  - DoomScrolling
+  - SalaDeAula
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - gameManager
   - 
   - 
   - 
@@ -27,16 +36,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - fim
   m_SortingLayers:
   - name: Default
     uniqueID: 0
@@ -55,6 +55,12 @@ TagManager:
     locked: 0
   - name: MinigameRegar
     uniqueID: 435542407
+    locked: 0
+  - name: DoomScrolling
+    uniqueID: 173922321
+    locked: 0
+  - name: SalaDeAula
+    uniqueID: 541717643
     locked: 0
   m_RenderingLayers:
   - Default

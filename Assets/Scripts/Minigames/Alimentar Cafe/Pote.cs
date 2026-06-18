@@ -22,9 +22,25 @@ public class PoteController : MonoBehaviour
     public AudioClip somAcerto;
 
     private bool finalizado = false;
+    private GameManager scriptCasa;
+
+    // O OnEnable roda toda vez que o minigame abre na tela
+    private void OnEnable()
+    {
+        pontos = 0;
+        finalizado = false;
+        RacaoDrop.jogoAtivo = true; // Ativa a queda dos prefabs novamente
+
+        // Reseta o sprite do pote para o primeiro estado (vazio)
+        if (poteUI != null && estadosPote != null && estadosPote.Length > 0)
+        {
+            poteUI.sprite = estadosPote[0];
+        }
+    }
 
     void Start()
     {
+        scriptCasa = Object.FindAnyObjectByType<GameManager>();
         if (rect == null)
             rect = GetComponent<RectTransform>();
     }
@@ -45,10 +61,9 @@ public class PoteController : MonoBehaviour
     {
         if (finalizado) return;
 
-        // TOCAR SOUND EFFECT poteRacao
-        if(audioSource != null && somAcerto != null)
+        if (audioSource != null && somAcerto != null)
         {
-            audioSource.PlayOneShot(somAcerto);
+            AudioManager.instance.TocarSFX(somAcerto);
         }
 
         pontos++;
@@ -56,18 +71,17 @@ public class PoteController : MonoBehaviour
 
         float porcentagem = (float)pontos / pontosMax * 10;
 
-        Debug.Log(porcentagem);
-
-        if(porcentagem <= 3.4)
+        if (porcentagem <= 3.4)
         {
             poteUI.sprite = estadosPote[1];
-        } else if (porcentagem <= 6.7)
+        }
+        else if (porcentagem <= 6.7)
         {
             poteUI.sprite = estadosPote[2];
         }
 
         if (pontos >= pontosMax)
-        {    
+        {
             Vencer();
         }
     }
@@ -79,32 +93,32 @@ public class PoteController : MonoBehaviour
 
         Debug.Log("WIN!");
 
-        // 1. PARA LÓGICA DO JOGO
-        enabled = false;
+        // Paramos o jogo (Não precisamos de enabled = false, o FecharPanel já vai congelar tudo)
         RacaoDrop.jogoAtivo = false;
 
-        // 2. PARA SCOOP
         if (scoop != null)
         {
             scoop.minigameAtivo = false;
             scoop.enabled = false;
         }
 
-        // 3. BLOQUEIA O GATO (Usando a lógica estática que criamos)
-        // Chamamos direto pela Classe Cafe para garantir a persistência entre cenas
+        // Status do gato e horário
         Cafe.AlterarFome(4);
         Cafe.AlterarAtencao(2);
         Cafe.SetLocked(true);
+        scriptCasa.AlterarHorario(0.25f);
+        Robin.AlterarDiversao(1);
+        Robin.AlterarFome(-1);
+        Robin.AlterarProgresso(2);
 
-        // 4. DESATIVA O MINIGAME
-        // Aqui ainda usamos a referência 'cafe' para chegar no painel que está na cena
         if (cafe != null && cafe.minigamePanel != null)
         {
             cafe.minigamePanel.FecharPanel();
+
+            DialogueManager.Instance.StartDialogue("depois_atividade_gato");
         }
         else
         {
-            // Caso a referência 'cafe' falhe, você pode tentar fechar pelo PanelCafeOpener direto se tiver a referência
             Debug.LogWarning("Minigame fechado, mas a referência do script Cafe no PoteController sumiu!");
         }
     }

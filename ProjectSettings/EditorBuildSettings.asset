@@ -9,11 +9,29 @@ EditorBuildSettings:
     path: Assets/Cenas/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
+    path: Assets/Cenas/Menu.unity
+    guid: 9869d24e34c9cac48bdcb17974aff3a6
+  - enabled: 1
+    path: Assets/Cenas/Botstrap.unity
+    guid: d65a0cf384a635f49b28edc620b4e05d
+  - enabled: 1
     path: Assets/Cenas/QuartoRobinTeste.unity
     guid: b9806ac17a2f4c049a0743dcec7aaf5d
   - enabled: 1
     path: Assets/Cenas/SalaRobinTeste.unity
     guid: d16c268f662475748a43698541f39f28
+  - enabled: 1
+    path: Assets/Cenas/Estacao.unity
+    guid: 60f830b8f570b5e419961380f80ec21c
+  - enabled: 1
+    path: Assets/Cenas/Vagao.unity
+    guid: ddcf03962d946c14c85a964c2bd4761e
+  - enabled: 1
+    path: Assets/Cenas/SaladeAula.unity
+    guid: e0f4e20d5afe89c44b9ad1860bb95279
+  - enabled: 1
+    path: Assets/Cenas/FimDoJogo.unity
+    guid: feaf6a567d90bfb43b44bdf8ca5c8d7d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

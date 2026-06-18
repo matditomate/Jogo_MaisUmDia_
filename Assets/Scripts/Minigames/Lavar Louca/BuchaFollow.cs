@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BuxaFollow : MonoBehaviour
+public class BuchaFollow : MonoBehaviour
 {
     void Update()
     {

@@ -15,6 +15,8 @@ public class Baloes : MonoBehaviour
     private float tempo;
 
     public float modificador;
+
+    public bool tipoBalao;
     private Vector2 posicaoInicial;
 
     public TextMeshProUGUI Fala;
@@ -32,7 +34,7 @@ public class Baloes : MonoBehaviour
 
         tempo += Time.deltaTime;
         
-        if (!BalaoSpawner.instance.Pensamento)
+        if (tipoBalao)
         {
             // Anda continuamente
             rect.anchoredPosition += new Vector2(
@@ -58,11 +60,18 @@ public class Baloes : MonoBehaviour
     public void Clicou()
     {
         BalaoManager.pontos++;
-
-        if(Fala.text == "Preste atenção")
+        if(Fala.color == Color.red)
+        {
+           BalaoManager.pontos--; 
+        }
+        else if(Fala.color == Color.green)
         {
             BalaoSpawner.instance.Pensamento = false;
-            CameraMinigame.instance.MoverCamera(2f, 2f);
+            BalaoManager.pontos++;
+        }
+        else
+        {
+            BalaoManager.pontos++;
         }
 
         Destroy(gameObject);

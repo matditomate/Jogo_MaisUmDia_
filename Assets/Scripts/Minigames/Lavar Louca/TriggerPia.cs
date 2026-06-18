@@ -4,14 +4,14 @@ public class TriggerPia : MonoBehaviour
 {
     [SerializeField] private GameObject canvasMinigame;
     public static bool minigameBloqueado = false; // A flag que trava o minigame
-    [SerializeField] private Texture2D cursorInteracao; // Arraste a textura de lavar louça/interação aqui
-    [SerializeField] private CursorCustom cursorMaoPadrao; // Opcional: Arraste o objeto com o CursorCustom aqui
+    [SerializeField] private Texture2D cursorInteracao; // Arrastar a textura de lavar louça/interação nisso
+    [SerializeField] private CursorCustom cursorMaoPadrao; // Opcional: Arrastar o objeto com o CursorCustom nisso
     private Vector2 hotspot = Vector2.zero;
 
     private void OnMouseEnter()
     {
-        // Só muda o cursor se NÃO estiver bloqueado E o minigame NÃO estiver aberto na tela
-        if (!minigameBloqueado && canvasMinigame != null && !canvasMinigame.activeSelf)
+        // Só muda o cursor se não estiver bloqueado e o minigame não estiver aberto na tela
+        if (!minigameBloqueado && !CameraPanLateral.minigameAtivo)
         {
             if (cursorInteracao != null)
             {
@@ -23,7 +23,7 @@ public class TriggerPia : MonoBehaviour
     private void OnMouseExit()
     {
         // Quando o mouse sai, volta para o cursor padrão (se o minigame não tiver aberto)
-        if (canvasMinigame != null && !canvasMinigame.activeSelf)
+        if (!CameraPanLateral.minigameAtivo)
         {
             if (cursorMaoPadrao != null)
             {
@@ -38,10 +38,10 @@ public class TriggerPia : MonoBehaviour
 
     void OnMouseDown()
     {
-        // Só abre se NÃO estiver bloqueado
-        if (!minigameBloqueado)
+        // Só abre se não estiver bloqueado
+        if (!minigameBloqueado && !CameraPanLateral.minigameAtivo)
         {
-            CameraPanLateral.minigameAtivo = true; // CONGELA A CÂMERA E AS PORTAS!
+            CameraPanLateral.minigameAtivo = true; // congela a camera e portas!
 
             // Força o reset do cursor antes de sumir com ele
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
