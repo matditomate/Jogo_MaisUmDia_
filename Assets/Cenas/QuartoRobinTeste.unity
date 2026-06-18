@@ -2154,6 +2154,7 @@ MonoBehaviour:
   canvasMinigame: {fileID: 1689950065}
   cursorMaoPadrao: {fileID: 464253152}
   cafeDeitado: {fileID: 1211812449}
+  somEstudos: {fileID: 8300000, guid: 20c970597134abc4fbe1cc4acca09c77, type: 3}
 --- !u!1 &1318296780 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4692883505731769840, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}

@@ -10,8 +10,8 @@ public class BotaoFechar : MonoBehaviour
 
     [SerializeField] private GameObject cafeDeitado;
 
-    // [Header("Referências")]
-    // [SerializeField] private TriggerLicaoDeCasa scriptLicaoDeCasa;
+    [Header("Sons do Minigame")]
+    public AudioClip somEstudos; 
 
     public void FecharMinigame()
     {
@@ -30,12 +30,17 @@ public class BotaoFechar : MonoBehaviour
         
         Cursor.visible = true;
 
+        if (somEstudos != null && AudioManager.instance != null)
+        {
+            AudioManager.instance.PararLooping();
+        }
+
         // Desativa sem aplicar debuffs ao Robin ou mudar horário
         if (canvasMinigame != null)
         {
             canvasMinigame.SetActive(false);
         }
 
-        Debug.Log("Minigame da Lição de casa bloqueado");
+        Debug.Log("Minigame da Lição de casa fechado");
     }
 }
