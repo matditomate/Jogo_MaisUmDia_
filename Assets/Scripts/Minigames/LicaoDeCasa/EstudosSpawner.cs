@@ -117,6 +117,9 @@ public class EstudosSpawner : MonoBehaviour
         else
         {
             Debug.Log("DERROTA! As distrações preencheram a tela toda!");
+            Robin.AlterarEnergia(-3);
+            Robin.AlterarAnsiedade(2);
+            Robin.AlterarProgresso(-3);
         }
 
         if (scriptTrigger != null)

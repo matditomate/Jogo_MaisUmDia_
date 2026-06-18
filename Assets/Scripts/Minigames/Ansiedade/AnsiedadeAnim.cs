@@ -3,6 +3,8 @@ using UnityEngine;
 public class AnsiedadeAnim : MonoBehaviour
 {
     private Animator anim;
+    [SerializeField] private AudioClip somAnsiedade;
+    private bool emLooping = false;
 
     void Start()
     {
@@ -18,10 +20,28 @@ public class AnsiedadeAnim : MonoBehaviour
     {
         if (Robin.ansiedade == 10)
         {
-            anim.SetBool("emAtaque", true);
-        }else
+            if (!emLooping)
+            {
+                emLooping = true;
+                anim.SetBool("emAtaque", true);
+                if (somAnsiedade != null && emLooping)
+                {
+                    AudioManager.instance.TocarLooping(somAnsiedade);
+                }
+            }
+
+        }
+        else
         {
-            anim.SetBool("emAtaque", false);
+            if (emLooping)
+            {
+                emLooping = false;
+                anim.SetBool("emAtaque", false);
+                if (somAnsiedade != null)
+                {
+                    AudioManager.instance.PararLooping();
+                }
+            }
         }
     }
 }

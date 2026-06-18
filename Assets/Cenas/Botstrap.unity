@@ -496,6 +496,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4469400992075434163, guid: 10b5d2f83b827f349b4f51e727814d90, type: 3}
+      propertyPath: somAnsiedade
+      value: 
+      objectReference: {fileID: 8300000, guid: b02b080d3175c84498e8434fda5d6b84, type: 3}
     - target: {fileID: 8695480993624701201, guid: 10b5d2f83b827f349b4f51e727814d90, type: 3}
       propertyPath: m_Name
       value: EfeitoAnsiedade
