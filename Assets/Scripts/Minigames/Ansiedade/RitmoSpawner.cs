@@ -94,7 +94,7 @@ public class RitmoSpawner : MonoBehaviour
     {
         jogoAtivo = false;
         Debug.Log("PARABÉNS! Você atingiu a pontuação e venceu o jogo de ritmo!");
-        Robin.AlterarAnsiedade(-3);
+        Robin.AlterarAnsiedade(-4);
         Robin.AlterarEnergia(-1);
         
         // Aqui você pode ativar uma tela de vitória, fechar o painel, etc.
