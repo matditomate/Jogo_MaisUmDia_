@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3383564747742263852}
   - component: {fileID: 6007603797841097081}
   - component: {fileID: 1861693202622262870}
+  - component: {fileID: 4339920224283792425}
   m_Layer: 12
   m_Name: Dispersao
   m_TagString: Untagged
@@ -88,5 +89,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dcc1b1101f31764ba17950edabf279e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Estudos
+  sprite33Porcento: {fileID: -5221754234967636939, guid: 67d4eebde34c1f04488dec036e15e515, type: 3}
+  sprite66Porcento: {fileID: 8385887411957514688, guid: 67d4eebde34c1f04488dec036e15e515, type: 3}
+  sprite99Porcento: {fileID: -8319826232234059846, guid: 67d4eebde34c1f04488dec036e15e515, type: 3}
   reducaoPorClique: 0.25
-  escalaMinima: 0.2
+  taxaCrescimento: 0.5
+  escalaMaxima: 2.5
+--- !u!114 &4339920224283792425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4766667667282455262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8630c548cc668f547bea185e3057fccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjetoInterativo
+  acaoAoClicar:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1861693202622262870}
+        m_TargetAssemblyTypeName: Estudos, Assembly-CSharp
+        m_MethodName: ClicouNaBola
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

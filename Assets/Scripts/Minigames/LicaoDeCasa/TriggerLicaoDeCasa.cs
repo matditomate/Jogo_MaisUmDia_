@@ -5,90 +5,73 @@ public class TriggerLicaoDeCasa : MonoBehaviour
     [Header("Configurações de UI")]
     [SerializeField] private GameObject canvasMinigame;
     [SerializeField] private GameObject cafeDeitado;
-    public static bool minigameBloqueado = false; // A flag que trava o minigame
+    public static bool minigameBloqueado = false;
 
     [Header("Cursores")]
-    [SerializeField] private Texture2D cursorInteracao; // Arrastar a textura de lavar louça/interação nisso
-    [SerializeField] private CursorCustom cursorMaoPadrao; // Opcional: Arrastar o objeto com o CursorCustom nisso
+    [SerializeField] private Texture2D cursorInteracao; 
+    [SerializeField] private CursorCustom cursorMaoPadrao; 
     private Vector2 hotspot = Vector2.zero;
+
+    [Header("Sons do Minigame")]
+    public AudioClip somEstudos; 
 
     private void OnMouseEnter()
     {
-        // Só muda o cursor se não estiver bloqueado e o minigame não estiver aberto na tela
-        if (!minigameBloqueado && !CameraPanLateral.minigameAtivo)
-        {
-            if (cursorInteracao != null)
-            {
-                Cursor.SetCursor(cursorInteracao, hotspot, CursorMode.Auto);
-            }
-        }
+        if (!minigameBloqueado && !CameraPanLateral.minigameAtivo && cursorInteracao != null)
+            Cursor.SetCursor(cursorInteracao, hotspot, CursorMode.Auto);
     }
 
     private void OnMouseExit()
     {
-        // Quando o mouse sai, volta para o cursor padrão (se o minigame não tiver aberto)
         if (!CameraPanLateral.minigameAtivo)
         {
-            if (cursorMaoPadrao != null)
-            {
-                cursorMaoPadrao.AtivarCursor();
-            }
-            else
-            {
-                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-            }
+            if (cursorMaoPadrao != null) cursorMaoPadrao.AtivarCursor();
+            else Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         }
     }
 
     void OnMouseDown()
     {
-        // Só abre se não estiver bloqueado
         if (!minigameBloqueado && !CameraPanLateral.minigameAtivo)
         {
             AbrirPanel();
-        }
-        else
-        {
-            Debug.Log("Lição de casa realizada!");
         }
     }
 
     public void AbrirPanel()
     {
-        Debug.Log("[PANEL] Abrindo minigame");
-        CameraPanLateral.minigameAtivo = true; // Congela camera e portas
-
-        // if (cursorMaoPadrao != null)
-        // {
-        //     cursorMaoPadrao.DesativarCursor();
-        // }
-
-        // Libera o cursor do sistema operacional e remove o de interação
+        CameraPanLateral.minigameAtivo = true; 
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         Cursor.visible = true; 
         Cursor.lockState = CursorLockMode.None;
 
-        canvasMinigame.SetActive(true);
-        cafeDeitado.SetActive(false);
-        cursorMaoPadrao.AtivarCursor();
+        if (canvasMinigame != null) canvasMinigame.SetActive(true);
+        if (cafeDeitado != null) cafeDeitado.SetActive(false);
+        if (cursorMaoPadrao != null) cursorMaoPadrao.AtivarCursor();
+
+        // Inicia o som de estudos assim que o painel do minigame abrir
+        if (somEstudos != null)
+        {
+            AudioManager.instance.TocarLooping(somEstudos);
+        }
     }
 
     public void FecharPanel()
     {
-        Debug.Log("[PANEL] Fechando minigame");
-        CameraPanLateral.minigameAtivo = false; // Descongela camera e portas
+        CameraPanLateral.minigameAtivo = false; 
 
-        if (cursorMaoPadrao != null)
-        {
-            cursorMaoPadrao.AtivarCursor();
-        }
-
+        if (cursorMaoPadrao != null) cursorMaoPadrao.AtivarCursor();
+        
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
-        Time.timeScale = 1f;
+        if (canvasMinigame != null) canvasMinigame.SetActive(false);
+        if (cafeDeitado != null) cafeDeitado.SetActive(true);
 
-        canvasMinigame.SetActive(false);
-        cafeDeitado.SetActive(true);
+        // Para o som de estudos
+        if (somEstudos != null && AudioManager.instance != null)
+        {
+            AudioManager.instance.PararLooping();
+        }
     }
 }

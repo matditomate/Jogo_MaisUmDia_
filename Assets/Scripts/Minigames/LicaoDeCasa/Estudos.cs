@@ -3,38 +3,89 @@ using UnityEngine.UI;
 
 public class Estudos : MonoBehaviour
 {
-    [Header("Configurações do Clicker")]
-    [SerializeField] private float reducaoPorClique = 0.25f; // Quanto ela encolhe por clique (ex: 25% menor)
-    [SerializeField] private float escalaMinima = 0.2f;      // Ponto em que ela some
+    [Header("Sprites de Evolução")]
+    [SerializeField] private Sprite sprite33Porcento;
+    [SerializeField] private Sprite sprite66Porcento;
+    [SerializeField] private Sprite sprite99Porcento;
 
+    [Header("Configurações do Clicker")]
+    [SerializeField] private float reducaoPorClique = 0.25f; 
+    [SerializeField] private float taxaCrescimento = 0.3f;   
+    [SerializeField] private float escalaMaxima = 3.0f;      
+
+    private int cliquesTotais = 0;
+    private float tempoSemClique = 0f;
+
+    private Image imagemComponente;
     private RectTransform rect;
 
     void Start()
     {
         rect = GetComponent<RectTransform>();
+        imagemComponente = GetComponent<Image>();
+
+        if (imagemComponente != null)
+        {
+            imagemComponente.sprite = sprite33Porcento;
+            imagemComponente.SetNativeSize();
+            rect.sizeDelta *= 3f; 
+        }
+        
+        rect.localScale = Vector3.one; 
     }
 
-    // Esta função deve ser associada ao botão ou componente de clique na UI da Bola
-    public void ClicouNaBola()
+    void Update()
     {
-        // Reduz a escala nos eixos X e Y uniformemente
-        rect.localScale -= new Vector3(reducaoPorClique, reducaoPorClique, 0f);
+        tempoSemClique += Time.deltaTime;
 
-        // Se a bola encolheu além do limite, ela é concluída e destruída
-        if (rect.localScale.x <= escalaMinima)
+        // Se passar 3 segundos sem clique, começa a inchar
+        if (tempoSemClique >= 3f)
         {
-            SucessoBola();
+            if (rect.localScale.x < escalaMaxima)
+            {
+                Vector3 crescimento = new Vector3(taxaCrescimento, taxaCrescimento, 0f) * Time.deltaTime;
+                rect.localScale += crescimento;
+            }
         }
     }
 
-    private void SucessoBola()
+    public void ClicouNaBola()
     {
-        // Aqui você pode somar pontos ou chamar ações no gerenciador do seu jogo
-        Debug.Log("Bola destruída!");
+        tempoSemClique = 0f;
+        cliquesTotais++;
         
-        // Se quiser tocar o som global do seu AudioManager ao estourar:
-        // if (AudioManager.instance != null) AudioManager.instance.TocarSFX(seuSomClip);
+        // Impede que a escala inverta e fique negativa
+        if (rect.localScale.x > 0.2f) 
+        {
+            rect.localScale -= new Vector3(reducaoPorClique, reducaoPorClique, 0f);
+        }
 
-        Destroy(gameObject);
+        AtualizarFase();
+    }
+
+    void AtualizarFase()
+    {
+        if (cliquesTotais == 4)
+        {
+            AplicarSprite(sprite66Porcento);
+        }
+        else if (cliquesTotais == 7)
+        {
+            AplicarSprite(sprite99Porcento);
+        }
+        else if (cliquesTotais >= 10)
+        {
+            Destroy(gameObject); // Some da tela
+        }
+    }
+
+    void AplicarSprite(Sprite novoSprite)
+    {
+        if (imagemComponente == null || novoSprite == null) return;
+
+        imagemComponente.sprite = novoSprite;
+        imagemComponente.SetNativeSize();
+        rect.sizeDelta *= 3f; 
+        rect.localScale = Vector3.one; // Reseta o tamanho pra próxima fase
     }
 }
