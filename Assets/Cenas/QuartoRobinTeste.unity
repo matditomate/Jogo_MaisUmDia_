@@ -444,6 +444,7 @@ MonoBehaviour:
   cafeDeitado: {fileID: 1211812449}
   cursorInteracao: {fileID: 2800000, guid: f2f35ef164af4f94c967d9fd7f5e6b31, type: 3}
   cursorMaoPadrao: {fileID: 464253152}
+  somEstudos: {fileID: 8300000, guid: 20c970597134abc4fbe1cc4acca09c77, type: 3}
 --- !u!114 &381707622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -550,7 +551,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &464253152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -563,7 +564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94be4e8f42bb5cb45afd01b6196fd85a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  cursorTexture: {fileID: 2800000, guid: 4a1eb209465305e4eaa2c72cc7397f2e, type: 3}
+  cursorTexture: {fileID: 0}
 --- !u!4 &464253153
 Transform:
   m_ObjectHideFlags: 0
@@ -1533,7 +1534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6146302144900783746, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0
+      value: 0.0018518518
       objectReference: {fileID: 0}
     - target: {fileID: 6146302144900783746, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
@@ -1541,7 +1542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6146302144900783746, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 1
+      value: 0.99669456
       objectReference: {fileID: 0}
     - target: {fileID: 8762512019683598850, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: background
@@ -1842,7 +1843,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cafe
   minigamePanel: {fileID: 101898628}
-  cursorInteracao: {fileID: 2800000, guid: 7fcdd20eaaba09a49a30186f7b28a4ce, type: 3}
+  somMiado: {fileID: 8300000, guid: eccf43b82f2f25140a8d9a00e7b37e49, type: 3}
+  fonteMiado: {fileID: 1423398865}
+  cursorInteracao: {fileID: 2800000, guid: 7da80363553a9194e9568d8849a8c3e8, type: 3}
 --- !u!114 &1211812451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2185,7 +2188,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: eccf43b82f2f25140a8d9a00e7b37e49, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2284,7 +2287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   sfxSource: {fileID: 1423398865}
-  loopSource: {fileID: 0}
+  loopSource: {fileID: 1423398865}
   somPortaFechando: {fileID: 8300000, guid: e302610fd710b394c9a6cf223218512f, type: 3}
 --- !u!4 &1423398867
 Transform:
@@ -2731,7 +2734,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EstudosSpawner
   prefabBola: {fileID: 4766667667282455262, guid: 963bec5e70ee297468d74121cd4a2419, type: 3}
   painelArea: {fileID: 1689950066}
-  intervaloSpawn: 1
+  intervaloSpawn: 3
+  limiteBolasDerrota: 8
+  tempoParaVencer: 10
+  scriptTrigger: {fileID: 381707621}
+  robin: {fileID: 0}
 --- !u!1 &1764561967
 GameObject:
   m_ObjectHideFlags: 0

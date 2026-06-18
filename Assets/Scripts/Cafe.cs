@@ -4,6 +4,10 @@ public class Cafe : MonoBehaviour
 {
     public PanelCafeOpener minigamePanel;
 
+    [Header("Sons do Minigame")]
+    public AudioClip somMiado;
+    [SerializeField] private AudioSource fonteMiado;
+
     [SerializeField] private Texture2D cursorInteracao; // Arrastar a textura do mouse de carinho/interação aqui
     private Vector2 hotspot = Vector2.zero;
 
@@ -12,6 +16,19 @@ public class Cafe : MonoBehaviour
     public static int atencao = 5;   // 0 a 10
     public static bool locked = false; // Trava total de interação
 
+    
+
+    void Update()
+    {
+        // Fazer gato Miar aleatoriamente
+        int numero1 = Random.Range(1, 10001);
+        int numero2 = Random.Range(1, 10001);
+
+        if (numero1 == numero2)
+        {
+            fonteMiado.Play();
+        }
+    }
 
     private void OnMouseEnter()
     {
@@ -49,6 +66,7 @@ public class Cafe : MonoBehaviour
         if (locked)
         {
             Debug.Log("Café está ignorando você completamente.");
+            fonteMiado.Play();
             return;
         }
 
