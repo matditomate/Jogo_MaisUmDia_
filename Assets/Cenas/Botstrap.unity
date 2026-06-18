@@ -460,11 +460,23 @@ MonoBehaviour:
   painelArea: {fileID: 1794228272}
   tempoEntreBolas: 2
   pontosParaVencer: 30
+  animacaoAnsiedade: {fileID: 1794228273}
 --- !u!224 &1794228272 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4584242727836094101, guid: 10b5d2f83b827f349b4f51e727814d90, type: 3}
   m_PrefabInstance: {fileID: 1866946109}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1794228273 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4469400992075434163, guid: 10b5d2f83b827f349b4f51e727814d90, type: 3}
+  m_PrefabInstance: {fileID: 1866946109}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdfb3e1d9766dd54191fa3f9cbba4704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnsiedadeAnim
 --- !u!1 &1804958701
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,10 +572,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4469400992075434163, guid: 10b5d2f83b827f349b4f51e727814d90, type: 3}
-      propertyPath: somAnsiedade
-      value: 
-      objectReference: {fileID: 8300000, guid: b02b080d3175c84498e8434fda5d6b84, type: 3}
-    - target: {fileID: 4469400992075434163, guid: 10b5d2f83b827f349b4f51e727814d90, type: 3}
       propertyPath: celular
       value: 
       objectReference: {fileID: 635540515}
@@ -571,6 +579,10 @@ PrefabInstance:
       propertyPath: minigame
       value: 
       objectReference: {fileID: 1501448268}
+    - target: {fileID: 4469400992075434163, guid: 10b5d2f83b827f349b4f51e727814d90, type: 3}
+      propertyPath: somAnsiedade
+      value: 
+      objectReference: {fileID: 8300000, guid: b02b080d3175c84498e8434fda5d6b84, type: 3}
     - target: {fileID: 8695480993624701201, guid: 10b5d2f83b827f349b4f51e727814d90, type: 3}
       propertyPath: m_Name
       value: EfeitoAnsiedade
