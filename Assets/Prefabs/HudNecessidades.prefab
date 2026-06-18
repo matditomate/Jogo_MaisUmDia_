@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4908358729186273780}
   - component: {fileID: 2502933729885573115}
   - component: {fileID: 8207886268477872274}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: HigieneTexto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 3854421970608431693}
   - component: {fileID: 4139613722743434951}
   - component: {fileID: 5986137937989556568}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: FomeCafeTexto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 6608763192771632648}
   - component: {fileID: 3157821868779642300}
   - component: {fileID: 2566534359686645507}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: AfetoCafeTexto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,7 +422,7 @@ GameObject:
   - component: {fileID: 668093190135043081}
   - component: {fileID: 2137445862677694760}
   - component: {fileID: 6787339558039721358}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: EnergiaIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,7 +497,7 @@ GameObject:
   - component: {fileID: 561141026117211642}
   - component: {fileID: 1869117108183716060}
   - component: {fileID: 1689349348718240729}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: AfetoCafeBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -572,7 +572,7 @@ GameObject:
   - component: {fileID: 9113237827863808553}
   - component: {fileID: 6921185503720753082}
   - component: {fileID: 1645211437239050020}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: FomeCafeBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -647,7 +647,7 @@ GameObject:
   - component: {fileID: 5859462487726798521}
   - component: {fileID: 4713326477912602234}
   - component: {fileID: 5483848806242969387}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: DiversaoTexto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -784,7 +784,7 @@ GameObject:
   - component: {fileID: 781752628981166566}
   - component: {fileID: 6226244751212486402}
   - component: {fileID: 4039386263791118273}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: AguaPlantaBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -859,7 +859,7 @@ GameObject:
   - component: {fileID: 5120639726201470653}
   - component: {fileID: 5891310707959571189}
   - component: {fileID: 6872869996064162719}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: FomeBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -934,7 +934,7 @@ GameObject:
   - component: {fileID: 9147523563147501232}
   - component: {fileID: 8108465495680225763}
   - component: {fileID: 995750809526536321}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: HigieneBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1010,7 +1010,7 @@ GameObject:
   - component: {fileID: 7348560810565365113}
   - component: {fileID: 8821292962657085296}
   - component: {fileID: 4933509212509765752}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: HigieneProgress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1100,7 +1100,7 @@ GameObject:
   - component: {fileID: 4744150546149825300}
   - component: {fileID: 6248009215875369523}
   - component: {fileID: 4351488902912381049}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: EnergiaTexto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1238,7 +1238,7 @@ GameObject:
   - component: {fileID: 3194701921399526878}
   - component: {fileID: 1537649243652694756}
   - component: {fileID: 7605914224522646838}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: AguaPlantasProgress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1329,7 +1329,7 @@ GameObject:
   - component: {fileID: 2523668061396478165}
   - component: {fileID: 7627159708192437677}
   - component: {fileID: 5255850267197781266}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: FomeCafeProgress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1419,7 +1419,7 @@ GameObject:
   - component: {fileID: 8971538944152196301}
   - component: {fileID: 8326370029463883499}
   - component: {fileID: 3758783591259421622}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: HigieneIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1496,7 +1496,7 @@ GameObject:
   - component: {fileID: 3191983574885696654}
   - component: {fileID: 4424085967761392104}
   - component: {fileID: 4149405481075048452}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: CafeTitulo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1633,7 +1633,7 @@ GameObject:
   - component: {fileID: 5958409756916539874}
   - component: {fileID: 6296910312209295547}
   - component: {fileID: 6011318417374065086}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: "Divers\xE3oBar"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1706,7 +1706,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1608313540640395300}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: HudNecessidades
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1744,7 +1744,7 @@ GameObject:
   - component: {fileID: 4765846079216862997}
   - component: {fileID: 8266589234277451844}
   - component: {fileID: 7111163593211793075}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: AnsiedadeIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1808,6 +1808,143 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &3169396121554353226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7099711720029973233}
+  - component: {fileID: 8986936550355336668}
+  - component: {fileID: 2687156423489880893}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7099711720029973233
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3169396121554353226}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4626891850329046341}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &8986936550355336668
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3169396121554353226}
+  m_CullTransparentMesh: 1
+--- !u!114 &2687156423489880893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3169396121554353226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: TriggerScrolling
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &3245333462115973979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1819,7 +1956,7 @@ GameObject:
   - component: {fileID: 4775686934856461260}
   - component: {fileID: 1049935220623309487}
   - component: {fileID: 4751861113302964984}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: AguaPlantasIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1894,7 +2031,7 @@ GameObject:
   - component: {fileID: 585383694869874140}
   - component: {fileID: 2682194128398771649}
   - component: {fileID: 2605378458163126299}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: FomeCafeIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1969,7 +2106,7 @@ GameObject:
   - component: {fileID: 8628509556686126698}
   - component: {fileID: 6382792676214379767}
   - component: {fileID: 2303876594729487285}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: FomeIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2044,7 +2181,7 @@ GameObject:
   - component: {fileID: 4798595287502304069}
   - component: {fileID: 4002676084433265375}
   - component: {fileID: 1244576458828049607}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: EnergiaBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2117,7 +2254,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6052934220218006718}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HudNecessidades
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2134,7 +2271,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9153333, y: 0.9153333, z: 0.9153333}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1608313540640395300}
@@ -2152,7 +2289,7 @@ GameObject:
   - component: {fileID: 4113043950617474039}
   - component: {fileID: 6209112193067238328}
   - component: {fileID: 2428392253626513341}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: EnergiaProgress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2240,7 +2377,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7947349555130975702}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Diversao
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2275,7 +2412,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4830455582799809906}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: Ansiedade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2317,7 +2454,7 @@ GameObject:
   - component: {fileID: 4182481336987266143}
   - component: {fileID: 7624677818009263503}
   - component: {fileID: 7079319406865664832}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: AnsiedadeProgress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2407,7 +2544,7 @@ GameObject:
   - component: {fileID: 8459114579848230445}
   - component: {fileID: 7058447844567805226}
   - component: {fileID: 746755327939023483}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: AnsiedadeBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2480,7 +2617,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3894678187930734104}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Higiene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2517,7 +2654,7 @@ GameObject:
   - component: {fileID: 6852281829188910269}
   - component: {fileID: 2261196903401500563}
   - component: {fileID: 7810151923947781166}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: AguaPlantasTexto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2652,7 +2789,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2197826626823526484}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: Fome
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2693,7 +2830,7 @@ GameObject:
   - component: {fileID: 8503574502282526304}
   - component: {fileID: 795395196752777261}
   - component: {fileID: 9114508747221901755}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: Fundo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2723,6 +2860,7 @@ RectTransform:
   - {fileID: 3682699091696182799}
   - {fileID: 8803426775247980087}
   - {fileID: 8204635123740140768}
+  - {fileID: 4626891850329046341}
   m_Father: {fileID: 1608313540640395300}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2752,7 +2890,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2777,7 +2915,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5280474034929539169}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: Energia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2819,7 +2957,7 @@ GameObject:
   - component: {fileID: 3281606973043632120}
   - component: {fileID: 2977100597620593528}
   - component: {fileID: 2001580526510935096}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: DiversaoProgress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2909,7 +3047,7 @@ GameObject:
   - component: {fileID: 334873483242238478}
   - component: {fileID: 6171717551890508714}
   - component: {fileID: 2872125826344192079}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: AnsiedadeTexto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3044,7 +3182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8204635123740140768}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: AguaPlantas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3081,7 +3219,7 @@ GameObject:
   - component: {fileID: 7343121258252171979}
   - component: {fileID: 1310429395106759610}
   - component: {fileID: 2545507448688420874}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: FomeTexto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3219,7 +3357,7 @@ GameObject:
   - component: {fileID: 605931950304321646}
   - component: {fileID: 6899887723063307036}
   - component: {fileID: 2643089059237924330}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: FomeProgress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3309,7 +3447,7 @@ GameObject:
   - component: {fileID: 8665216313680271350}
   - component: {fileID: 4027549175720311351}
   - component: {fileID: 2182684733958171307}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: HigieneIcon2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3384,7 +3522,7 @@ GameObject:
   - component: {fileID: 3152472939443190204}
   - component: {fileID: 3630237240865566930}
   - component: {fileID: 4462508771115617549}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: PlantasTitulo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3521,7 +3659,7 @@ GameObject:
   - component: {fileID: 8601094459682853133}
   - component: {fileID: 767865295745314082}
   - component: {fileID: 1347419562164680657}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: DiversaoIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3597,7 +3735,7 @@ GameObject:
   - component: {fileID: 2986092026775988721}
   - component: {fileID: 3796366859912415077}
   - component: {fileID: 6250192269829090990}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: AfetoCafeProgress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3685,7 +3823,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8803426775247980087}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: AfetoCafe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3722,7 +3860,7 @@ GameObject:
   - component: {fileID: 2640387832844075825}
   - component: {fileID: 1852830720591773863}
   - component: {fileID: 4700706167682070151}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: AfetoCafeIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3786,6 +3924,187 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &7473931774108204192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4626891850329046341}
+  - component: {fileID: 248558114888204027}
+  - component: {fileID: 3393816806887570388}
+  - component: {fileID: 888033978518641957}
+  m_Layer: 5
+  m_Name: BotaoAbrirCelular
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &4626891850329046341
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473931774108204192}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.98029613, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7099711720029973233}
+  m_Father: {fileID: 8503574502282526304}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -83.6, y: 60.8}
+  m_SizeDelta: {x: 160, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &248558114888204027
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473931774108204192}
+  m_CullTransparentMesh: 1
+--- !u!114 &3393816806887570388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473931774108204192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &888033978518641957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473931774108204192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 3393816806887570388}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CameraPanLateral, Assembly-CSharp
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.BoxCollider2D, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.BoxCollider2D, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8172666565996975048
 GameObject:
   m_ObjectHideFlags: 0
@@ -3797,7 +4116,7 @@ GameObject:
   - component: {fileID: 8860820660226970733}
   - component: {fileID: 3972649662427726510}
   - component: {fileID: 3426604763379032384}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: RobinTitulo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3934,7 +4253,7 @@ GameObject:
   - component: {fileID: 8168898946703335385}
   - component: {fileID: 624225438105042294}
   - component: {fileID: 1536740963442848487}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: HigieneIcon1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4007,7 +4326,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3682699091696182799}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: FomeCafe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
