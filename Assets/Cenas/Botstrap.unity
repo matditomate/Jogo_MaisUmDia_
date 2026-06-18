@@ -142,18 +142,6 @@ PrefabInstance:
       value: HudNecessidades
       objectReference: {fileID: 0}
     - target: {fileID: 6052934220218006718, guid: f9e33cab864c65540b92e8cc8cb6f8d6, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6052934220218006718, guid: f9e33cab864c65540b92e8cc8cb6f8d6, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6052934220218006718, guid: f9e33cab864c65540b92e8cc8cb6f8d6, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6052934220218006718, guid: f9e33cab864c65540b92e8cc8cb6f8d6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -308,7 +296,7 @@ CanvasGroup:
   m_GameObject: {fileID: 1144181627}
   m_Enabled: 1
   m_Alpha: 1
-  m_Interactable: 1
+  m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!114 &1144181629
@@ -414,23 +402,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6052934220218006718, guid: f9e33cab864c65540b92e8cc8cb6f8d6, type: 3}
   m_PrefabInstance: {fileID: 30598813}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1741706300 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6654540434961204249, guid: 10b5d2f83b827f349b4f51e727814d90, type: 3}
-  m_PrefabInstance: {fileID: 1866946109}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1741706305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1741706300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdfb3e1d9766dd54191fa3f9cbba4704, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AnsiedadeAnim
 --- !u!1 &1804958701
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,10 +456,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1144181632}
     m_Modifications:
-    - target: {fileID: 2870279525697046604, guid: 10b5d2f83b827f349b4f51e727814d90, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3459830032577334771, guid: 10b5d2f83b827f349b4f51e727814d90, type: 3}
       propertyPath: m_LocalPosition.x
       value: -21.751604
@@ -536,10 +503,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6654540434961204249, guid: 10b5d2f83b827f349b4f51e727814d90, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1741706305}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10b5d2f83b827f349b4f51e727814d90, type: 3}
 --- !u!1 &1987050277
 GameObject:
@@ -647,10 +611,6 @@ PrefabInstance:
       propertyPath: background
       value: 
       objectReference: {fileID: 572597939}
-    - target: {fileID: 8510945029644981392, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -5231113848647204316, guid: c33899b3f6b7a194d8d5347df2a3ddee, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -664,6 +624,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1140459475244380194, guid: 31627f3130451b04ea91c4fd295b1d27, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 1140459475244380194, guid: 31627f3130451b04ea91c4fd295b1d27, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4949724238870987050, guid: 31627f3130451b04ea91c4fd295b1d27, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4949724238870987050, guid: 31627f3130451b04ea91c4fd295b1d27, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 6695841637278852625, guid: 31627f3130451b04ea91c4fd295b1d27, type: 3}
       propertyPath: m_Name
       value: DialogueManager
@@ -748,6 +724,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7343295015005675876, guid: 31627f3130451b04ea91c4fd295b1d27, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 7343295015005675876, guid: 31627f3130451b04ea91c4fd295b1d27, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 8141347624133994142, guid: 31627f3130451b04ea91c4fd295b1d27, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 8141347624133994142, guid: 31627f3130451b04ea91c4fd295b1d27, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 8562829860025582267, guid: 31627f3130451b04ea91c4fd295b1d27, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 8562829860025582267, guid: 31627f3130451b04ea91c4fd295b1d27, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

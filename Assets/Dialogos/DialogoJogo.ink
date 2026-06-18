@@ -178,4 +178,9 @@ Robin, tem muitas coisas pra se gostar em você... #panel:dialogue #speaker:Sole
 Você sempre fala isso... meus pais também... não quer dizer que eu concordo... #panel:dialogue #speaker:RobinNormal
 
 -> END
+
+=== chegando_casa ====
+Oi Café, cheguei, sentiu minha falta, porque senti sua! #panel:dialogue #speaker:RobinFeliz
+
+-> END
 ```

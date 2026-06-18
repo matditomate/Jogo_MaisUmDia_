@@ -6,12 +6,16 @@ public class DialogueMetro : MonoBehaviour
     [Header("Cenas")]
     [SerializeField] private string cenaVagao;
     [SerializeField] private string cenaSalaDeAula = "SaladeAula";
+    [SerializeField] private string cenaSaladoRobin = "SalaRobinTeste";
 
     [Header("Diálogos Ink")]
     [SerializeField] private string dialogoAntesDoVagao = "estacao_metro";
     [SerializeField] private string dialogoDepoisDoMinigame = "depois_minigame_ansiedade";
+    [SerializeField] private string dialogoDepoisDaAula = "depois_aula";
 
     private static bool voltouDoVagao = false;
+
+    private static bool voltouDaAula = false;
 
     private bool jaTrocouCena = false;
     private string cenaDestino;
@@ -31,6 +35,16 @@ public class DialogueMetro : MonoBehaviour
             cenaDestino = cenaSalaDeAula;
 
             DialogueManager.Instance.StartDialogue(dialogoDepoisDoMinigame, AoTerminarDialogo);
+        }
+        else if (voltouDaAula)
+        {
+            voltouDaAula = false;
+
+            cenaDestino = cenaSaladoRobin;
+
+            DialogoChegouCasa.MarcarVoltaCasa();
+
+            DialogueManager.Instance.StartDialogue(dialogoDepoisDaAula, AoTerminarDialogo);
         }
         else
         {
@@ -59,5 +73,10 @@ public class DialogueMetro : MonoBehaviour
     public static void MarcarVoltaDoVagao()
     {
         voltouDoVagao = true;
+    }
+
+    public static void MarcarVoltaDaAula()
+    {
+        voltouDaAula = true;
     }
 }
