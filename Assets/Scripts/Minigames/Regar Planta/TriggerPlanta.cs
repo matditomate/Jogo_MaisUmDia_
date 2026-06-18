@@ -3,6 +3,8 @@ using UnityEngine;
 public class TriggerPlanta : MonoBehaviour
 {
     [SerializeField] private GameObject canvasMinigame;
+    [SerializeField] private GameObject fundoSala;
+    [SerializeField] private GameObject fundoSacada;
     
     public static bool minigameBloqueado = false;
     
@@ -44,6 +46,8 @@ public class TriggerPlanta : MonoBehaviour
         if (!minigameBloqueado)
         {
             canvasMinigame.SetActive(true);
+            fundoSacada.SetActive(false);
+            fundoSala.SetActive(false);
             Cursor.visible = false;
             
             // congela camera e portas, variavel que criei na camera
@@ -55,6 +59,8 @@ public class TriggerPlanta : MonoBehaviour
     public void FecharMinigameRegar()
     {
         canvasMinigame.SetActive(false);
+        fundoSacada.SetActive(true);
+        fundoSala.SetActive(true);
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
 
         Cursor.visible = true;

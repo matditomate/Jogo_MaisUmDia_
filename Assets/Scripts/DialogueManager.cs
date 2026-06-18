@@ -9,6 +9,8 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
 
+    public event Action<string> OnDialogueFinished;
+
     private enum PanelType
     {
         Dialogue,
@@ -528,6 +530,8 @@ public class DialogueManager : MonoBehaviour
         onDialogueFinished = null;
 
         callback?.Invoke(resultado);
+
+        OnDialogueFinished?.Invoke(resultado);
 
         EsconderCanvasDialogo();
     }

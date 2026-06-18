@@ -125,9 +125,13 @@ Sim, vamos lá... #panel:dialogue #speaker:RobinNormal
 Ei, vai ficar tudo bem, Robin. Eu tô aqui com você. #panel:dialogue #speaker:SoleilNormal
 Eu sei, Sol... você é a melhor amiga de todas. #panel:dialogue #speaker:RobinNormal
 
+-> END
+
 // Robin e Soleil entram no vagão do metrô.
 // O vagão está cheio e barulhento.
 // Robin começa a ter um ataque de pânico.
+
+=== estacao_vagao ===
 
 Robin, tá tudo bem... só respira comigo, tá bom...? #panel:dialogue #speaker:SoleilNormal
 

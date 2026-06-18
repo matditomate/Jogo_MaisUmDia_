@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8d10d8c4fd6e1ec44b14fd9f9cd82549
+guid: 9683347ee5cf67f4c8e498dfbc0be045
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3009882158199659844
-    second: SoleilFeliz_0
+      213: -1910838104378665609
+    second: VarandaTemp_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SoleilFeliz_0
+      name: VarandaTemp_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 134
-        height: 148
+        width: 874
+        height: 418
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cb229b8cf10ca36d0800000000000000
-      internalID: -3009882158199659844
+      spriteID: 7759a3d3ed65b75e0800000000000000
+      internalID: -1910838104378665609
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SoleilFeliz_0: -3009882158199659844
+      VarandaTemp_0: -1910838104378665609
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
