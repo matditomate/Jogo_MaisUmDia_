@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
 
     public static event Action OnHorarioMudou;
 
+    public GameObject canvasAnsiedade;
+
     void Awake()
     {
         // Garante que só exista um GameManager no jogo
@@ -34,6 +36,7 @@ public class GameManager : MonoBehaviour
         }
 
         AlterarHoraio(0);
+        AtivarEfeitoAnsiedade();
     }
 
     public void AlterarSujeira(int valor)
@@ -84,6 +87,18 @@ public class GameManager : MonoBehaviour
             DialogueManager.Instance.StartDialogue("rota_2_atrasado");
             
             return;
+        }
+    }
+
+    public void AtivarEfeitoAnsiedade()
+    {
+        bool deveAtivar = Robin.ansiedade >= 7;
+
+        // AnsiedadeManager.ansiedadeAlta = deveAtivar;
+
+        if (canvasAnsiedade != null)
+        {
+            canvasAnsiedade.SetActive(deveAtivar);
         }
     }
 }
