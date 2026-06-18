@@ -103,8 +103,8 @@ public class BalaoSpawnerPensamentos : MonoBehaviour
 
             RectTransform rect = balao.GetComponent<RectTransform>();
             rect.anchoredPosition = new Vector2(
-                Random.Range(-500, 400),
-                Random.Range(-210, 210)
+                Random.Range(-400, 350),
+                Random.Range(-200, 190)
             );
 
             script.Fala.text = item.Key;

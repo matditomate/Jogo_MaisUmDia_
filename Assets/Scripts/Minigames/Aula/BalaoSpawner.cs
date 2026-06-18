@@ -237,7 +237,6 @@ public class BalaoSpawner : MonoBehaviour
             {
                 indiceBlaBla = 0;
                 this.enabled =false;
-                CameraMinigame.instance?.MoverCamera(0f, -2.5f);
             }
         }
         else
@@ -281,7 +280,7 @@ public class BalaoSpawner : MonoBehaviour
         Baloes script = balao.GetComponent<Baloes>();
 
         RectTransform rect = balao.GetComponent<RectTransform>();
-        rect.anchoredPosition = new Vector2(273f, 252f);
+        rect.anchoredPosition = new Vector2(300f, 68f);
 
         float valor = Random.Range(-1f, 1f);
 
