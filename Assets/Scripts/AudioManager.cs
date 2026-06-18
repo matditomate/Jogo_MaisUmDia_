@@ -7,6 +7,8 @@ public class AudioManager : MonoBehaviour
 
     [Header("Componentes de Áudio")]
     [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private AudioSource AlarmeAwakeCafe;
+
     [SerializeField] private AudioSource loopSource;
 
     [Header("Sons Globais de Transição")]
