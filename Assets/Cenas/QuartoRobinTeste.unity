@@ -406,7 +406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TriggerLicaoDeCasa
   canvasMinigame: {fileID: 1689950065}
   cafeDeitado: {fileID: 1211812449}
-  cursorInteracao: {fileID: 2800000, guid: f2f35ef164af4f94c967d9fd7f5e6b31, type: 3}
+  cursorInteracao: {fileID: 2800000, guid: 7da80363553a9194e9568d8849a8c3e8, type: 3}
   cursorMaoPadrao: {fileID: 464253152}
   somEstudos: {fileID: 8300000, guid: 20c970597134abc4fbe1cc4acca09c77, type: 3}
 --- !u!114 &381707622
@@ -1397,7 +1397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6146302144900783746, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.0018518518
+      value: 0.0015822785
       objectReference: {fileID: 0}
     - target: {fileID: 6146302144900783746, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
@@ -1405,7 +1405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6146302144900783746, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.99669456
+      value: 0.9962018
       objectReference: {fileID: 0}
     - target: {fileID: 8762512019683598850, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: background
