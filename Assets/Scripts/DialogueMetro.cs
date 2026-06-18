@@ -50,6 +50,8 @@ public class DialogueMetro : MonoBehaviour
         {
             cenaDestino = cenaVagao;
 
+            GameManager.SetHorario(8.5f);
+
             DialogueManager.Instance.StartDialogue(dialogoAntesDoVagao, AoTerminarDialogo);
         }
     }

@@ -1,5 +1,7 @@
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,6 +23,10 @@ public class GameManager : MonoBehaviour
 
     public GameObject canvasAnsiedade;
 
+    private string cenaDestinoG;
+
+    private bool primeiroDialogoJaChamado = false;
+
     void Awake()
     {
         // Garante que só exista um GameManager no jogo
@@ -34,6 +40,12 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+    }
+
+    private IEnumerator Start()
+    {
+        // Espera 1 frame para garantir que o DialogueManager já exista
+        yield return null;
 
         AlterarHorario(0);
         AtivarEfeitoAnsiedade();
@@ -64,15 +76,25 @@ public class GameManager : MonoBehaviour
     public void AlterarHorario(float valor)
     {
         horario += valor;
-        if (horario > 23.98f)
+
+        if (horario >= 24.0f)
         {
-            horario -= 23.98f;
+            horario -= 24.0f;
             dia += 1;
         }
 
-        if (horario == 6.0f && dia == 1)
+        if (!primeiroDialogoJaChamado && Mathf.Approximately(horario, 6.0f) && dia == 1)
         {
-            DialogueManager.Instance.StartDialogue("primeiro_dia", ReceberResultado);
+            primeiroDialogoJaChamado = true;
+
+            if (DialogueManager.Instance != null)
+            {
+                DialogueManager.Instance.StartDialogue("primeiro_dia", ReceberResultado);
+            }
+            else
+            {
+                Debug.LogError("DialogueManager.Instance está NULL. Verifique se existe um DialogueManager na cena Bootstrap.");
+            }
         }
 
         if (OnHorarioMudou != null)
@@ -83,7 +105,7 @@ public class GameManager : MonoBehaviour
 
     private void ReceberResultado(string resultado)
     {
-        Debug.Log("Resultado recebido do Ink: " + resultado);
+        Debug.Log("Resultado recebido do Ink: [" + resultado + "]");
 
         if (resultado == "despertador_levantar")
         {
@@ -93,22 +115,28 @@ public class GameManager : MonoBehaviour
 
         if (resultado == "despertador_snooze")
         {
-            AlterarHorario(2);
-            DialogueManager.Instance.StartDialogue("rota_2_atrasado");
+            SetHorario(8);
+            cenaDestinoG = "Estacao";
+            DialogueManager.Instance.StartDialogue("rota_2_atrasado", TerminouDialogo);
             
             return;
         }
+
+        Debug.LogWarning("Resultado não reconhecido: [" + resultado + "]");
     }
 
     public void AtivarEfeitoAnsiedade()
     {
         bool deveAtivar = Robin.ansiedade >= 7;
 
-        // AnsiedadeManager.ansiedadeAlta = deveAtivar;
-
         if (canvasAnsiedade != null)
         {
             canvasAnsiedade.SetActive(deveAtivar);
         }
+    }
+
+    private void TerminouDialogo(string resultado)
+    {
+        SceneManager.LoadScene(cenaDestinoG);
     }
 }
