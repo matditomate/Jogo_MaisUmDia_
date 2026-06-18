@@ -45,6 +45,15 @@ public class Robin : MonoBehaviour
         ansiedade = Mathf.Clamp(ansiedade + valor, 0, 10);
         Debug.Log($"Ansiedade de Robin: {ansiedade}");
         GameManager.instance.AtivarEfeitoAnsiedade();
+        if(ansiedade == 10)
+        {
+            AnsiedadeAnim componentesAnsiedade = FindFirstObjectByType<AnsiedadeAnim>();
+            if (componentesAnsiedade != null)
+            {
+                componentesAnsiedade.AtualizarEstadoAnsiedade();
+            }
+        }
+        
     }
 
     public static void AlterarProgresso(int valor)

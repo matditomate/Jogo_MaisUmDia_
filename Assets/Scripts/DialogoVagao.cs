@@ -36,6 +36,7 @@ public class DialogueVagao : MonoBehaviour
         if(!jaTeveMinigame)
         {
             Robin.AlterarAnsiedade(10);
+            
             jaTeveMinigame = true;
         }
 
