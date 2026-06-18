@@ -207,6 +207,7 @@ public class BalaoSpawner : MonoBehaviour
 
     void Awake()
     {
+        GameManager.SetHorario(9.0f);
         instance = this;
         Pensamento = false;
         StartCoroutine(CooldownMinigame(10));
@@ -259,6 +260,7 @@ public class BalaoSpawner : MonoBehaviour
                 aulaTerminou = true;
                 Debug.Log("Fim da aula");
                 DialogueMetro.MarcarVoltaDaAula();
+                GameManager.SetHorario(15.0f);
                 SceneManager.LoadScene(cenaEstacao);
             }
         }

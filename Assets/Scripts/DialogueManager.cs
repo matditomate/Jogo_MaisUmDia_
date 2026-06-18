@@ -529,11 +529,13 @@ public class DialogueManager : MonoBehaviour
         Action<string> callback = onDialogueFinished;
         onDialogueFinished = null;
 
+        // Esconde o diálogo antigo ANTES de chamar o callback.
+        // Assim, se o callback iniciar outro diálogo, ele não será escondido depois.
+        EsconderCanvasDialogo();
+
         callback?.Invoke(resultado);
 
         OnDialogueFinished?.Invoke(resultado);
-
-        EsconderCanvasDialogo();
     }
 
     public bool IsDialogueActive()
