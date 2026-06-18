@@ -67,7 +67,6 @@ public class Baloes : MonoBehaviour
         else if(Fala.color == Color.green)
         {
             BalaoSpawner.instance.Pensamento = false;
-            CameraMinigame.instance.MoverCamera(2f, 2f);
             BalaoManager.pontos++;
         }
         else
