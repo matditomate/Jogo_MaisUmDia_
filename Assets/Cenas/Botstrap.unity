@@ -266,6 +266,11 @@ RectTransform:
   m_AnchoredPosition: {x: -0.00012207031, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &635540515 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4692883505731769840, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
+  m_PrefabInstance: {fileID: 2144216660}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1144181627
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,8 +458,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RitmoSpawner
   prefabBolaRitmo: {fileID: 4766667667282455262, guid: 1d33337244519d746a4c20e5d03b30c6, type: 3}
   painelArea: {fileID: 1794228272}
-  tempoEntreBolas: 1
-  pontosParaVencer: 150
+  tempoEntreBolas: 2
+  pontosParaVencer: 30
 --- !u!224 &1794228272 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4584242727836094101, guid: 10b5d2f83b827f349b4f51e727814d90, type: 3}
@@ -555,6 +560,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4469400992075434163, guid: 10b5d2f83b827f349b4f51e727814d90, type: 3}
+      propertyPath: celular
+      value: 
+      objectReference: {fileID: 635540515}
+    - target: {fileID: 4469400992075434163, guid: 10b5d2f83b827f349b4f51e727814d90, type: 3}
       propertyPath: minigame
       value: 
       objectReference: {fileID: 1501448268}
@@ -621,10 +630,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1144181632}
     m_Modifications:
-    - target: {fileID: 14642966792630604, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 83bd9e00d7016f14aaa87e0db3446e5b, type: 2}
     - target: {fileID: 359023756197612215, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -669,58 +674,14 @@ PrefabInstance:
       propertyPath: background
       value: 
       objectReference: {fileID: 572597939}
-    - target: {fileID: 1243317831751797072, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: e7b68c4657206f147adfeb3e353763f2, type: 2}
-    - target: {fileID: 1761114400634679982, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: e7b68c4657206f147adfeb3e353763f2, type: 2}
-    - target: {fileID: 2283099765213601229, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: e7b68c4657206f147adfeb3e353763f2, type: 2}
-    - target: {fileID: 2708914650074790085, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 83bd9e00d7016f14aaa87e0db3446e5b, type: 2}
-    - target: {fileID: 2925107622874411836, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: e7b68c4657206f147adfeb3e353763f2, type: 2}
-    - target: {fileID: 3724398223251444542, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: e7b68c4657206f147adfeb3e353763f2, type: 2}
-    - target: {fileID: 4212333613092079370, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: e7b68c4657206f147adfeb3e353763f2, type: 2}
     - target: {fileID: 4692883505731769840, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
       propertyPath: m_Name
       value: HudCelular
       objectReference: {fileID: 0}
-    - target: {fileID: 5473210521648330233, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 83bd9e00d7016f14aaa87e0db3446e5b, type: 2}
-    - target: {fileID: 5538407306855186395, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 83bd9e00d7016f14aaa87e0db3446e5b, type: 2}
-    - target: {fileID: 6197886378409197605, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 83bd9e00d7016f14aaa87e0db3446e5b, type: 2}
     - target: {fileID: 6735167062512739556, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
       propertyPath: background
       value: 
       objectReference: {fileID: 572597939}
-    - target: {fileID: 8461946801268805093, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 83bd9e00d7016f14aaa87e0db3446e5b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
