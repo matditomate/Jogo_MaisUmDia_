@@ -18,6 +18,8 @@ public class DialogoChegouCasa : MonoBehaviour
             voltouCasa = false;
 
             DialogueManager.Instance.StartDialogue("chegando_casa");
+
+            GameManager.SetHorario(16.0f);
         }
     }
 
