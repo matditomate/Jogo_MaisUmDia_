@@ -5,6 +5,8 @@ public class AnsiedadeAnim : MonoBehaviour
     private Animator anim;
     [SerializeField] private AudioClip somAnsiedade;
     private bool emLooping = false;
+    public GameObject minigame;
+    public GameObject celular;
 
     void Start()
     {
@@ -30,6 +32,9 @@ public class AnsiedadeAnim : MonoBehaviour
                 }
             }
 
+            minigame.SetActive(true);
+            celular.SetActive(false);
+
         }
         else
         {
@@ -42,6 +47,8 @@ public class AnsiedadeAnim : MonoBehaviour
                     AudioManager.instance.PararLooping();
                 }
             }
+            minigame.SetActive(false);
+            celular.SetActive(true);
         }
     }
 }

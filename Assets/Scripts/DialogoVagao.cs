@@ -9,7 +9,10 @@ public class DialogueVagao : MonoBehaviour
     [Header("Diálogo Ink")]
     [SerializeField] private string dialogoInk = "estacao_vagao";
 
+    private string result;
+
     private bool jaTrocouCena = false;
+    private bool jaTeveMinigame = false;
 
     private void Start()
     {
@@ -21,8 +24,28 @@ public class DialogueVagao : MonoBehaviour
 
         DialogueManager.Instance.StartDialogue(dialogoInk, AoTerminarDialogo);
     }
+    
+    private void Update()
+    {
+        AoTerminarDialogo(null);
+    }
 
     private void AoTerminarDialogo(string resultado)
+    {
+        if(resultado != null) result = resultado;
+        if(!jaTeveMinigame)
+        {
+            Robin.AlterarAnsiedade(10);
+            jaTeveMinigame = true;
+        }
+
+        if(Robin.ansiedade != 10)
+        {
+            PosMinigame(resultado);
+        }
+    }
+
+    private void PosMinigame(string resultado)
     {
         if (jaTrocouCena)
             return;
@@ -39,4 +62,5 @@ public class DialogueVagao : MonoBehaviour
 
         SceneManager.LoadScene(cenaEstacao);
     }
+    
 }
