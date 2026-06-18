@@ -551,7 +551,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &464253152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -564,7 +564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94be4e8f42bb5cb45afd01b6196fd85a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  cursorTexture: {fileID: 2800000, guid: 4a1eb209465305e4eaa2c72cc7397f2e, type: 3}
+  cursorTexture: {fileID: 0}
 --- !u!4 &464253153
 Transform:
   m_ObjectHideFlags: 0
@@ -1511,7 +1511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6146302144900783746, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0
+      value: 0.0018518518
       objectReference: {fileID: 0}
     - target: {fileID: 6146302144900783746, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
@@ -1519,7 +1519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6146302144900783746, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 1
+      value: 0.99669456
       objectReference: {fileID: 0}
     - target: {fileID: 8762512019683598850, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: background
@@ -1820,7 +1820,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cafe
   minigamePanel: {fileID: 101898628}
-  cursorInteracao: {fileID: 2800000, guid: 7fcdd20eaaba09a49a30186f7b28a4ce, type: 3}
+  somMiado: {fileID: 8300000, guid: eccf43b82f2f25140a8d9a00e7b37e49, type: 3}
+  fonteMiado: {fileID: 1423398865}
+  cursorInteracao: {fileID: 2800000, guid: 7da80363553a9194e9568d8849a8c3e8, type: 3}
 --- !u!114 &1211812451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2163,7 +2165,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: eccf43b82f2f25140a8d9a00e7b37e49, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
