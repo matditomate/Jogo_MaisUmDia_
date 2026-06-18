@@ -221,7 +221,7 @@ CanvasGroup:
   m_GameObject: {fileID: 1144181627}
   m_Enabled: 1
   m_Alpha: 1
-  m_Interactable: 1
+  m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!114 &1144181629
@@ -285,7 +285,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: -1000
   m_TargetDisplay: 0
 --- !u!224 &1144181632
 RectTransform:
@@ -380,6 +380,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1144181632}
     m_Modifications:
+    - target: {fileID: 2870279525697046604, guid: 10b5d2f83b827f349b4f51e727814d90, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3459830032577334771, guid: 10b5d2f83b827f349b4f51e727814d90, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -543,6 +547,10 @@ PrefabInstance:
     - target: {fileID: 4692883505731769840, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
       propertyPath: m_Name
       value: HudCelular
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510945029644981392, guid: c1a240af2fb497046b00d002ef282e3d, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
 public class BalaoSpawner : MonoBehaviour
 {
+      [Header("Cena para voltar")]
+    [SerializeField] private string cenaEstacao = "Estacao";
+
     public GameObject prefabBalao;
 
     public static BalaoSpawner instance;
@@ -67,7 +71,7 @@ public class BalaoSpawner : MonoBehaviour
         "vazio tambem",
         "é informacao",
         "menos elementos",
-        "podem criar",
+        "podem criar"/*,
         "mais impacto",
         "o alinhamento",
         "errado causa",
@@ -198,7 +202,7 @@ public class BalaoSpawner : MonoBehaviour
         "analisar cada",
         "escolha visual",
         "conta uma",
-        "historia"
+        "historia"*/
     };
 
     void Awake()
@@ -220,6 +224,11 @@ public class BalaoSpawner : MonoBehaviour
             CriarBalao();
             TentarMinigame();
         }
+    }
+
+    void Start()
+    {
+        aulaTerminou = false;
     }
 
     void CriarBalao()
@@ -249,6 +258,8 @@ public class BalaoSpawner : MonoBehaviour
             {
                 aulaTerminou = true;
                 Debug.Log("Fim da aula");
+                DialogueMetro.MarcarVoltaDaAula();
+                SceneManager.LoadScene(cenaEstacao);
             }
         }
     }
