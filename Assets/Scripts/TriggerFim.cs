@@ -9,7 +9,7 @@ public class TriggerFim : MonoBehaviour
     public AudioClip somFim;
     public void IrParaFim()
     {
-        AudioManager.instance.TocarSFX(somFim);
+        GameManager.instance.som.TocarSFX(somFim);
         SceneManager.LoadScene(this.nomeProximaFase);
     }
 }

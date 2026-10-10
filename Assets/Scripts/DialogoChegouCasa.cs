@@ -19,7 +19,7 @@ public class DialogoChegouCasa : MonoBehaviour
 
             DialogueManager.Instance.StartDialogue("chegando_casa");
 
-            GameManager.SetHorario(16.0f);
+            GameManager.instance.tempo.DefinirHorario(16.0f);
         }
     }
 

@@ -47,7 +47,7 @@
 //     {
 //         ansiedade = Mathf.Clamp(ansiedade + valor, 0, 10);
 //         Debug.Log($"Ansiedade de Robin: {ansiedade}");
-//         GameManager.instance.AtivarEfeitoAnsiedade();
+//         GameManager.instance.statusRobin.AtivarEfeitoAnsiedade();
 //         if(ansiedade == 10)
 //         {
 //             AnsiedadeAnim componentesAnsiedade = FindFirstObjectByType<AnsiedadeAnim>();

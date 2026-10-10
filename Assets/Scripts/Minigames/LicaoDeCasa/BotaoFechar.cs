@@ -30,9 +30,9 @@ public class BotaoFechar : MonoBehaviour
         
         Cursor.visible = true;
 
-        if (somEstudos != null && AudioManager.instance != null)
+        if (somEstudos != null && GameManager.instance != null)
         {
-            AudioManager.instance.PararLooping();
+            GameManager.instance.som.PararLooping();
         }
 
         // Desativa sem aplicar debuffs ao Robin ou mudar horário

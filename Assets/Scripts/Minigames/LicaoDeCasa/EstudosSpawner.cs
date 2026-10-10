@@ -110,16 +110,16 @@ public class EstudosSpawner : MonoBehaviour
         {
             Debug.Log("VITÓRIA! O jogador manteve o foco e limpou as distrações!");
             TriggerLicaoDeCasa.minigameBloqueado = true; 
-            Robin.AlterarEnergia(-3);
-            Robin.AlterarAnsiedade(-2);
-            Robin.AlterarProgresso(3);
+            GameManager.instance.statusRobin.AlterarEnergia(-3);
+            GameManager.instance.statusRobin.AlterarAnsiedade(-2);
+            GameManager.instance.statusRobin.AlterarProgresso(3);
         }
         else
         {
             Debug.Log("DERROTA! As distrações preencheram a tela toda!");
-            Robin.AlterarEnergia(-3);
-            Robin.AlterarAnsiedade(2);
-            Robin.AlterarProgresso(-3);
+            GameManager.instance.statusRobin.AlterarEnergia(-3);
+            GameManager.instance.statusRobin.AlterarAnsiedade(2);
+            GameManager.instance.statusRobin.AlterarProgresso(-3);
         }
 
         if (scriptTrigger != null)
