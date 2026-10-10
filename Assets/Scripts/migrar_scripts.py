@@ -18,7 +18,9 @@ O que ele faz sozinho:
   - Casa.*, Cafe.* (estáticos), AudioManager.instance.*, PausarTempo()/RetomarTempo(),
     variáveis dos tipos antigos (Casa casa; Tempo t; ...)
   - Membros do GameManager ANTIGO: SetHorario(x) -> tempo.DefinirHorario(x), horario/dia -> tempo.Horas/Dia,
-    AlterarHorario(x) -> tempo.AvancarHoras(x), AlterarAguaPlanta/AlterarSujeira -> statusCasa.*
+    AlterarHorario(x) -> tempo.AvancarHoras(x), AlterarAguaPlanta/AlterarSujeira -> statusCasa.*,
+    portaDeDestino -> DataManager.instance.portaDeDestino
+  - Ignora Library, Temp, Packages, .git, backup_migracao etc. (pode passar a raiz do projeto)
   - Remove campos "Robin robin;", "Casa casa;", "Tempo tempo;", "AudioManager audioManager;"
 O que ele NÃO faz (aparece no relatório como REVISAR): atribuições (Robin.x = ..., Casa.dia += 1),
 FindFirstObjectByType<Casa>(), campos com inicializador e qualquer membro do GameManager antigo que
@@ -31,6 +33,9 @@ import sys
 from pathlib import Path
 
 PULAR = {"DataManager.cs", "GameManager.cs", "Cafe.cs", "ClickDetector.cs"}
+# Pastas que nunca devem ser tocadas (cache do Unity, pacotes, git, backups)
+IGNORAR = {"Library", "Temp", "obj", "Logs", "Packages", "UserSettings", ".git", ".vs", ".vscode",
+           "backup_migracao", "node_modules"}
 
 SG = "GameManager.instance"
 DM = "DataManager.instance"
@@ -149,10 +154,12 @@ def migrar_texto(texto):
         t = sub(t, rf"\bCafe\.{campo}\b{NAO_ATRIB}", lambda m, d=destino: d, contagem, "Cafe.<campo> (leitura)")
 
     # --- 5) AudioManager (singleton antigo) ---
+    t = sub(t, r"\bAudioManager\.instance\?\.", lambda m: f"{SG}?.som.", contagem, "AudioManager.instance?.X")
     t = sub(t, r"\bAudioManager\.instance\.", lambda m: f"{SG}.som.", contagem, "AudioManager.instance.X")
     t = sub(t, r"\bAudioManager\.instance\b", lambda m: SG, contagem, "AudioManager.instance (sozinho) - REVISAR")
 
     # --- 6) GameManager antigo ---
+    t = sub(t, r"\bGameManager\.instance\.portaDeDestino\b", lambda m: f"{DM}.portaDeDestino", contagem, "GameManager.instance.portaDeDestino -> DataManager")
     t = sub(t, r"\bGameManager\.instance\.AlterarHorario\(", lambda m: f"{SG}.tempo.AvancarHoras(", contagem, "GameManager.instance.AlterarHorario")
     t = sub(t, r"\bGameManager\.instance\.AtivarEfeitoAnsiedade\(", lambda m: f"{SG}.statusRobin.AtivarEfeitoAnsiedade(", contagem, "GameManager.instance.AtivarEfeitoAnsiedade")
     t = sub(t, r"\bGameManager\.(?:instance\.)?SetHorario\(", lambda m: f"{SG}.tempo.DefinirHorario(", contagem, "GameManager.SetHorario -> tempo.DefinirHorario (VERIFICAR semantica)")
@@ -185,6 +192,8 @@ def sobras(texto):
 
 
 def raiz_backup(pasta):
+    if (pasta / "Assets").is_dir():          # passou a raiz do projeto
+        return pasta / "backup_migracao"
     for p in [pasta, *pasta.parents]:
         if p.name == "Assets":
             return p.parent / "backup_migracao"
@@ -209,6 +218,8 @@ def main():
 
     for arq in sorted(pasta.rglob("*.cs")):
         if arq.name in PULAR:
+            continue
+        if any(parte in IGNORAR for parte in arq.relative_to(pasta).parts[:-1]):
             continue
 
         bruto = arq.read_bytes()
