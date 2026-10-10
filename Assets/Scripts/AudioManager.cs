@@ -1,85 +1,87 @@
-using UnityEngine;
-using UnityEngine.SceneManagement;
+// //PODE DELETAR, NÃO DELETEI AINDA SÓ PARA EVITAR RETRABALHO CASO ESTEJA ERRADO O QUE FIZ!
 
-public class AudioManager : MonoBehaviour
-{
-    public static AudioManager instance;
+// using UnityEngine;
+// using UnityEngine.SceneManagement;
 
-    [Header("Componentes de Áudio")]
-    [SerializeField] private AudioSource sfxSource;
-    [SerializeField] private AudioSource AlarmeAwakeCafe;
+// public class AudioManager : MonoBehaviour
+// {
+//     public static AudioManager instance;
 
-    [SerializeField] private AudioSource loopSource;
+//     [Header("Componentes de Áudio")]
+//     [SerializeField] private AudioSource sfxSource;
+//     [SerializeField] private AudioSource AlarmeAwakeCafe;
 
-    [Header("Sons Globais de Transição")]
-    [SerializeField] private AudioClip somPortaFechando;
+//     [SerializeField] private AudioSource loopSource;
 
-    private bool deveTocarFecharNaProximaCena = false;
+//     [Header("Sons Globais de Transição")]
+//     [SerializeField] private AudioClip somPortaFechando;
 
-    void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-    }
+//     private bool deveTocarFecharNaProximaCena = false;
 
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += AoCarregarCena;
-    }
+//     void Awake()
+//     {
+//         if (instance == null)
+//         {
+//             instance = this;
+//             DontDestroyOnLoad(gameObject);
+//         }
+//         else
+//         {
+//             Destroy(gameObject);
+//             return;
+//         }
+//     }
 
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= AoCarregarCena;
-    }
+//     private void OnEnable()
+//     {
+//         SceneManager.sceneLoaded += AoCarregarCena;
+//     }
 
-    public void AgendarSomDeFechar()
-    {
-        deveTocarFecharNaProximaCena = true;
-    }
+//     private void OnDisable()
+//     {
+//         SceneManager.sceneLoaded -= AoCarregarCena;
+//     }
 
-    private void AoCarregarCena(Scene scene, LoadSceneMode mode)
-    {
-        if (deveTocarFecharNaProximaCena)
-        {
-            TocarSFX(somPortaFechando);
-            deveTocarFecharNaProximaCena = false;
-        }
-    }
+//     public void AgendarSomDeFechar()
+//     {
+//         deveTocarFecharNaProximaCena = true;
+//     }
 
-    public void TocarSFX(AudioClip som)
-    {
-        if (som != null && sfxSource != null)
-        {
-            sfxSource.PlayOneShot(som);
-        }
-    }
+//     private void AoCarregarCena(Scene scene, LoadSceneMode mode)
+//     {
+//         if (deveTocarFecharNaProximaCena)
+//         {
+//             TocarSFX(somPortaFechando);
+//             deveTocarFecharNaProximaCena = false;
+//         }
+//     }
 
-    public void TocarLooping(AudioClip som)
-    {
-        if(som != null && loopSource != null)
-        {
-            if(loopSource.clip == som && loopSource.isPlaying) return;
+//     public void TocarSFX(AudioClip som)
+//     {
+//         if (som != null && sfxSource != null)
+//         {
+//             sfxSource.PlayOneShot(som);
+//         }
+//     }
 
-            loopSource.clip = som;
-            loopSource.loop = true;
-            loopSource.Play();
-        }
-    }
+//     public void TocarLooping(AudioClip som)
+//     {
+//         if(som != null && loopSource != null)
+//         {
+//             if(loopSource.clip == som && loopSource.isPlaying) return;
 
-    public void PararLooping()
-    {
-        if(loopSource != null && loopSource.isPlaying)
-        {
-            loopSource.Stop();
-            loopSource.clip = null;
-        }
-    }
-}
+//             loopSource.clip = som;
+//             loopSource.loop = true;
+//             loopSource.Play();
+//         }
+//     }
+
+//     public void PararLooping()
+//     {
+//         if(loopSource != null && loopSource.isPlaying)
+//         {
+//             loopSource.Stop();
+//             loopSource.clip = null;
+//         }
+//     }
+// }

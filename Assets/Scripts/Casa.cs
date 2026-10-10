@@ -1,46 +1,48 @@
-using UnityEngine;
-using System;
+// //PODE DELETAR, NÃO DELETEI AINDA SÓ PARA EVITAR RETRABALHO CASO ESTEJA ERRADO O QUE FIZ!
 
-public class Casa : MonoBehaviour
-{
-    public static Casa instancia;
-    public static int sujeira = 5; // 10 = muito suja
+// using UnityEngine;
+// using System;
 
-    public static int aguaPlanta = 6;
+// public class Casa : MonoBehaviour
+// {
+//     public static Casa instancia;
+//     public static int sujeira = 5; // 10 = muito suja
 
-    public static float horario = 6.0f;
+//     public static int aguaPlanta = 6;
 
-    public static int dia = 1;
+//     public static float horario = 6.0f;
 
-    private Horario horarioScript;
+//     public static int dia = 1;
 
-    public static event Action OnHorarioMudou;
+//     private Horario horarioScript;
 
-    public void AlterarSujeira(int valor)
-    {
-        sujeira = Mathf.Clamp(sujeira + valor, 0, 10);
-        Debug.Log($"Sujeira da casa: {sujeira}");
-    }
+//     public static event Action OnHorarioMudou;
 
-    public static void AlterarAguaPlanta(int valor)
-    {
-        aguaPlanta = Mathf.Clamp(aguaPlanta + valor, 0, 10);
-        Debug.Log($"Água das plantas: {aguaPlanta}");
-    }
+//     public void AlterarSujeira(int valor)
+//     {
+//         sujeira = Mathf.Clamp(sujeira + valor, 0, 10);
+//         Debug.Log($"Sujeira da casa: {sujeira}");
+//     }
 
-    public void AlterarHorario(float valor)
-    {
-        horario += valor;
-        if(horario > 23.98f)
-        {
-            horario -= 23.98f;
-            dia += 1;
-        }
+//     public static void AlterarAguaPlanta(int valor)
+//     {
+//         aguaPlanta = Mathf.Clamp(aguaPlanta + valor, 0, 10);
+//         Debug.Log($"Água das plantas: {aguaPlanta}");
+//     }
 
-        if (OnHorarioMudou != null)
-        {
-            OnHorarioMudou.Invoke();
-        }
-    }
+//     public void AlterarHorario(float valor)
+//     {
+//         horario += valor;
+//         if(horario > 23.98f)
+//         {
+//             horario -= 23.98f;
+//             dia += 1;
+//         }
 
-}
+//         if (OnHorarioMudou != null)
+//         {
+//             OnHorarioMudou.Invoke();
+//         }
+//     }
+
+// }

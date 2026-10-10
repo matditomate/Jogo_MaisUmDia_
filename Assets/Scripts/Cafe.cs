@@ -1,4 +1,10 @@
+// TIVE QUE REFATORAR AQUI TAMBÉM!
+
 using UnityEngine;
+
+
+// Cafe = parte da CENA (cursor, mouse, minigame, miado).
+// Os status (saciedade, atenção, locked) ficam no DataManager / GameManager.StatusCafe.
 
 public class Cafe : MonoBehaviour
 {
@@ -8,32 +14,52 @@ public class Cafe : MonoBehaviour
     public AudioClip somMiado;
     [SerializeField] private AudioSource fonteMiado;
 
-    [SerializeField] private Texture2D cursorInteracao; // Arrastar a textura do mouse de carinho/interação aqui
+    [Header("Miado aleatório")]
+    [Tooltip("Intervalo em SEGUNDOS (mínimo, máximo) entre um miado e outro.")]
+    [SerializeField] private Vector2 intervaloMiado = new Vector2(60f, 270f);
+    private float proximoMiado;
+
+    [Header("Cursor")]
+    [SerializeField] private Texture2D cursorInteracao; // Textura do mouse de carinho/interação
     private Vector2 hotspot = Vector2.zero;
 
-    // --- STATUS ESTÁTICOS (Persistem entre cenas) ---
-    public static int fome = 5;      // 0 a 10
-    public static int atencao = 5;   // 0 a 10
-    public static bool locked = false; // Trava total de interação
+    private DataManager Data => DataManager.instance;
 
-    
-
-    void Update()
+    private void Start()
     {
-        // Fazer gato Miar aleatoriamente
-        int numero1 = Random.Range(1, 10001);
-        int numero2 = Random.Range(1, 10001);
+        AgendarProximoMiado();
+    }
 
-        if (numero1 == numero2)
+    private void Update()
+    {
+        // Miado aleatório baseado em tempo (independente do FPS)
+        if (Time.time >= proximoMiado)
         {
-            fonteMiado.Play();
+            Miar();
+            AgendarProximoMiado();
         }
+    }
+
+    private void AgendarProximoMiado()
+    {
+        proximoMiado = Time.time + Random.Range(intervaloMiado.x, intervaloMiado.y);
+    }
+
+    private void Miar()
+    {
+        if (fonteMiado == null)
+        {
+            Debug.LogWarning("Cafe: fonteMiado não foi atribuída no Inspector.");
+            return;
+        }
+
+        fonteMiado.Play();
     }
 
     private void OnMouseEnter()
     {
         // Só muda o cursor se o minigame NÃO estiver aberto e o gato NÃO estiver travado
-        if (!locked && minigamePanel != null && !minigamePanel.minigamePanel.activeSelf)
+        if (!Data.cafeLocked && minigamePanel != null && !minigamePanel.minigamePanel.activeSelf)
         {
             if (cursorInteracao != null)
             {
@@ -44,34 +70,32 @@ public class Cafe : MonoBehaviour
 
     private void OnMouseExit()
     {
-        // Quando o mouse sai de cima do gato, volta para o cursor padrão
-        // Se o minigame abriu, o PanelCafeOpener já vai gerenciar o mouse, então aqui só limpamos se o painel estiver fechado
+        // Se o minigame abriu, o PanelCafeOpener gerencia o mouse; aqui só restauramos se o painel estiver fechado
         if (minigamePanel != null && !minigamePanel.minigamePanel.activeSelf)
         {
-            // Se você tiver o CursorCustom na cena, podemos chamá-lo para restaurar a "mão" padrão:
             if (minigamePanel.CursorMao != null)
             {
                 minigamePanel.CursorMao.AtivarCursor();
             }
             else
             {
-                // Caso contrário, volta para o ponteiro padrão do sistema
                 Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
             }
         }
     }
+
     public void AchouCafe()
     {
-        // Se estiver travado (bool), nem tenta checar o resto
-        if (locked)
+        // Se estiver travado, nem tenta checar o resto
+        if (Data.cafeLocked)
         {
             Debug.Log("Café está ignorando você completamente.");
-            fonteMiado.Play();
+            Miar();
             return;
         }
 
-        // Exemplo: Se a fome estiver baixa, abre o minigame de comida
-        if (fome > 0)
+        // Saciedade < 10 = Café tem alguma fome (antes: fome > 0)
+        if (Data.saciedadeCafe < 10)
         {
             Debug.Log("Café está com fome! Abrindo minigame.");
 
@@ -82,31 +106,7 @@ public class Cafe : MonoBehaviour
         }
         else
         {
-            Debug.Log("Café não está com tanta fome agora.");
+            Debug.Log("Café não está com fome agora.");
         }
-    }
-
-    // --- FUNÇÕES PARA ALTERAR OS STATUS (Chame de qualquer script) ---
-
-    public static void AlterarFome(int valor)
-    {
-        fome += valor;
-        fome = Mathf.Clamp(fome, 0, 10); // Garante que fique entre 0 e 10
-        Debug.Log("Fome do Café agora é: " + fome);
-    }
-
-    // Mathf.Clamp(atencao, 0, 10); isso garante que não passe do maximo (10)
-    // Se somar e passar de 10, devolve o maximo, que aqui é 10.
-    public static void AlterarAtencao(int valor)
-    {
-        atencao += valor;
-        atencao = Mathf.Clamp(atencao, 0, 10);
-        Debug.Log("Atenção do Café agora é: " + atencao);
-    }
-
-    public static void SetLocked(bool estado)
-    {
-        locked = estado;
-        Debug.Log("Estado Locked do Café: " + locked);
     }
 }

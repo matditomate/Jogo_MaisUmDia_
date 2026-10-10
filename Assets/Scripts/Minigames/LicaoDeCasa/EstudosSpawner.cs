@@ -19,7 +19,7 @@ public class EstudosSpawner : MonoBehaviour
     private float cronometroVitoria = 0f;
     private bool jaSpawnouPrimeiraBola = false; // Evita que o jogador vença no segundo 0
 
-    public Robin robin;
+    // public Robin robin; // isso aqui ta dando problema
 
     private void OnEnable()
     {
