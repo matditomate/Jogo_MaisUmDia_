@@ -4,9 +4,9 @@ public class CameraSpawner : MonoBehaviour
 {
     void Start()
     {
-        if (GameManager.instance != null && !string.IsNullOrEmpty(GameManager.instance.portaDeDestino))
+        if (GameManager.instance != null && !string.IsNullOrEmpty(DataManager.instance.portaDeDestino))
         {
-            GameObject portaEntrada = GameObject.Find(GameManager.instance.portaDeDestino);
+            GameObject portaEntrada = GameObject.Find(DataManager.instance.portaDeDestino);
 
             if (portaEntrada != null)
             {

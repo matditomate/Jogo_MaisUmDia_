@@ -44,9 +44,9 @@ public class LimpezaSujeira : MonoBehaviour
         // Monitora se o jogador soltou o clique para parar SOMENTE a esponja
         if (Input.GetMouseButtonUp(0))
         {
-            if (AudioManager.instance != null)
+            if (GameManager.instance.som != null)
             {
-                AudioManager.instance.PararLooping();
+                GameManager.instance.som.PararLooping();
             }
         }
     }
@@ -58,7 +58,7 @@ public class LimpezaSujeira : MonoBehaviour
             // Toca a esponja no gerenciador global
             if(somEsponja != null)
             {
-                AudioManager.instance.TocarLooping(somEsponja);
+                GameManager.instance.som.TocarLooping(somEsponja);
             }
             
             Color corAtual = imagemSujeira.color;
@@ -86,10 +86,10 @@ public class LimpezaSujeira : MonoBehaviour
         Cursor.visible = true;
         
         // Aplica as consequências de vitória
-        Robin.AlterarEnergia(-2);
-        Robin.AlterarDiversao(-1);
-        scriptCasa.AlterarHorario(0.5f);
-        Robin.AlterarProgresso(3);
+        GameManager.instance.statusRobin.AlterarEnergia(-2);
+        GameManager.instance.statusRobin.AlterarDiversao(-1);
+        GameManager.instance.tempo.AvancarHoras(0.5f);
+        GameManager.instance.statusRobin.AlterarProgresso(3);
 
         DialogueManager.Instance.StartDialogue("depois_atividade_lousa");
         
@@ -101,9 +101,9 @@ public class LimpezaSujeira : MonoBehaviour
     private void OnDisable()
     {
         // Para a esponja
-        if (AudioManager.instance != null)
+        if (GameManager.instance.som != null)
         {
-            AudioManager.instance.PararLooping();
+            GameManager.instance.som.PararLooping();
         }
 
         // Para a água escorrendo

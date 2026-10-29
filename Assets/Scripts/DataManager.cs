@@ -78,4 +78,7 @@ public class DataManager : MonoBehaviour
 
     [Header("ÁUDIO - Estado")]
     public bool deveTocarFecharNaProximaCena = false;
+
+    [Header("NAVEGAÇÃO")]
+    public string portaDeDestino;
 }

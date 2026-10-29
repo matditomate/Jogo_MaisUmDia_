@@ -145,12 +145,12 @@ public class DoomScrollingManager : MonoBehaviour, IDragHandler
     {
 
         tempoTotal += 5;
-        GameManager.instance.AlterarHorario(0.08f);
+        GameManager.instance.tempo.AvancarHoras(0.08f);
         if(tempoTotal >= 30)
         {
-            Robin.AlterarAnsiedade(1);
-            Robin.AlterarProgresso(-1);
-            Robin.AlterarDiversao(3);
+            GameManager.instance.statusRobin.AlterarAnsiedade(1);
+            GameManager.instance.statusRobin.AlterarProgresso(1);
+            GameManager.instance.statusRobin.AlterarDiversao(3);
             tempoTotal = 0;
         }
         

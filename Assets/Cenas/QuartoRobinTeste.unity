@@ -1518,7 +1518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6146302144900783746, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0
+      value: 0.0018518518
       objectReference: {fileID: 0}
     - target: {fileID: 6146302144900783746, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
@@ -1526,7 +1526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6146302144900783746, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 1
+      value: 0.99669456
       objectReference: {fileID: 0}
     - target: {fileID: 8762512019683598850, guid: 1375f4872cefd4445804b25ce6cba667, type: 3}
       propertyPath: background
@@ -1829,6 +1829,7 @@ MonoBehaviour:
   minigamePanel: {fileID: 101898628}
   somMiado: {fileID: 8300000, guid: eccf43b82f2f25140a8d9a00e7b37e49, type: 3}
   fonteMiado: {fileID: 1423398865}
+  intervaloMiado: {x: 60, y: 270}
   cursorInteracao: {fileID: 2800000, guid: 7da80363553a9194e9568d8849a8c3e8, type: 3}
 --- !u!114 &1211812451
 MonoBehaviour:
@@ -2139,6 +2140,87 @@ MonoBehaviour:
   cursorMaoPadrao: {fileID: 464253152}
   cafeDeitado: {fileID: 1211812449}
   somEstudos: {fileID: 8300000, guid: 20c970597134abc4fbe1cc4acca09c77, type: 3}
+--- !u!1 &1345570913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1345570916}
+  - component: {fileID: 1345570915}
+  - component: {fileID: 1345570914}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1345570914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345570913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce24fe8d9dffef947a4d1817dd5e8b20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+--- !u!114 &1345570915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345570913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe8f623b48fab11499904c215528e517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DataManager
+  saciedadeRobin: 6
+  higieneRobin: 6
+  diversaoRobin: 7
+  energiaRobin: 8
+  ansiedadeRobin: 6
+  progressoRobin: 0
+  sujeiraCasa: 5
+  aguaPlanta: 6
+  saciedadeCafe: 5
+  atencaoCafe: 5
+  cafeLocked: 0
+  escalaDeTempo: 1
+  tempoAtivo: 1
+  ansiedadeAceleraTempo: 1
+  totalMinutosDoJogo: 360
+  minutosFlutuantes: 0
+  relogioTexto: 'Dia 1
+
+    06:00'
+  portaDeDestino: 
+  sfxSource: {fileID: 0}
+  loopSource: {fileID: 0}
+  somPortaFechando: {fileID: 0}
+  deveTocarFecharNaProximaCena: 0
+--- !u!4 &1345570916
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345570913}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7206, y: 0.20521, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1423398864
 GameObject:
   m_ObjectHideFlags: 0
@@ -2755,7 +2837,6 @@ MonoBehaviour:
   limiteBolasDerrota: 8
   tempoParaVencer: 10
   scriptTrigger: {fileID: 381707621}
-  robin: {fileID: 0}
 --- !u!1 &1764561967
 GameObject:
   m_ObjectHideFlags: 0
@@ -3146,3 +3227,4 @@ SceneRoots:
   - {fileID: 464253153}
   - {fileID: 495773747}
   - {fileID: 1423398867}
+  - {fileID: 1345570916}

@@ -63,7 +63,7 @@ public class PoteController : MonoBehaviour
 
         if (audioSource != null && somAcerto != null)
         {
-            AudioManager.instance.TocarSFX(somAcerto);
+            GameManager.instance.som.TocarSFX(somAcerto);
         }
 
         pontos++;
@@ -103,13 +103,13 @@ public class PoteController : MonoBehaviour
         }
 
         // Status do gato e horário
-        Cafe.AlterarFome(4);
-        Cafe.AlterarAtencao(2);
-        Cafe.SetLocked(true);
-        scriptCasa.AlterarHorario(0.25f);
-        Robin.AlterarDiversao(1);
-        Robin.AlterarFome(-1);
-        Robin.AlterarProgresso(2);
+        GameManager.instance.statusCafe.AlterarSaciedade(-4);
+        GameManager.instance.statusCafe.AlterarAtencao(2);
+        GameManager.instance.statusCafe.SetLocked(true);
+        GameManager.instance.tempo.AvancarHoras(0.25f);
+        GameManager.instance.statusRobin.AlterarDiversao(1);
+        GameManager.instance.statusRobin.AlterarSaciedade(1);
+        GameManager.instance.statusRobin.AlterarProgresso(2);
 
         if (cafe != null && cafe.minigamePanel != null)
         {

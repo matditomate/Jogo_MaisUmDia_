@@ -52,7 +52,7 @@ public class TriggerLicaoDeCasa : MonoBehaviour
         // Inicia o som de estudos assim que o painel do minigame abrir
         if (somEstudos != null)
         {
-            AudioManager.instance.TocarLooping(somEstudos);
+            GameManager.instance.som.TocarLooping(somEstudos);
         }
     }
 
@@ -69,9 +69,9 @@ public class TriggerLicaoDeCasa : MonoBehaviour
         if (cafeDeitado != null) cafeDeitado.SetActive(true);
 
         // Para o som de estudos
-        if (somEstudos != null && AudioManager.instance != null)
+        if (somEstudos != null && GameManager.instance.som != null)
         {
-            AudioManager.instance.PararLooping();
+            GameManager.instance.som.PararLooping();
         }
     }
 }

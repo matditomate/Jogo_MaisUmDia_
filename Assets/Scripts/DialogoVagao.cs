@@ -35,12 +35,12 @@ public class DialogueVagao : MonoBehaviour
         if(resultado != null) result = resultado;
         if(!jaTeveMinigame)
         {
-            Robin.AlterarAnsiedade(10);
+            GameManager.instance.statusRobin.AlterarAnsiedade(10);
             
             jaTeveMinigame = true;
         }
 
-        if(Robin.ansiedade != 10)
+        if(DataManager.instance.ansiedadeRobin != 10)
         {
             PosMinigame(resultado);
         }

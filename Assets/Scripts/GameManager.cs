@@ -376,7 +376,17 @@ public class GameManager : MonoBehaviour
             d.aguaPlanta = Limitar(d.aguaPlanta, valor);
             Debug.Log($"Água das plantas: {d.aguaPlanta}");
         }
+        public int ObterSujeira()
+        {
+            return d.sujeiraCasa;
+        }
+
+        public int ObterAguaPlanta()
+        {
+            return d.aguaPlanta;
+        }
     }
+
 
     // =====================================================================
     //  CLASSE: STATUS CAFÉ  (origem: Cafe.cs - apenas a parte de status)
@@ -410,6 +420,14 @@ public class GameManager : MonoBehaviour
         {
             d.cafeLocked = estado;
             Debug.Log("Estado Locked do Café: " + d.cafeLocked);
+        }
+        public int  obterCafeAtencao()
+        {
+            return d.atencaoCafe;
+        }
+        public int  obterCafeSaciedade()
+        {
+            return d.saciedadeCafe; 
         }
     }
 }
