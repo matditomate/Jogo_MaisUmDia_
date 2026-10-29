@@ -22,14 +22,13 @@ public class PoteController : MonoBehaviour
     public AudioClip somAcerto;
 
     private bool finalizado = false;
-    private GameManager scriptCasa;
 
     // O OnEnable roda toda vez que o minigame abre na tela
     private void OnEnable()
     {
         pontos = 0;
         finalizado = false;
-        RacaoDrop.jogoAtivo = true; // Ativa a queda dos prefabs novamente
+        // A ração é ligada pelo PanelCafeOpener.IniciarMinigame(), depois do tutorial
 
         // Reseta o sprite do pote para o primeiro estado (vazio)
         if (poteUI != null && estadosPote != null && estadosPote.Length > 0)
@@ -40,14 +39,13 @@ public class PoteController : MonoBehaviour
 
     void Start()
     {
-        scriptCasa = Object.FindAnyObjectByType<GameManager>();
         if (rect == null)
             rect = GetComponent<RectTransform>();
     }
 
     void Update()
     {
-        if (finalizado) return;
+        if (finalizado || TutorialPanel.Aberto) return;
 
         rect.anchoredPosition += new Vector2(direcao * speed * Time.deltaTime, 0);
 
@@ -103,8 +101,8 @@ public class PoteController : MonoBehaviour
         }
 
         // Status do gato e horário
-        GameManager.instance.statusCafe.AlterarSaciedade(-4);
-        GameManager.instance.statusCafe.AlterarAtencao(2);
+        GameManager.instance.statusCafe.AlterarSaciedade(4);
+        GameManager.instance.statusCafe.AlterarAtencao(-2);
         GameManager.instance.statusCafe.SetLocked(true);
         GameManager.instance.tempo.AvancarHoras(0.25f);
         GameManager.instance.statusRobin.AlterarDiversao(1);
@@ -115,11 +113,10 @@ public class PoteController : MonoBehaviour
         {
             cafe.minigamePanel.FecharPanel();
 
-            DialogueManager.Instance.StartDialogue("depois_atividade_gato");
-        }
-        else
-        {
-            Debug.LogWarning("Minigame fechado, mas a referência do script Cafe no PoteController sumiu!");
+            if (DialogueManager.Instance != null)
+                DialogueManager.Instance.StartDialogue("depois_atividade_gato");
+            else
+                Debug.LogWarning("DialogueManager.Instance está null: o diálogo não foi iniciado.");
         }
     }
 }

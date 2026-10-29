@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 // DataManager = SOMENTE VARIÁVEIS (estado do jogo + referências de áudio).
@@ -81,4 +82,8 @@ public class DataManager : MonoBehaviour
 
     [Header("NAVEGAÇÃO")]
     public string portaDeDestino;
+
+    // TUTORIAIS
+    [Header("TUTORIAIS")]
+    public HashSet<string> tutoriaisVistos = new HashSet<string>();
 }

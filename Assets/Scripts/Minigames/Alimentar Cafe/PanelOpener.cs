@@ -3,7 +3,7 @@ using UnityEngine;
 public class PanelCafeOpener : MonoBehaviour
 {
     [Header("Configurações de Objetos")]
-    public GameObject worldRoot; 
+    public GameObject worldRoot;
     public GameObject minigamePanel;
     public CursorCustom CursorMao;
 
@@ -11,24 +11,40 @@ public class PanelCafeOpener : MonoBehaviour
     public CanvasGroup canvasGroup;
     public ScoopController scoop;
 
+    [Header("Tutorial (opcional)")]
+    public TutorialPanel tutorial;   // deixe o "Ao Finalizar" dele VAZIO
+
     [Header("Referência do Jogo")]
     public Cafe cafe;
 
+    private void Start()
+    {
+        if (tutorial != null)
+            tutorial.aoFinalizar.AddListener(IniciarMinigame);
+    }
+
     public void AbrirPanel()
     {
-        Debug.Log("[PANEL] Abrindo minigame");
-        CameraPanLateral.minigameAtivo = true; // Congela camera e portas
-
-        if (CursorMao != null)
+        // Gato travado: não abre minigame nem tutorial
+        if (GameManager.instance.statusCafe.Locked)
         {
-            CursorMao.DesativarCursor();
+            Debug.Log("[PANEL] Café está travado, minigame não abre.");
+            return;
         }
 
-        // Libera o cursor do sistema operacional
-        Cursor.visible = true; 
+        Debug.Log("[PANEL] Abrindo minigame");
+        CameraPanLateral.minigameAtivo = true;
+
+        if (CursorMao != null)
+            CursorMao.DesativarCursor();
+
+        Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
         minigamePanel.SetActive(true);
+
+        // O PoteController liga a ração no OnEnable; seguramos até o tutorial fechar
+        RacaoDrop.jogoAtivo = false;
 
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
@@ -39,9 +55,25 @@ public class PanelCafeOpener : MonoBehaviour
             scoop.transform.SetParent(minigamePanel.transform, false);
             scoop.transform.SetAsLastSibling();
             scoop.gameObject.SetActive(true);
-            scoop.minigameAtivo = true;
+            scoop.minigameAtivo = false;
             scoop.cheio = false;
-            scoop.enabled = true; 
+            scoop.enabled = false;
+        }
+
+        if (tutorial != null)
+            tutorial.Mostrar();      // se já foi visto, chama IniciarMinigame() na hora
+        else
+            IniciarMinigame();
+    }
+
+    public void IniciarMinigame()
+    {
+        RacaoDrop.jogoAtivo = true;
+
+        if (scoop != null)
+        {
+            scoop.minigameAtivo = true;
+            scoop.enabled = true;
         }
     }
 
@@ -51,22 +83,19 @@ public class PanelCafeOpener : MonoBehaviour
         CameraPanLateral.minigameAtivo = false; // Descongela camera e portas
 
         if (CursorMao != null)
-        {
             CursorMao.AtivarCursor();
-        }
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
         Time.timeScale = 1f;
 
-        // Centraliza a desativação do Scoop aqui
         if (scoop != null)
         {
             scoop.minigameAtivo = false;
             scoop.cheio = false;
             scoop.enabled = false;
-            scoop.gameObject.SetActive(false); // Garante que o objeto do scoop suma da tela
+            scoop.gameObject.SetActive(false);
         }
 
         minigamePanel.SetActive(false);
