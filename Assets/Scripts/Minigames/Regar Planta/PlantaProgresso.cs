@@ -63,7 +63,7 @@ public class PlantaProgresso : MonoBehaviour
 
                 if (somRegando != null)
                 {
-                    AudioManager.instance.TocarLooping(somRegando);
+                    GameManager.instance.som.TocarLooping(somRegando);
                 }
                 return;
             }
@@ -71,7 +71,7 @@ public class PlantaProgresso : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            AudioManager.instance.PararLooping();
+            GameManager.instance.som.PararLooping();
         }
     }
 
@@ -92,7 +92,7 @@ public class PlantaProgresso : MonoBehaviour
             Debug.Log($"{gameObject.name} totalmente regada! Total resolvidas: {plantasResolvidas}");
 
             // Força o som a parar imediatamente no momento do acerto
-            AudioManager.instance.PararLooping();
+            GameManager.instance.som.PararLooping();
 
             ChecarFinalJogo();
         }
@@ -144,9 +144,9 @@ public class PlantaProgresso : MonoBehaviour
     private IEnumerator FecharPainelComSeguranca()
     {
         // 1. Mandamos o AudioManager parar o looping enquanto o painel ainda está ativo
-        if (AudioManager.instance != null)
+        if (GameManager.instance.som != null)
         {
-            AudioManager.instance.PararLooping();
+            GameManager.instance.som.PararLooping();
         }
 
         // 2. Esperamos o final deste frame. Isso dá tempo para a Unity processar o comando de parada do áudio
@@ -154,10 +154,10 @@ public class PlantaProgresso : MonoBehaviour
 
         // 3. Agora que o som parou com 100% de certeza, rodamos o restante da sua lógica de vitória
         TriggerPlanta.minigameBloqueado = true;
-        Robin.AlterarDiversao(4);
-        Robin.AlterarProgresso(2);
-        GameManager.AlterarAguaPlanta(4);
-        scriptCasa.AlterarHorario(0.75f);
+        GameManager.instance.statusRobin.AlterarDiversao(4);
+        GameManager.instance.statusRobin.AlterarProgresso(2);
+        GameManager.instance.statusCasa.AlterarAguaPlanta(4);
+        GameManager.instance.tempo.AvancarHoras(0.75f);
 
         DialogueManager.Instance.StartDialogue("depois_atividade_plantas");
 
@@ -175,9 +175,9 @@ public class PlantaProgresso : MonoBehaviour
 
     private void OnDisable()
     {
-        if (AudioManager.instance != null)
+        if (GameManager.instance.som != null)
         {
-            AudioManager.instance.PararLooping();
+            GameManager.instance.som.PararLooping();
         }
     }
 }

@@ -27,7 +27,7 @@ public class Horario : MonoBehaviour
 
     public void CalculoHorario()
     {
-        float horario = GameManager.horario;
+        float horario = GameManager.instance.tempo.Horas;
         int horas = (int)horario;
         int segundos = (int)((horario - horas) * 60f);
         Debug.Log(horario);
@@ -41,7 +41,8 @@ public class Horario : MonoBehaviour
         CalculoHorario();
         horaIniTMPro.text = horarioTexto;
         horaDesbloqTMPro.text = horarioTexto;
-        diaTexto = string.Format("{0}, {1}", diasSemana[GameManager.dia - 1], GameManager.dia);
+        int dia = GameManager.instance.tempo.Dia;
+        diaTexto = string.Format("{0}, {1}", diasSemana[dia - 1], dia);
         diaTMPro.text = diaTexto;
     }
 }

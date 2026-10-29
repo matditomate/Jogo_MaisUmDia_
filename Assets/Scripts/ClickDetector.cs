@@ -1,8 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
+#if ENABLE_INPUT_SYSTEM
+using UnityEngine.InputSystem;
+#endif
 
 public class ClickDetector : MonoBehaviour
 {
@@ -29,19 +30,7 @@ public class ClickDetector : MonoBehaviour
 
     private void Update()
     {
-        bool clicou = false;
-
-        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            clicou = true;
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            clicou = true;
-        }
-
-        if (!clicou)
+        if (!ClicouEsteFrame())
             return;
 
         if (mostrarDebug)
@@ -66,6 +55,46 @@ public class ClickDetector : MonoBehaviour
         DetectarCliqueNoMundo();
     }
 
+    //  INPUT: usa o sistema que estiver ativo no projeto.
+    //  Evita InvalidOperationException ao chamar Input.* com o
+    //  Input System novo como único ativo (Player Settings > Active Input Handling).
+    // obs: Não entendi direito mas pelo que vi é melhor
+
+    // ----- Explicação 1: O problema do script original era que ele usava os dois ao mesmo tempo. Se o projeto estivesse só no sistema novo, 
+    // qualquer chamada Input.GetMouseButtonDown lançava InvalidOperationException em todo frame. 
+    // Se estivesse só no legado, nem compilava, por causa do using UnityEngine.InputSystem.
+
+    // ----- Explicação 2:
+    // #if ENABLE_INPUT_SYSTEM é uma diretiva de compilação, não um if normal. 
+    // O Unity define o símbolo ENABLE_INPUT_SYSTEM automaticamente quando o Input System novo está ativo. 
+    // Na hora de compilar, o código do bloco errado é descartado, como se nem existisse no arquivo.
+
+    // ----- Explicação 3:
+    // No original, essa lógica de “qual input usar” aparecia repetida em três lugares: no Update, 
+    // em DetectarCliqueNoMundo e em MouseEstaSobreUI. Agora o resto do script só chama ClicouEsteFrame() e PosicaoMouseTela() 
+    // e não precisa saber qual sistema está ativo. Se um dia nos trocarmos de sistema, só esses dois métodos importam.
+
+    // ta mais centralizado resumidamente!
+
+    private bool ClicouEsteFrame()
+    {
+#if ENABLE_INPUT_SYSTEM 
+        return Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame;
+#else
+        return Input.GetMouseButtonDown(0);
+#endif
+    }
+
+    private Vector2 PosicaoMouseTela()
+    {
+#if ENABLE_INPUT_SYSTEM
+        return Mouse.current != null ? Mouse.current.position.ReadValue() : Vector2.zero;
+#else
+        return Input.mousePosition;
+#endif
+    }
+
+
     private void AtualizarCameraPrincipal()
     {
         if (cameraPrincipal == null)
@@ -85,13 +114,7 @@ public class ClickDetector : MonoBehaviour
         if (cameraPrincipal == null)
             return;
 
-        Vector2 mousePosTela;
-
-        if (Mouse.current != null)
-            mousePosTela = Mouse.current.position.ReadValue();
-        else
-            mousePosTela = Input.mousePosition;
-
+        Vector2 mousePosTela = PosicaoMouseTela();
         Vector2 mousePosMundo = cameraPrincipal.ScreenToWorldPoint(mousePosTela);
 
         if (mostrarDebug)
@@ -166,15 +189,8 @@ public class ClickDetector : MonoBehaviour
             return false;
         }
 
-        Vector2 mousePosTela;
-
-        if (Mouse.current != null)
-            mousePosTela = Mouse.current.position.ReadValue();
-        else
-            mousePosTela = Input.mousePosition;
-
         PointerEventData pointerData = new PointerEventData(EventSystem.current);
-        pointerData.position = mousePosTela;
+        pointerData.position = PosicaoMouseTela();
 
         List<RaycastResult> resultados = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointerData, resultados);

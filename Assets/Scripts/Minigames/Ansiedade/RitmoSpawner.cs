@@ -95,8 +95,8 @@ public class RitmoSpawner : MonoBehaviour
     {
         jogoAtivo = false;
         Debug.Log("PARABÉNS! Você atingiu a pontuação e venceu o jogo de ritmo!");
-        Robin.AlterarAnsiedade(-4);
-        Robin.AlterarEnergia(-1);
+        GameManager.instance.statusRobin.AlterarAnsiedade(4);
+        GameManager.instance.statusRobin.AlterarEnergia(1);
         
         if (animacaoAnsiedade != null)
         {
@@ -106,5 +106,4 @@ public class RitmoSpawner : MonoBehaviour
         // Desativa o spawner por segurança
         this.enabled = false;
     }
-
 }

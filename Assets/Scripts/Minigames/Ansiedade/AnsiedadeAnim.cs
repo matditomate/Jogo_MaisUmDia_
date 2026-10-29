@@ -15,12 +15,12 @@ public class AnsiedadeAnim : MonoBehaviour
 
     public void AtualizarEstadoAnsiedade()
     {
-        Debug.Log("O valor atual da ansiedade do Robin é: " + Robin.ansiedade);
+        Debug.Log("O valor atual da ansiedade do Robin é: " + DataManager.instance.ansiedadeRobin);
         if (anim == null) 
         {
             anim = GetComponent<Animator>();
         }
-        if (Robin.ansiedade == 10)
+        if (DataManager.instance.ansiedadeRobin == 10)
         {
             if (!emLooping)
             {
@@ -28,7 +28,7 @@ public class AnsiedadeAnim : MonoBehaviour
                 anim.SetBool("emAtaque", true);
                 if (somAnsiedade != null && emLooping)
                 {
-                    AudioManager.instance.TocarLooping(somAnsiedade);
+                    	GameManager.instance.som.TocarLooping(somAnsiedade);
                 }
             }
 
@@ -43,7 +43,7 @@ public class AnsiedadeAnim : MonoBehaviour
                 emLooping = false;
                 if (somAnsiedade != null)
                 {
-                    AudioManager.instance.PararLooping();
+                    	GameManager.instance.som.PararLooping();
                 }
                 anim.SetBool("emAtaque", false);
             }

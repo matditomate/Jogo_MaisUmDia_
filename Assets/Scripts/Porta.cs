@@ -20,10 +20,10 @@ public class Porta : MonoBehaviour
         }
         
         //Som da porta ao mudar de cena
-        AudioManager.instance.TocarSFX(somAbrir);
-        AudioManager.instance.AgendarSomDeFechar();
+        GameManager.instance.som.TocarSFX(somAbrir);
+        GameManager.instance.som.AgendarSomDeFechar();
 
-        GameManager.instance.portaDeDestino = nomePortaDeDestino;
+        DataManager.instance.portaDeDestino = nomePortaDeDestino;
         SceneManager.LoadScene(this.nomeProximaFase);
     }
 }
