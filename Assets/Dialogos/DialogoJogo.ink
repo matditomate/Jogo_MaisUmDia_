@@ -1,18 +1,39 @@
 ```ink
 VAR resultado_dialogo = ""
 
+// #panel -dialogue -thought
+// #speaker
+// codigo de falas da historia = "semana"_"dia"_"hora"_"local"
+// codigo de falas tutorial = "nome do minigame"_tutorial
+// codigo de falas fim de minigame = "nome do minigame"_concluido
+// codigo de falas especiais = "nome da cena especial"
+// codigo de falas
 
-=== primeiro_dia ===
+===sonho===
 
-// CENA 1 – PRIMEIRO DIA, SEGUNDA-FEIRA
-// INT. QUARTO DE ROBIN
-// O despertador toca. Robin acorda em sua cama, cansado.
+Vocês mimam o garoto demais! Deixam ele fugir das responsabilidades com aquele discursinho de depressão ou sei lá o que! #panel:dialogue #speaker:Tia
+Ele fala que não está bem, mas ele nem faz nada para melhorar dessa suposta “depressão”, faz? #panel:dialogue #speaker:Tia
+Não é assim! Elu se esforça sim. #panel:dialogue #speaker:Mae
+Seu apartamento está sempre uma zona, quando foi a última vez que elu tomou um banho ou comeu alguma coisa? #panel:dialogue #speaker:Tia
+Amor, você vai realmente deixar sua irmã falar assim de nosso filho? #panel:dialogue #speaker:Mae
+Mas ela não está completamente errada, está? Você sabe tão bem quanto eu que Robin não está se esforçando para melhorar... #panel:dialogue #speaker:Pai
+Isso mesmo! Aposto que ele passa o dia enfurnado no quarto naquele apartamento que vocês deram para ele! #panel:dialogue #speaker:Tia
+Passar o dia na cama e não cuidar de si não é se esforçar! Ele só está fazendo drama para chamar a atenção de vocês! Igual aquela vez que ele tentou se- #panel:dialogue #speaker:Tia
+Já chega! Você não sabe de nada de Robin! Se você não tem nada de útil para dizer, saia da minha casa! #panel:dialogue #speaker:Mae
+Eles estão falando de mim #panel:thought
+Querida, ela está certa... Eu não sinto que Robin esteja se esforçando... ele está cada dia pior... #panel:dialogue #speaker:Pai
+Você sabe que não é tão simples assim... Eu sei que ele está fazendo o seu melhor... #panel:dialogue #speaker:Mae
+Mas aparentemente isso não é suficiente... Eu sinto como se nosso filho estivesse desaparecendo lentamente bem na frente de nossos olhos... #panel:dialogue #speaker:Pai
+Eu sei... E eu tenho medo de lhe perder também... #panel:dialogue #speaker:Mae
+
+-> END
+
+===1_segunda_6_quarto===
 
 Argh... o alarme tá tocando... #panel:dialogue #speaker:RobinBravo
-Eu deveria me levantar... mas só mais 5 minutinhos não vai matar ninguém... #panel:dialogue #speaker:RobinNormal
-Eu mal consegui dormir noite passada... #panel:thought
-
-O que Robin deve fazer? #panel:thought
+Eu deveria me levantar... mas só mais 5 minutos não vai matar ninguém... #panel:dialogue #speaker:RobinNormal
+Eu demorei pra pegar no sono essa noite... e ainda teve esse sonho de novo... #panel:dialogue #speaker:RobinNormal
+Será que eu realmente estou tentando o meu melhor...? #panel:dialogue #speaker:RobinNormal
 
 + Desligar o despertador e se levantar da cama.
     ~ resultado_dialogo = "despertador_levantar"
@@ -22,63 +43,26 @@ O que Robin deve fazer? #panel:thought
     ~ resultado_dialogo = "despertador_snooze"
     -> END
 
-
 === rota_1_manha ===
 
 // Robin se levanta da cama e abre a cortina do quarto.
 
 Ah, mais um dia... #panel:thought
 Vamos lá, Robin! Você só precisa se levantar, fazer suas necessidades básicas e ir para a faculdade... #panel:thought
-Basicamente, só sobreviver... #panel:thought
+Basicamente só sobreviver... Não é tão difícil assim, certo? #panel:thought
+Depois de escutar aquela conversa, eu acabei instalando um aplicativo de tarefas para me organizar melhor... #panel:thought
+Eu deveria acessar meu celular para verificar as tarefas que eu anotei para hoje...  #panel:thought
+Minhas aulas só começam às 09:00... eu preciso sair às 08:30 para encontrar com a Soleil no metrô... mas eu tenho tempo ainda para fazer algumas tarefas antes... #panel:thought
+Eu deveria abrir o aplicativo TO DO... #panel:thought
 
 -> END
 
-=== depois_atividade_comer ===
-
-Robin prepara alguma coisa rápida para comer antes da faculdade. #panel:thought
-Pelo menos agora eu não vou sair completamente vazio... #panel:thought
-
--> END
-
-
-=== depois_atividade_banho ===
-
-A água cai sobre Robin enquanto ele tenta acordar de verdade. #panel:thought
-Certo... isso ajudou um pouco. #panel:thought
+===bloco_tarefas_tutorial===
+Eu acabei anotando todas as tarefas que eu preciso fazer normalmente durante a semana... #panel:thought
+Mas eu queria testar uma funcionalidade desse aplicativo... Quando eu instalei, eu reparei que era possível selecionar no máximo 3 das minhas tarefas para ele me relembrar ao longo do dia... #panel:thought
+Eu deveria escolher uma para começar... eu me preocupo com as outras depois... vamos um passo de cada vez... #panel:thought
 
 -> END
-
-
-=== depois_atividade_gato ===
-
-Robin coloca comida para Café, que se aproxima imediatamente. #panel:thought
-Pronto, pequeno. Pelo menos um de nós vai começar o dia feliz. #panel:thought
-
--> END
-
-
-=== depois_atividade_doomscrolling ===
-
-Robin pega o celular por alguns minutos. Alguns minutos viram mais do que ele gostaria. #panel:thought
-Eu devia ter feito qualquer outra coisa... #panel:thought
-
--> END
-
-
-=== depois_atividade_plantas ===
-
-Robin rega as plantas com cuidado. #panel:thought
-Pelo menos elas parecem estar indo bem... #panel:thought
-
--> END
-
-=== depois_atividade_lousa ===
-
-Robin lava a louça. #panel:thought
-Ainda bem que acbou, lavar isso tudo é um saco, não posso deixar acumular tanto assim. #panel:thought
-
--> END
-
 
 === rota_2_atrasado ===
 
@@ -89,7 +73,6 @@ Eu preciso me levantar... #panel:dialogue #speaker:RobinNormal
 
 -> END
 
-
 === preparar_para_faculdade ===
 
 // Depois da manhã, Robin volta para o quarto para se trocar e ir para a faculdade.
@@ -98,8 +81,12 @@ Não é como se eu quisesse ir para a faculdade... #panel:dialogue #speaker:Robi
 Ainda assim, eu preciso ir... é só colocar um sorriso no rosto... só isso... #panel:dialogue #speaker:RobinNormal
 Eu deveria me trocar... #panel:dialogue #speaker:RobinNormal
 
+-> END
+
 // Aqui pode escurecer a tela enquanto Robin se troca.
 // Depois disso, o jogo pode forçar o jogador a ir até a porta principal.
+
+===depois_arrumado===
 
 É só mais um dia... é só a faculdade... vai ficar tudo bem... #panel:dialogue #speaker:RobinNormal
 Mas vai ter tanta gente lá... e eu ainda preciso pegar o metrô agora de manhã... vai estar lotado... #panel:dialogue #speaker:RobinNormal
@@ -108,79 +95,3 @@ E você vai encontrar a Soleil no metrô, você não vai estar sozinho... #panel
 
 -> END
 
-
-=== estacao_metro ===
-
-// INT. ESTAÇÃO DE METRÔ
-// Robin chega na estação e encontra Soleil.
-
-Oi Robin! Eu tava te esperando! #panel:dialogue #speaker:SoleilNormal
-Oi Sol... desculpa, eu te fiz esperar muito? #panel:dialogue #speaker:RobinNormal
-Não, eu cheguei faz uns 5 minutos, não se preocupa. #panel:dialogue #speaker:SoleilNormal
-Pronte para ir? #panel:dialogue #speaker:SoleilNormal
-
-Não, eu nunca vou estar... mas eu não quero ser o motivo da Soleil chegar atrasada na aula... #panel:thought
-
-Sim, vamos lá... #panel:dialogue #speaker:RobinNormal
-Ei, vai ficar tudo bem, Robin. Eu tô aqui com você. #panel:dialogue #speaker:SoleilNormal
-Eu sei, Sol... você é a melhor amiga de todas. #panel:dialogue #speaker:RobinNormal
-
--> END
-
-// Robin e Soleil entram no vagão do metrô.
-// O vagão está cheio e barulhento.
-// Robin começa a ter um ataque de pânico.
-
-=== estacao_vagao ===
-
-Robin, tá tudo bem... só respira comigo, tá bom...? #panel:dialogue #speaker:SoleilNormal
-
--> END
-
-
-=== depois_minigame_ansiedade ===
-
-// Ao fim do minigame, Robin e Soleil saem do vagão.
-
-Tá tudo bem...? #panel:dialogue #speaker:SoleilNormal
-Sim, só... tinha muita gente lá... mas eu já tô bem, sério... #panel:dialogue #speaker:RobinNormal
-Se você diz... vamos para a faculdade então... #panel:dialogue #speaker:SoleilNormal
-
-// A tela fica preta por enquanto, já que ainda não há imagem do campus.
-
-Eu preciso ir para a minha sala, mas eu te vejo depois, certo? #panel:dialogue #speaker:SoleilNormal
-Claro, você não vai se livrar de mim tão fácil assim... #panel:dialogue #speaker:RobinNormal
-
-Eu preciso ir para a minha sala também... apesar de eu não querer... aula de segunda é sempre um saco... #panel:thought
-
--> END
-
-
-=== depois_aula ===
-
-// Após a aula terminar, Robin se encontra com Soleil.
-
-Oiê Robin! Eu voltei! #panel:dialogue #speaker:SoleilNormal
-Você não sabe quem eu me sentei do lado hoje... #panel:dialogue #speaker:SoleilNormal
-Pra você estar tão animada pra me contar... o Kai...? #panel:dialogue #speaker:RobinNormal
-Mas ele não é da sua sala já? Vocês não se encontram todos os dias? #panel:dialogue #speaker:RobinNormal
-
-Ah, sim, mas ele normalmente tá sempre cercado de gente, então é um milagre que o lugar do seu lado ainda estivesse vazio... #panel:dialogue #speaker:SoleilNormal
-A gente passou a aula inteira conversando, ele é um fofo. #panel:dialogue #speaker:SoleilNormal
-Eu super entendo por que você gosta dele, mas quando é que você vai ter coragem de falar com ele? #panel:dialogue #speaker:SoleilNormal
-
-Sol, você sabe que não é tão fácil assim... #panel:dialogue #speaker:RobinNormal
-Além do mais... ele está sempre cercado de pessoas... definitivamente ele pelo menos gosta de um deles... #panel:dialogue #speaker:RobinNormal
-
-E se esse “um deles” for você? Nunca se sabe... #panel:dialogue #speaker:SoleilNormal
-Ai Sol, só você mesmo... por que ele gostaria de alguém como eu...? #panel:dialogue #speaker:RobinNormal
-Robin, tem muitas coisas pra se gostar em você... #panel:dialogue #speaker:SoleilNormal
-Você sempre fala isso... meus pais também... não quer dizer que eu concordo... #panel:dialogue #speaker:RobinNormal
-
--> END
-
-=== chegando_casa ====
-Oi Café, cheguei, sentiu minha falta, porque senti sua! #panel:dialogue #speaker:RobinFeliz
-
--> END
-```
