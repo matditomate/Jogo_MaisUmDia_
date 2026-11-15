@@ -339,6 +339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BalaoSpawner
   cenaEstacao: Estacao
+  dialogoFimDaAula: 1_segunda_salaAula
   prefabBalao: {fileID: 3517258568233872918, guid: 3e2fb4583e303fe4e95ef085465a45c8, type: 3}
   canvas: {fileID: 1697567461}
   balaoSpawnerPensamentos: {fileID: 1066653550}

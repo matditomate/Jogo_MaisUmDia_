@@ -2116,6 +2116,7 @@ GameObject:
   - component: {fileID: 1498837705}
   - component: {fileID: 1498837704}
   - component: {fileID: 1498837708}
+  - component: {fileID: 1498837709}
   m_Layer: 0
   m_Name: PortaEstacao
   m_TagString: Untagged
@@ -2153,9 +2154,9 @@ MonoBehaviour:
   acaoAoClicar:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1498837704}
-        m_TargetAssemblyTypeName: Porta, Assembly-CSharp
-        m_MethodName: IrProximaFase
+      - m_Target: {fileID: 1498837709}
+        m_TargetAssemblyTypeName: DialogoSalaRobin, Assembly-CSharp
+        m_MethodName: AoClicarPortaMetro
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3414,6 +3415,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2091242664}
   m_CullTransparentMesh: 1
+--- !u!114 &1498837709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498837703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ff93447bca4dc2a9508b99fe7da271, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::DialogoSalaRobin
+  dialogoSaida: preparar_para_faculdade
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

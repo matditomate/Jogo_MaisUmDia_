@@ -81,6 +81,8 @@ public class DataManager : MonoBehaviour
     [Header("CENAS - Porta de destino")]
     public string portaDeDestino = "";              // Nome do GameObject (porta) onde Robin aparece na próxima cena
 
+    public bool dialogoManhaQuartoConcluido;
+
     // =====================================================================
     //  ÁUDIO  (origem: AudioManager.cs)
     // =====================================================================

@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 using Random = UnityEngine.Random;
-using UnityEngine.SceneManagement;
 
 public class BalaoSpawner : MonoBehaviour
 {
-      [Header("Cena para voltar")]
+    [Header("Fim da aula")]
     [SerializeField] private string cenaEstacao = "Estacao";
+    [SerializeField] private string dialogoFimDaAula = "1_segunda_salaAula";
 
     public GameObject prefabBalao;
 
@@ -259,16 +259,30 @@ public class BalaoSpawner : MonoBehaviour
             {
                 aulaTerminou = true;
                 Debug.Log("Fim da aula");
-                DialogueMetro.MarcarVoltaDaAula();
-                GameManager.instance.tempo.DefinirHorario(15.0f);
-                SceneManager.LoadScene(cenaEstacao);
+                GameManager.instance.tempo.DefinirHorario(12.0f);
+
+                int dia = GameManager.instance.tempo.Dia;
+                if (dia != 1)
+                {
+                    DialogueMetro.VoltarDaAula(cenaEstacao);
+                    return;
+                }
+
+                if (DialogueManager.Instance == null)
+                {
+                    Debug.LogError("DialogueManager não encontrado ao terminar a aula.", this);
+                    return;
+                }
+
+                DialogueManager.Instance.StartDialogue(dialogoFimDaAula,
+                    _ => DialogueMetro.VoltarDaAula(cenaEstacao));
             }
         }
     }
 
     public void TentarMinigame()
     {
-        if (!podeAparecer) return;
+        if (aulaTerminou || !podeAparecer) return;
 
         if (Random.value <= chanceMinigame)
         {

@@ -370,8 +370,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTester
   cenaVagao: Vagao
   cenaSalaDeAula: SaladeAula
-  dialogoAntesDoVagao: estacao_metro
-  dialogoDepoisDoMinigame: depois_minigame_ansiedade
+  dialogoAntesDoVagao: 1_segunda_metro
+  dialogoDepoisDoMinigame: 1_segunda_metro2
+  dialogoMetroVolta: 1_segunda_metro_volta
 --- !u!4 &1246233733
 Transform:
   m_ObjectHideFlags: 0

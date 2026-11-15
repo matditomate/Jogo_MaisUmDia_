@@ -1433,7 +1433,7 @@ MonoBehaviour:
     portrait: {fileID: 21300000, guid: f444368247756e44780b2e35592a92e1, type: 3}
   - speakerName: RobinNormal
     portrait: {fileID: 21300000, guid: 6577f59ef5c1dea4187cf0a934032c5e, type: 3}
-  - speakerName: RobinSorrindo
+  - speakerName: RobinSorrisoFalso
     portrait: {fileID: 21300000, guid: 959cd4605eacffe498c6aed852879b32, type: 3}
   - speakerName: RobinSurpreso
     portrait: {fileID: 21300000, guid: 2b64a53e2fc126245bcc37d94cb89553, type: 3}
@@ -1449,6 +1449,8 @@ MonoBehaviour:
     portrait: {fileID: 21300000, guid: e88c69ebc8ff2f645b99ba0fe60e32ef, type: 3}
   - speakerName: SoleilTriste
     portrait: {fileID: 21300000, guid: 8dbb46bf80cde6142a35c6dc216692da, type: 3}
+  - speakerName: Cafe
+    portrait: {fileID: -4573854067136861274, guid: 7dc780b6ec069234e8b83f1f9a5c7a5b, type: 3}
   typingSpeed: 0.03
 --- !u!1 &7323477512915113621
 GameObject:

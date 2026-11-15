@@ -33,7 +33,8 @@ public class AnsiedadeAnim : MonoBehaviour
             }
 
             minigame.SetActive(true);
-            celular.SetActive(false);
+            if (celular != null)
+                celular.SetActive(false);
 
         }
         else
@@ -48,7 +49,8 @@ public class AnsiedadeAnim : MonoBehaviour
                 anim.SetBool("emAtaque", false);
             }
             minigame.SetActive(false);
-            celular.SetActive(true);
+            if (celular != null)
+                celular.SetActive(true);
         }
     }
 }

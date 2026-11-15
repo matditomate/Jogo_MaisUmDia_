@@ -9,13 +9,14 @@ public class DialogueMetro : MonoBehaviour
     [SerializeField] private string cenaSaladoRobin = "SalaRobinTeste";
 
     [Header("Diálogos Ink")]
-    [SerializeField] private string dialogoAntesDoVagao = "estacao_metro";
-    [SerializeField] private string dialogoDepoisDoMinigame = "depois_minigame_ansiedade";
-    [SerializeField] private string dialogoDepoisDaAula = "depois_aula";
+    [SerializeField] private string dialogoAntesDoVagao = "1_segunda_metro";
+    [SerializeField] private string dialogoDepoisDoMinigame = "1_segunda_metro2";
+    [SerializeField] private string dialogoMetroVolta = "1_segunda_metro_volta";
 
     private static bool voltouDoVagao = false;
 
     private static bool voltouDaAula = false;
+    private static bool chegouAtrasado;
 
     private bool jaTrocouCena = false;
     private string cenaDestino;
@@ -28,13 +29,14 @@ public class DialogueMetro : MonoBehaviour
             return;
         }
 
+        string dialogo;
         if (voltouDoVagao)
         {
             voltouDoVagao = false;
 
             cenaDestino = cenaSalaDeAula;
 
-            DialogueManager.Instance.StartDialogue(dialogoDepoisDoMinigame, AoTerminarDialogo);
+            dialogo = dialogoDepoisDoMinigame;
         }
         else if (voltouDaAula)
         {
@@ -44,15 +46,28 @@ public class DialogueMetro : MonoBehaviour
 
             DialogoChegouCasa.MarcarVoltaCasa();
 
-            DialogueManager.Instance.StartDialogue(dialogoDepoisDaAula, AoTerminarDialogo);
+            dialogo = dialogoMetroVolta;
         }
         else
         {
             cenaDestino = cenaVagao;
 
-            GameManager.instance.tempo.DefinirHorario(8.5f);
+            if (!chegouAtrasado)
+                GameManager.instance.tempo.DefinirHorario(8.5f);
 
-            DialogueManager.Instance.StartDialogue(dialogoAntesDoVagao, AoTerminarDialogo);
+            chegouAtrasado = false;
+
+            dialogo = dialogoAntesDoVagao;
+        }
+
+        int dia = GameManager.instance.tempo.Dia;
+        if (dia == 1)
+        {
+            DialogueManager.Instance.StartDialogue(dialogo, AoTerminarDialogo);
+        }
+        else
+        {
+            AoTerminarDialogo(null);
         }
     }
 
@@ -77,8 +92,21 @@ public class DialogueMetro : MonoBehaviour
         voltouDoVagao = true;
     }
 
-    public static void MarcarVoltaDaAula()
+    public static void IrAoMetroAtrasado(string cenaEstacao)
     {
+        chegouAtrasado = true;
+        SceneManager.LoadScene(cenaEstacao);
+    }
+
+    public static void VoltarDaAula(string cenaEstacao)
+    {
+        if (string.IsNullOrEmpty(cenaEstacao))
+        {
+            Debug.LogError("Cena da estação não foi configurada no Inspector.");
+            return;
+        }
+
         voltouDaAula = true;
+        SceneManager.LoadScene(cenaEstacao);
     }
 }

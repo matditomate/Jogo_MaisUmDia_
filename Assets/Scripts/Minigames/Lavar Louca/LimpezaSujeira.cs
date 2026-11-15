@@ -91,7 +91,7 @@ public class LimpezaSujeira : MonoBehaviour
         GameManager.instance.tempo.AvancarHoras(0.5f);
         GameManager.instance.statusRobin.AlterarProgresso(3);
 
-        DialogueManager.Instance.StartDialogue("depois_atividade_lousa");
+        DialogueManager.Instance.StartDialogue("apos_lavar_louca");
         
         velocidadeLimpeza /= 2;
         Debug.Log("Velocidade de limpeza:" + velocidadeLimpeza);

@@ -75,6 +75,7 @@ public class DialogueManager : MonoBehaviour
     private PanelType previousPanel = PanelType.Dialogue;
 
     private Action<string> onDialogueFinished;
+    private Action<string> onChoiceSelected;
 
     private void Awake()
     {
@@ -213,7 +214,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void StartDialogue(string knot, Action<string> callback = null)
+    public void StartDialogue(string knot, Action<string> callback = null, Action<string> choiceCallback = null)
     {
         if (inkJson == null)
         {
@@ -226,8 +227,6 @@ public class DialogueManager : MonoBehaviour
 
         story.ResetState();
 
-        onDialogueFinished = callback;
-
         try
         {
             story.ChoosePathString(knot);
@@ -238,6 +237,8 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
+        onDialogueFinished = callback;
+        onChoiceSelected = choiceCallback;
         dialogueActive = true;
         currentPanel = PanelType.Dialogue;
         previousPanel = PanelType.Dialogue;
@@ -290,15 +291,16 @@ public class DialogueManager : MonoBehaviour
         }
 
         isTyping = false;
-
-        if (story.currentChoices.Count > 0)
-            DisplayChoices();
+        typingCoroutine = null;
     }
 
     private void FinishTyping()
     {
         if (typingCoroutine != null)
+        {
             StopCoroutine(typingCoroutine);
+            typingCoroutine = null;
+        }
 
         TMP_Text currentText = GetCurrentText();
 
@@ -306,9 +308,6 @@ public class DialogueManager : MonoBehaviour
             currentText.text = currentLine;
 
         isTyping = false;
-
-        if (story.currentChoices.Count > 0)
-            DisplayChoices();
     }
 
     private TMP_Text GetCurrentText()
@@ -376,7 +375,10 @@ public class DialogueManager : MonoBehaviour
 
         currentPanel = previousPanel;
 
+        var escolha = onChoiceSelected;
         ContinueStory();
+        if (escolha != null)
+            escolha(GetDialogueResult());
     }
 
     private void ReadTags()
@@ -447,11 +449,13 @@ public class DialogueManager : MonoBehaviour
             if (speakerPortrait.speakerName == speakerName)
             {
                 personagemPortrait.sprite = speakerPortrait.portrait;
+                personagemPortrait.enabled = speakerPortrait.portrait != null;
                 return;
             }
         }
 
-        Debug.LogWarning($"Retrato não configurado para o personagem: {speakerName}");
+        personagemPortrait.sprite = null;
+        personagemPortrait.enabled = false;
     }
 
     private void ShowCurrentPanel()
@@ -528,6 +532,7 @@ public class DialogueManager : MonoBehaviour
 
         Action<string> callback = onDialogueFinished;
         onDialogueFinished = null;
+        onChoiceSelected = null;
 
         // Esconde o diálogo antigo ANTES de chamar o callback.
         // Assim, se o callback iniciar outro diálogo, ele não será escondido depois.

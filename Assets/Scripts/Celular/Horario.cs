@@ -30,9 +30,6 @@ public class Horario : MonoBehaviour
         float horario = GameManager.instance.tempo.Horas;
         int horas = (int)horario;
         int segundos = (int)((horario - horas) * 60f);
-        Debug.Log(horario);
-        Debug.Log(horas);
-        Debug.Log(segundos);
         horarioTexto = string.Format("{0:D2}:{1:D2}", horas, segundos);
     }
 

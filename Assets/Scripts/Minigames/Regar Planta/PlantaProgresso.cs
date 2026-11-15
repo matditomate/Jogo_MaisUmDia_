@@ -159,7 +159,7 @@ public class PlantaProgresso : MonoBehaviour
         GameManager.instance.statusCasa.AlterarAguaPlanta(4);
         GameManager.instance.tempo.AvancarHoras(0.75f);
 
-        DialogueManager.Instance.StartDialogue("depois_atividade_plantas");
+        DialogueManager.Instance.StartDialogue("apos_regar_plantas");
 
         CameraPanLateral.minigameAtivo = false;
 

@@ -12,7 +12,6 @@ public class RitmoSpawner : MonoBehaviour
 
     [Header("Regras de Fim de Jogo")]
     [SerializeField] private int pontosParaVencer = 30; // Jogo acaba quando atingir isso
-    [SerializeField] private AnsiedadeAnim animacaoAnsiedade;
 
     private bool jogoAtivo = false;
     private float cronometro = 0f;
@@ -97,14 +96,6 @@ public class RitmoSpawner : MonoBehaviour
         Debug.Log("PARABÉNS! Você atingiu a pontuação e venceu o jogo de ritmo!");
         GameManager.instance.statusRobin.AlterarAnsiedade(-4);
         GameManager.instance.statusRobin.AlterarEnergia(-1);
-        
-        if (animacaoAnsiedade != null)
-        {
-            animacaoAnsiedade.AtualizarEstadoAnsiedade();
-        }
-
-        // Desativa o spawner por segurança
-        this.enabled = false;
     }
 
 }

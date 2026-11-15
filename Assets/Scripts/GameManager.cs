@@ -324,19 +324,13 @@ public class GameManager : MonoBehaviour
         // Atenção: ansiedade é a exceção (0 = calma, 10 = crise)
         public void AlterarAnsiedade(int valor)
         {
+            bool estavaEmCrise = d.ansiedadeRobin == STATUS_MAX;
             d.ansiedadeRobin = Limitar(d.ansiedadeRobin, valor);
             Debug.Log($"Ansiedade de Robin: {d.ansiedadeRobin}");
 
-            AtivarEfeitoAnsiedade();
-
-            if (d.ansiedadeRobin == STATUS_MAX)
-            {
-                AnsiedadeAnim componentesAnsiedade = FindFirstObjectByType<AnsiedadeAnim>();
-                if (componentesAnsiedade != null)
-                {
-                    componentesAnsiedade.AtualizarEstadoAnsiedade();
-                }
-            }
+            bool emCrise = d.ansiedadeRobin == STATUS_MAX;
+            if (HudManager.instance != null)
+                HudManager.instance.AtualizarAnsiedade(emCrise, estavaEmCrise && !emCrise);
         }
 
         public void AlterarProgresso(int valor)
@@ -345,11 +339,6 @@ public class GameManager : MonoBehaviour
             Debug.Log($"Progresso de Robin: {d.progressoRobin}");
         }
 
-        // TODO: COLE AQUI o corpo do seu AtivarEfeitoAnsiedade() antigo
-        // (ele existia no GameManager anterior, que eu não tive acesso).
-        public void AtivarEfeitoAnsiedade()
-        {
-        }
     }
 
     // =====================================================================

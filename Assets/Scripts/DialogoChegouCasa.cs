@@ -17,7 +17,11 @@ public class DialogoChegouCasa : MonoBehaviour
         {
             voltouCasa = false;
 
-            DialogueManager.Instance.StartDialogue("chegando_casa");
+            int dia = GameManager.instance.tempo.Dia;
+            if (dia == 1)
+            {
+                DialogueManager.Instance.StartDialogue("1_segunda_casa_tarde");
+            }
 
             GameManager.instance.tempo.DefinirHorario(16.0f);
         }

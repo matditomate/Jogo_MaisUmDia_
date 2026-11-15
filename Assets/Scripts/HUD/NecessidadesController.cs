@@ -1,7 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System;
-using System.Reflection;
 
 public class NecessidadeController : MonoBehaviour
 {
@@ -15,13 +13,6 @@ public class NecessidadeController : MonoBehaviour
     private string amarelo = "#EDB144";
     private string vermelho = "#E43636";
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        AlterarBarra();
-    }
-
-    // Update is called once per frame
     void Update()
     {
         AlterarBarra();
@@ -29,26 +20,33 @@ public class NecessidadeController : MonoBehaviour
 
     void AlterarBarra()
     {
-        int valorNecessidade = (int)PegarValorDinamico();
+        var dados = DataManager.instance;
+        if (dados == null || necessidadeUIBar == null)
+            return;
+
+        int? valor = PegarValor(dados);
+        if (!valor.HasValue)
+            return;
+
+        int valorNecessidade = valor.Value;
         necessidadeUIBar.fillAmount = TamanhoBarra(valorNecessidade);
         necessidadeUIBar.color = CorBarra(valorNecessidade);
     }
 
-    object PegarValorDinamico()
+    int? PegarValor(DataManager dados)
     {
-        Type tipoDaClasse = Type.GetType(objeto);
-
-        object instanciaDaClasse = FindObjectOfType(tipoDaClasse);
-
-        FieldInfo campoReal = tipoDaClasse.GetField(necessidade);
-
-        if (campoReal != null)
+        return (objeto, necessidade) switch
         {
-            return campoReal.GetValue(instanciaDaClasse);
-        }
-
-        Debug.LogError($"Não achei o atributo {necessidade} na classe {objeto}");
-        return null;
+            ("Robin", "fome") => dados.saciedadeRobin,
+            ("Robin", "higiene") => dados.higieneRobin,
+            ("Robin", "energia") => dados.energiaRobin,
+            ("Robin", "diversao") => dados.diversaoRobin,
+            ("Robin", "ansiedade") => dados.ansiedadeRobin,
+            ("Casa", "aguaPlanta") => dados.aguaPlanta,
+            ("Cafe", "fome") => dados.saciedadeCafe,
+            ("Cafe", "atencao") => dados.atencaoCafe,
+            _ => null
+        };
     }
 
     //Calcular a porcentagem do tamanho da barra
